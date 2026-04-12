@@ -1,21 +1,5 @@
 services:
-  # PostgreSQL Database (Docker internal, no port expose)
-  postgres:
-    image: postgres:16-alpine
-    restart: unless-stopped
-    environment:
-      POSTGRES_DB: ordu_cilingir
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ordu_cilingir"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-
-  # Redis Cache (Docker internal, no port expose)
+  # Redis Cache (Docker internal)
   redis:
     image: redis:7-alpine
     restart: unless-stopped
@@ -35,9 +19,11 @@ services:
     restart: unless-stopped
     ports:
       - "127.0.0.1:3090:3000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
       - MOCK_DB=false
-      - DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@postgres:5432/ordu_cilingir?schema=public
+      - DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@host.docker.internal:5432/ordu_cilingir?schema=public
       - REDIS_URL=redis://redis:6379
       - JWT_SECRET=${JWT_SECRET}
       - NEXT_PUBLIC_SITE_URL=https://altinorducilingircim.com.tr
@@ -46,11 +32,8 @@ services:
       - NEXT_PUBLIC_PHONE_RAW=+905541279292
       - NEXT_PUBLIC_WHATSAPP=905541279292
     depends_on:
-      postgres:
-        condition: service_healthy
       redis:
         condition: service_healthy
 
 volumes:
-  postgres_data:
   redis_data:
