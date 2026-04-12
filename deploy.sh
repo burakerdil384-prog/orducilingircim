@@ -4,59 +4,61 @@ set -e
 # ========================================
 # Ordu Çilingir - VPS Deploy Script
 # ========================================
-# Usage: bash deploy.sh
+# Kullanım: bash deploy.sh
+# Konum: /var/www/orducilingircim/
 
+APP_DIR="/var/www/orducilingircim"
 DOMAIN="altinorducilingircim.com.tr"
-APP_DIR="/opt/orducilingir"
 
 echo "=== Ordu Çilingir Deploy ==="
 
-# 1. Check .env exists
-if [ ! -f .env ]; then
+# 1. .env kontrolü
+if [ ! -f "$APP_DIR/.env" ]; then
   echo "❌ .env dosyası bulunamadı!"
-  echo "   cp .env.production .env && nano .env"
+  echo "   cp $APP_DIR/.env.production $APP_DIR/.env && nano $APP_DIR/.env"
   exit 1
 fi
 
-# 2. Source env for validation
-source .env
+source "$APP_DIR/.env"
 if [ "$DB_PASSWORD" = "CHANGE_ME_STRONG_DB_PASSWORD" ] || [ "$JWT_SECRET" = "CHANGE_ME_GENERATE_WITH_OPENSSL_RAND_HEX_32" ]; then
   echo "❌ .env dosyasındaki şifreleri değiştirin!"
   exit 1
 fi
 
-# 3. Build and start containers
+cd "$APP_DIR"
+
+# 2. Build & start
 echo "🔨 Container'lar build ediliyor..."
 docker compose build --no-cache app
 
-echo "🚀 Container'lar başlatılıyor..."
+echo "🚀 PostgreSQL & Redis başlatılıyor..."
 docker compose up -d postgres redis
 echo "⏳ Veritabanı hazır olana kadar bekleniyor..."
 sleep 5
 
-# 4. Run Prisma migrations
-echo "📦 Veritabanı migration'ları çalıştırılıyor..."
+# 3. Prisma migration & seed
+echo "📦 Migration çalıştırılıyor..."
 docker compose run --rm app npx prisma migrate deploy
 
-# 5. Seed database
-echo "🌱 Veritabanı seed ediliyor..."
+echo "🌱 Seed çalıştırılıyor..."
 docker compose run --rm app npx tsx scripts/seed.ts
 
-# 6. Start the app
+# 4. App başlat
 echo "🚀 Uygulama başlatılıyor..."
-docker compose up -d
+docker compose up -d app
+
+# 5. Nginx config
+echo "📋 Nginx config kopyalanıyor..."
+sudo cp "$APP_DIR/nginx-site.conf" "/etc/nginx/sites-available/$DOMAIN"
+sudo ln -sf "/etc/nginx/sites-available/$DOMAIN" "/etc/nginx/sites-enabled/$DOMAIN"
+sudo nginx -t && sudo systemctl reload nginx
 
 echo ""
 echo "✅ Deploy tamamlandı!"
 echo ""
-echo "📋 Sonraki adımlar:"
-echo "   1. SSL sertifikası al:"
-echo "      docker compose run --rm certbot certbot certonly --webroot -w /var/www/certbot -d $DOMAIN -d www.$DOMAIN"
+echo "🌐 Site: https://$DOMAIN"
+echo "🔐 Admin: https://$DOMAIN/admin"
+echo "📧 Giriş: admin@altinorducilingircim.com.tr / admin123"
 echo ""
-echo "   2. Nginx'i yeniden başlat:"
-echo "      docker compose restart nginx"
-echo ""
-echo "   3. Kontrol et:"
-echo "      curl -I https://$DOMAIN"
-echo ""
-echo "   Admin panel: https://$DOMAIN/admin"
+echo "⚠️  Cloudflare DNS'te A kaydını VPS IP'sine yönlendirmeyi unutma!"
+echo "⚠️  Cloudflare SSL ayarını 'Flexible' veya 'Full' olarak ayarla."
