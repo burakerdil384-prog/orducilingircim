@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#e1f0ff",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#015300",
+                        "surface-bright": "#f7f9ff",
+                        "on-secondary-container": "#5c1a00",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#b3c9de",
+                        "on-secondary-fixed-variant": "#812800",
+                        "tertiary": "#002d00",
+                        "surface-tint": "#4c6173",
+                        "on-primary-fixed": "#061d2d",
+                        "on-tertiary-fixed": "#002200",
+                        "on-surface": "#061d2d",
+                        "outline-variant": "#c3c7cc",
+                        "on-background": "#061d2d",
+                        "surface-container-high": "#d6ebff",
+                        "secondary-container": "#ff6a2e",
+                        "on-secondary-fixed": "#380d00",
+                        "primary-fixed-dim": "#b3c9de",
+                        "tertiary-container": "#004600",
+                        "surface-container-low": "#ecf4ff",
+                        "primary-fixed": "#cfe5fb",
+                        "on-surface-variant": "#43474c",
+                        "surface-dim": "#c6ddf2",
+                        "primary": "#112737",
+                        "tertiary-fixed-dim": "#62e04f",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#cfe5fb",
+                        "inverse-surface": "#1d3243",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary": "#a93700",
+                        "secondary-fixed": "#ffdbcf",
+                        "inverse-on-surface": "#e6f2ff",
+                        "on-tertiary-container": "#3dbd2f",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#34495a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#7efe68",
+                        "secondary-fixed-dim": "#ffb59b",
+                        "surface-container-highest": "#cfe5fb",
+                        "on-primary-container": "#92a8bc",
+                        "outline": "#73777c",
+                        "surface": "#f7f9ff",
+                        "primary-container": "#283d4e",
+                        "background": "#f7f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary/30">
+<nav class="bg-slate-900/80 dark:bg-slate-950/80 backdrop-blur-md fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 shadow-xl shadow-slate-900/20">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-orange-600 dark:text-orange-500" data-icon="security">security</span>
+<span class="text-xl font-extrabold tracking-tighter text-white font-headline">ORDU ÇİLİNGİR</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-slate-300 hover:text-orange-400 transition-colors font-label text-sm uppercase tracking-wider" href="#">Ana Sayfa</a>
+<a class="text-orange-500 font-bold font-label text-sm uppercase tracking-wider" href="#">Hizmetler</a>
+<a class="text-slate-300 hover:text-orange-400 transition-colors font-label text-sm uppercase tracking-wider" href="#">Blog</a>
+</div>
+<button class="bg-secondary text-white px-6 py-2.5 rounded-xl font-bold text-sm tracking-tight active:scale-95 transition-transform duration-150 shadow-lg shadow-secondary/20">
+            HEMEN ARA
+        </button>
+</nav>
+<main class="pt-24 pb-32">
+<section class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-7 space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-surface-container-high rounded-full">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-xs font-semibold text-primary uppercase tracking-widest">Altınordu / Akyazı</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold text-primary tracking-tight leading-[1.1]">
+                        Akyazı Mahallesi <span class="text-secondary">Çilingir</span> Hizmeti
+                    </h1>
+<p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                        Akyazı Mahallesi'nde anahtarınızı mı unuttunuz? Panik yapmayın. Uzman ekibimizle <span class="font-bold text-primary">15 dakikada yanınızdayız.</span> Hasarsız kapı açma garantisi.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-xl text-lg font-bold flex items-center justify-center gap-3 shadow-2xl shadow-secondary/30 hover:brightness-110 transition-all">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+                            Hemen Ulaşın
+                        </button>
+<button class="bg-primary-container text-white px-8 py-4 rounded-xl text-lg font-bold flex items-center justify-center gap-3 hover:bg-primary transition-all">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+                            WhatsApp Hattı
+                        </button>
+</div>
+</div>
+<div class="lg:col-span-5 relative">
+<div class="aspect-square rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 bg-surface-container-low p-2">
+<img alt="Akyazı Mahallesi Ordu Map" class="w-full h-full object-cover rounded-2xl" data-alt="modern clean map interface showing Akyazı neighborhood in Ordu city with a central red location pin and elegant blue highlights" data-location="Akyazı Mahallesi Ordu" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxTYTVUzA3CrcHYf97Ls_gCR0rKpYw3ZSw7jvhGpGXJUt7-uiOy2Lo13SM__Ta2PMNabokwBpU0BoXI9FEt9xZNbx17JrYXbiOZeqIxpPsidudoMaX_of1uRbsndJe1j_OyIVF4upeyNR-rCcw6yQPsh9RJGn12F9TpWUZ6Zlv1fxNCMKdPPgcufZ3PmcmIn1RbyuZguh4Pc9piFaMTcrBTKcseWIkROUwfLWASrPIViF5zZxC1WGLk1LMTsRkATseHIv_KsznEANq"/>
+<div class="absolute inset-0 pointer-events-none border-[12px] border-white/20 rounded-3xl"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="mt-24 max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/10">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4" data-icon="speed" style="font-variation-settings: 'FILL' 1;">speed</span>
+<h3 class="text-xl font-bold text-primary mb-2">Hızlı Müdahale</h3>
+<p class="text-on-surface-variant">Konumunuza en yakın mobil aracımızı yönlendirerek Ordu Akyazı bölgesinde 15 dakikada servis sağlıyoruz.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/10">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<h3 class="text-xl font-bold text-primary mb-2">Sertifikalı Uzmanlar</h3>
+<p class="text-on-surface-variant">Tüm personelimiz oda kayıtlı, profesyonel eğitim almış sertifikalı çilingirlerden oluşmaktadır.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/10">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4" data-icon="key_visualizer" style="font-variation-settings: 'FILL' 1;">key_visualizer</span>
+<h3 class="text-xl font-bold text-primary mb-2">Modern Ekipman</h3>
+<p class="text-on-surface-variant">En yeni teknikleri ve ekipmanları kullanarak kapılarınıza hiçbir zarar vermeden açma işlemini gerçekleştiriyoruz.</p>
+</div>
+</div>
+</section>
+<section class="mt-24 py-20 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-headline font-extrabold text-primary mb-4">Altınordu'nun Tüm Mahallelerindeyiz</h2>
+<p class="text-on-surface-variant">Ordu'nun neresinde olursanız olun bir telefon uzağınızdayız.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<a class="bg-white p-4 rounded-xl text-center text-sm font-semibold text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">Altınordu Merkez</a>
+<a class="bg-secondary text-white p-4 rounded-xl text-center text-sm font-extrabold shadow-md scale-105" href="#">Akyazı Mahallesi</a>
+<a class="bg-white p-4 rounded-xl text-center text-sm font-semibold text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">Bahçelievler</a>
+<a class="bg-white p-4 rounded-xl text-center text-sm font-semibold text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">Durugöl</a>
+<a class="bg-white p-4 rounded-xl text-center text-sm font-semibold text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">Cumhuriyet</a>
+<a class="bg-white p-4 rounded-xl text-center text-sm font-semibold text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">Şirinevler</a>
+<a class="bg-white p-4 rounded-xl text-center text-sm font-semibold text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">Subaşı</a>
+<a class="bg-white p-4 rounded-xl text-center text-sm font-semibold text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">Yeni Mahalle</a>
+<a class="bg-white p-4 rounded-xl text-center text-sm font-semibold text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">Karşıyaka</a>
+<a class="bg-white p-4 rounded-xl text-center text-sm font-semibold text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">Selimiye</a>
+<a class="bg-white p-4 rounded-xl text-center text-sm font-semibold text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">Eskipazar</a>
+<a class="bg-white p-4 rounded-xl text-center text-sm font-semibold text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">Hürriyet</a>
+</div>
+</div>
+</section>
+<section class="mt-24 max-w-7xl mx-auto px-6 text-center">
+<h2 class="text-lg font-headline font-bold text-on-surface-variant uppercase tracking-[0.2em] mb-12">Güvenilir Çözüm Ortaklarımız ve Belgelerimiz</h2>
+<div class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl" data-icon="workspace_premium">workspace_premium</span>
+<span class="font-bold text-xl">Ustalık Belgesi</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-bold text-xl">Oda Kayıtlı</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl" data-icon="verified">verified</span>
+<span class="font-bold text-xl">ISO 9001</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-4xl" data-icon="handshake">handshake</span>
+<span class="font-bold text-xl">Resmi Kurum Onaylı</span>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-slate-900 w-full py-12 px-8 flex flex-col md:flex-row justify-between max-w-full mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="font-headline font-bold text-white text-2xl mb-4">ORDU ÇİLİNGİR</div>
+<p class="text-slate-400 font-sans max-w-xs mb-6">
+                Ordu Altınordu bölgesinde 7/24 kesintisiz güvenlik ve çilingir çözümleri sunuyoruz. Precision Security Solutions markasıdır.
+            </p>
+<p class="text-orange-500 font-sans text-sm">© 2024 Ordu Çilingir - Precision Security Solutions</p>
+</div>
+<div class="grid grid-cols-2 gap-8 md:gap-16">
+<div>
+<h4 class="text-white font-bold mb-4">Hızlı Linkler</h4>
+<ul class="space-y-2">
+<li><a class="text-slate-400 hover:text-orange-300 transition-colors text-sm" href="#">Altınordu Çilingir</a></li>
+<li><a class="text-white underline transition-colors text-sm" href="#">Akyazı Anahtarcı</a></li>
+<li><a class="text-slate-400 hover:text-orange-300 transition-colors text-sm" href="#">Bahçelievler Çilingir</a></li>
+<li><a class="text-slate-400 hover:text-orange-300 transition-colors text-sm" href="#">Acil Kapı Açma</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-4">İletişim</h4>
+<ul class="space-y-2">
+<li class="text-slate-400 text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="location_on">location_on</span>
+                        Altınordu, Ordu
+                    </li>
+<li class="text-slate-400 text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="phone">phone</span>
+                        +90 (5XX) XXX XX XX
+                    </li>
+<li class="text-slate-400 text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="mail">mail</span>
+                        info@orducilingir.com
+                    </li>
+</ul>
+</div>
+</div>
+</footer>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl md:hidden shadow-[0_-4px_20px_rgba(0,0,0,0.1)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-medium font-sans">Ana Sayfa</span>
+</a>
+<a class="flex flex-col items-center justify-center text-orange-600 dark:text-orange-400 font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="build" style="font-variation-settings: 'FILL' 1;">build</span>
+<span class="text-[10px] font-medium font-sans">Hizmetler</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+<span class="text-[10px] font-medium font-sans">Blog</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined text-green-500" data-icon="chat">chat</span>
+<span class="text-[10px] font-medium font-sans">WhatsApp</span>
+</a>
+</nav>
+</body></html>

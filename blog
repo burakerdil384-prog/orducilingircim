@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#e1f0ff",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#015300",
+                        "surface-bright": "#f7f9ff",
+                        "on-secondary-container": "#5c1a00",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#b3c9de",
+                        "on-secondary-fixed-variant": "#812800",
+                        "tertiary": "#002d00",
+                        "surface-tint": "#4c6173",
+                        "on-primary-fixed": "#061d2d",
+                        "on-tertiary-fixed": "#002200",
+                        "on-surface": "#061d2d",
+                        "outline-variant": "#c3c7cc",
+                        "on-background": "#061d2d",
+                        "surface-container-high": "#d6ebff",
+                        "secondary-container": "#ff6a2e",
+                        "on-secondary-fixed": "#380d00",
+                        "primary-fixed-dim": "#b3c9de",
+                        "tertiary-container": "#004600",
+                        "surface-container-low": "#ecf4ff",
+                        "primary-fixed": "#cfe5fb",
+                        "on-surface-variant": "#43474c",
+                        "surface-dim": "#c6ddf2",
+                        "primary": "#112737",
+                        "tertiary-fixed-dim": "#62e04f",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#cfe5fb",
+                        "inverse-surface": "#1d3243",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "secondary": "#a93700",
+                        "secondary-fixed": "#ffdbcf",
+                        "inverse-on-surface": "#e6f2ff",
+                        "on-tertiary-container": "#3dbd2f",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#34495a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#7efe68",
+                        "secondary-fixed-dim": "#ffb59b",
+                        "surface-container-highest": "#cfe5fb",
+                        "on-primary-container": "#92a8bc",
+                        "outline": "#73777c",
+                        "surface": "#f7f9ff",
+                        "primary-container": "#283d4e",
+                        "background": "#f7f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-glass {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .signature-gradient {
+            background: linear-gradient(135deg, #112737 0%, #283d4e 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-slate-900/80 dark:bg-slate-950/80 backdrop-blur-md text-white docked full-width top-0 sticky shadow-xl shadow-slate-900/20 z-50">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-orange-600 dark:text-orange-500" data-icon="security">security</span>
+<span class="text-xl font-extrabold tracking-tighter text-white font-headline">ORDU ÇİLİNGİR</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-slate-300 hover:text-orange-400 transition-colors font-sans Inter" href="#">Ana Sayfa</a>
+<a class="text-slate-300 hover:text-orange-400 transition-colors font-sans Inter" href="#">Hizmetler</a>
+<a class="text-orange-500 font-bold font-sans Inter" href="#">Blog</a>
+<button class="bg-secondary text-white px-6 py-2 rounded-xl font-bold transition-all hover:scale-95 active:duration-150">HEMEN ARA</button>
+</nav>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="signature-gradient py-20 px-6">
+<div class="max-w-7xl mx-auto text-center">
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold text-white tracking-tight mb-6">
+                    Güvenlik Rehberi
+                </h1>
+<p class="text-primary-fixed-dim text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                    Profesyonel çilingir ekibimizden güvenlik ipuçları, kilit bakımı ve acil durum çözümleri hakkında uzman görüşleri.
+                </p>
+<!-- Search Bar Container -->
+<div class="max-w-xl mx-auto relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container-highest border-none py-5 pl-12 pr-6 rounded-2xl text-primary focus:bg-surface-container-lowest focus:ring-0 transition-all shadow-lg" placeholder="Makale ara..." type="text"/>
+</div>
+</div>
+</section>
+<!-- Topic Chips -->
+<section class="py-12 px-6 bg-surface">
+<div class="max-w-7xl mx-auto flex flex-wrap justify-center gap-3">
+<button class="px-6 py-2 rounded-full bg-primary-fixed text-on-primary-fixed font-medium hover:bg-primary transition-colors hover:text-white">Hepsi</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium hover:bg-primary transition-colors hover:text-white">Güvenlik İpuçları</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium hover:bg-primary transition-colors hover:text-white">Kilit Bakımı</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium hover:bg-primary transition-colors hover:text-white">Acil Durumlar</button>
+<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-medium hover:bg-primary transition-colors hover:text-white">Teknoloji</button>
+</div>
+</section>
+<!-- Blog Grid -->
+<section class="pb-24 px-6 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Blog Card 1 -->
+<article class="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden transition-all hover:bg-surface-bright">
+<div class="aspect-[16/10] overflow-hidden relative">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close-up of high-security door keys resting on a brushed metal surface with sharp focus and professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-XBJedgN0qvV8OiIeMwFG6CDLlWtjzNb780xjB3AzP3U92bcIC4jl0aJ_Y1Nk7uLJN8RiqrC25eCcY4_FXWrU4VG73lMZ1wObyGxtUFnvS6y-ZGT_OD7hlZXzBZybOr61CDytxxeIHYBdf54hwG-A3eRhS0OTcLWwV60JCrPje8uf6NUXWy6OndFPqS8zl4MgAqT0tpwSyEMiaJGhIhov-hwPd31-n1PIVUHZKLQmxK7d1CAx6v3r9Go9AUPVBcDQHZO_azk3gZ7u"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary px-3 py-1 text-[10px] font-bold text-white rounded-full uppercase tracking-wider">Güvenlik</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<time class="text-xs font-medium text-outline mb-3 uppercase tracking-widest">12 Ocak 2024</time>
+<h3 class="text-2xl font-headline font-bold text-primary mb-4 leading-tight group-hover:text-secondary transition-colors">Ev Güvenliğinizi Artırmanın 5 Modern Yolu</h3>
+<p class="text-on-surface-variant line-clamp-3 mb-6 text-sm leading-relaxed">
+                                Evinizi hırsızlara karşı daha güvenli hale getirmek için yapabileceğiniz basit ama etkili teknolojik ve fiziksel önlemleri keşfedin.
+                            </p>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<a class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all" href="#">
+                                    DEVAMINI OKU <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Blog Card 2 (Featured Large Card Pattern) -->
+<article class="group flex flex-col bg-primary-container rounded-xl overflow-hidden md:col-span-2 lg:col-span-2 transition-all">
+<div class="grid md:grid-cols-2 h-full">
+<div class="h-full overflow-hidden">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern smart home digital lock on a dark wooden door at dusk with ambient blue light and subtle warm glow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWlKcrFnvuN_hl7Mp5yPSpQ3XoXrFLhvjboQkFzkzDz3jJumLrUpmlRKf0SFh2R8fQOgioTdZj6FI9aQCMR-qlcKBbHvNb58b4VC-K86X05WPWesT4gOqxEuMRypmbtKcUoDUUMxUmwEf0K9icM--AjsKf9Q1zyzzw571Zr91_w5G_BUTuqbNEDv5hvxrFYRiHp3E9hxtPI93OeDmCpw6g3r2ommZQU6XXB0cS7kGZ51vY5fw7x5uaGlFSRSPTiYVYjgfbJUCBO68y"/>
+</div>
+<div class="p-10 flex flex-col justify-center">
+<span class="text-on-tertiary-container font-bold text-xs mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill">star</span> ÖNE ÇIKAN
+                                </span>
+<h3 class="text-3xl md:text-4xl font-headline font-extrabold text-white mb-6 leading-tight">Akıllı Kilitler: Geleneksel Anahtarların Sonu mu?</h3>
+<p class="text-primary-fixed-dim mb-8 leading-relaxed">
+                                    Dijital güvenlik dünyasına giriş yapın. Akıllı kilitlerin avantajları, kurulum süreçleri ve güvenilirlik testleri hakkında her şey bu yazıda.
+                                </p>
+<div class="flex items-center gap-4">
+<button class="bg-secondary text-white px-8 py-3 rounded-xl font-bold hover:scale-95 transition-transform">Makaleye Git</button>
+<span class="text-white/40 text-xs font-medium">8 Dakika Okuma</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Blog Card 3 -->
+<article class="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden transition-all hover:bg-surface-bright">
+<div class="aspect-[16/10] overflow-hidden relative">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Emergency locksmith tools and kit inside a service van with soft morning light and professional tools in focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYXZX9r_BxAMQE1ZN3vpiL7h0e8Z_VHU1niybLObNeAKw23rWhW1fELnbBbl2s9pMZc69vzfebkqgtIZQn2fygXZI-EaTkjeRNl0QsDCD60xfcqbng-4gusI722BGl6fVnDc_LiEsLmFwFRLtZvacQUmyLVwoWyr7MDuwhFyV845F2REblCpxNxM2lW20LN-w2TJtb1O5bEE8EQ8bEzTJJdmhXp55YN2IDCg7DDCo0H_qZAoveGE2AkMdvrhaYwm8D24exU8g2WYoJ"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary px-3 py-1 text-[10px] font-bold text-white rounded-full uppercase tracking-wider">Acil Durum</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<time class="text-xs font-medium text-outline mb-3 uppercase tracking-widest">08 Ocak 2024</time>
+<h3 class="text-2xl font-headline font-bold text-primary mb-4 leading-tight group-hover:text-secondary transition-colors">Kapıda Kaldığınızda Yapmanız Gereken İlk Şey</h3>
+<p class="text-on-surface-variant line-clamp-3 mb-6 text-sm leading-relaxed">
+                                Panik yapmadan önce bu adımları izleyin. Profesyonel bir çilingir çağırmadan önce kontrol etmeniz gereken kritik noktalar.
+                            </p>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<a class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all" href="#">
+                                    DEVAMINI OKU <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Blog Card 4 -->
+<article class="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden transition-all hover:bg-surface-bright">
+<div class="aspect-[16/10] overflow-hidden relative">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Hands applying lubricant to a complex door lock mechanism with focus on the precision work and metallic textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuskxzOYZZGbsQ6k0R9huumU2LvjJ1E7WiE1XO91V1G511VxU19N0GzslnqMl-1eWX9vyJdnNUiWsydHyjIfrIRDcWCng4k3YP5HTxRukT5HKD93pwsNNvIv-Z5sZfvk8NlGoJoHmV5Lwus5eoKNkmS0o6UwcabWD45bqfNw87RLinFmpjJjTPlyxhMoZMibmT4CgTL5d6_9OD9N5VySwxODFET_ZdXs9HzDjrlEc16SxR_qBYF0dSrFoKsqXbAHwqeyMiiIEGnFE_"/>
+<div class="absolute top-4 left-4">
+<span class="bg-surface-container-highest text-primary px-3 py-1 text-[10px] font-bold rounded-full uppercase tracking-wider">Bakım</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<time class="text-xs font-medium text-outline mb-3 uppercase tracking-widest">05 Ocak 2024</time>
+<h3 class="text-2xl font-headline font-bold text-primary mb-4 leading-tight group-hover:text-secondary transition-colors">Kilit Ömrünü Uzatan Bakım Tavsiyeleri</h3>
+<p class="text-on-surface-variant line-clamp-3 mb-6 text-sm leading-relaxed">
+                                Kilitlerinizin tutukluk yapmasını önlemek için yılda bir kez yapmanız gereken basit temizlik ve yağlama işlemleri.
+                            </p>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<a class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all" href="#">
+                                    DEVAMINI OKU <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+<!-- Blog Card 5 -->
+<article class="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden transition-all hover:bg-surface-bright">
+<div class="aspect-[16/10] overflow-hidden relative">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern office glass entrance with biometric security scanner and minimalist interior lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4nM1YjAoO4RAJXZqzyw7KeD8hsUBlXQS0Wp4lNLkwt2CoVpEIBnTzzMdT2UZgO2wVViUYLVKlhTIiouqQZpmjcXzksP0gCYVN3Eg8RHVVY5C1RCXePjVQhsaNd69SZfB5HhFxyuJPsYB77nQZQMNnQGChx9dbeESfHmHIq8lRYANG4OAU1z5HWe6XLOVPucd2dO2WGAN9YHJBsZzCG2HkqkMA0UnorrggoHbbET038-qazcOxeBMTmrAwPLFsKCwqDoBBNwRdCGmZ"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary px-3 py-1 text-[10px] font-bold text-white rounded-full uppercase tracking-wider">İş Yeri</span>
+</div>
+</div>
+<div class="p-8 flex flex-col flex-grow">
+<time class="text-xs font-medium text-outline mb-3 uppercase tracking-widest">02 Ocak 2024</time>
+<h3 class="text-2xl font-headline font-bold text-primary mb-4 leading-tight group-hover:text-secondary transition-colors">İş Yerleri İçin Geçiş Kontrol Sistemleri</h3>
+<p class="text-on-surface-variant line-clamp-3 mb-6 text-sm leading-relaxed">
+                                Ofis ve mağaza güvenliğinde yeni nesil kartlı ve biyometrik geçiş sistemlerinin verimlilik üzerine etkileri.
+                            </p>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<a class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:gap-3 transition-all" href="#">
+                                    DEVAMINI OKU <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex justify-center items-center gap-2">
+<button class="w-10 h-10 rounded-lg flex items-center justify-center text-outline hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center text-primary font-bold hover:bg-surface-container-high transition-colors">2</button>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center text-primary font-bold hover:bg-surface-container-high transition-colors">3</button>
+<span class="px-2 text-outline">...</span>
+<button class="w-10 h-10 rounded-lg flex items-center justify-center text-outline hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-20 px-6 bg-surface-container">
+<div class="max-w-3xl mx-auto text-center">
+<div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="mail">mail</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-headline font-extrabold text-primary mb-4">Güvenlik Bülteni</h2>
+<p class="text-on-surface-variant mb-10">En yeni güvenlik teknolojileri ve ipuçlarını doğrudan e-postanıza alın.</p>
+<form class="flex flex-col md:flex-row gap-4">
+<input class="flex-grow px-6 py-4 rounded-xl border-none bg-surface-container-lowest focus:ring-2 focus:ring-primary shadow-sm" placeholder="E-posta adresiniz" type="email"/>
+<button class="bg-primary text-white px-10 py-4 rounded-xl font-bold hover:bg-primary-container transition-colors">Abone Ol</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-900 dark:bg-black text-slate-400 full-width relative">
+<div class="w-full py-16 px-8 flex flex-col md:flex-row justify-between max-w-7xl mx-auto gap-12">
+<div class="max-w-xs">
+<span class="font-display font-bold text-white text-2xl block mb-4 font-headline">ORDU ÇİLİNGİR</span>
+<p class="text-sm leading-relaxed mb-6">7/24 kesintisiz hizmet ve modern güvenlik çözümleri ile Ordu'nun her noktasındayız.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:text-orange-300 transition-all" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="share">share</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-8 md:gap-20">
+<div>
+<h4 class="text-white font-bold mb-6 text-sm uppercase tracking-widest">Hizmet Bölgeleri</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-orange-300 transition-all" href="#">Altınordu Çilingir</a></li>
+<li><a class="hover:text-orange-300 transition-all" href="#">Akyazı Anahtarcı</a></li>
+<li><a class="hover:text-orange-300 transition-all" href="#">Bahçelievler Çilingir</a></li>
+<li><a class="hover:text-orange-300 transition-all" href="#">Acil Kapı Açma</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6 text-sm uppercase tracking-widest">Hızlı Erişim</h4>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-orange-300 transition-all" href="#">Hakkımızda</a></li>
+<li><a class="text-white underline font-bold" href="#">Blog</a></li>
+<li><a class="hover:text-orange-300 transition-all" href="#">Kariyer</a></li>
+<li><a class="hover:text-orange-300 transition-all" href="#">İletişim</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 pb-8 border-t border-slate-800 pt-8 text-center md:text-left">
+<p class="text-xs">© 2024 Ordu Çilingir - Precision Security Solutions</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl flex justify-around items-center px-4 pb-4 pt-2 shadow-[0_-4px_20px_rgba(0,0,0,0.1)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-medium font-sans">Ana Sayfa</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="build">build</span>
+<span class="text-[10px] font-medium font-sans">Hizmetler</span>
+</a>
+<a class="flex flex-col items-center justify-center text-orange-600 dark:text-orange-400 font-bold scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="article">article</span>
+<span class="text-[10px] font-medium font-sans">Blog</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="text-[10px] font-medium font-sans">WhatsApp</span>
+</a>
+</nav>
+</body></html>

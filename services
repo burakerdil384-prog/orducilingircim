@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#e1f0ff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#015300",
+                    "surface-bright": "#f7f9ff",
+                    "on-secondary-container": "#5c1a00",
+                    "error-container": "#ffdad6",
+                    "inverse-primary": "#b3c9de",
+                    "on-secondary-fixed-variant": "#812800",
+                    "tertiary": "#002d00",
+                    "surface-tint": "#4c6173",
+                    "on-primary-fixed": "#061d2d",
+                    "on-tertiary-fixed": "#002200",
+                    "on-surface": "#061d2d",
+                    "outline-variant": "#c3c7cc",
+                    "on-background": "#061d2d",
+                    "surface-container-high": "#d6ebff",
+                    "secondary-container": "#ff6a2e",
+                    "on-secondary-fixed": "#380d00",
+                    "primary-fixed-dim": "#b3c9de",
+                    "tertiary-container": "#004600",
+                    "surface-container-low": "#ecf4ff",
+                    "primary-fixed": "#cfe5fb",
+                    "on-surface-variant": "#43474c",
+                    "surface-dim": "#c6ddf2",
+                    "primary": "#112737",
+                    "tertiary-fixed-dim": "#62e04f",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#cfe5fb",
+                    "inverse-surface": "#1d3243",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "secondary": "#a93700",
+                    "secondary-fixed": "#ffdbcf",
+                    "inverse-on-surface": "#e6f2ff",
+                    "on-tertiary-container": "#3dbd2f",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#34495a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#7efe68",
+                    "secondary-fixed-dim": "#ffb59b",
+                    "surface-container-highest": "#cfe5fb",
+                    "on-primary-container": "#92a8bc",
+                    "outline": "#73777c",
+                    "surface": "#f7f9ff",
+                    "primary-container": "#283d4e",
+                    "background": "#f7f9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-effect { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background">
+<!-- TopAppBar -->
+<header class="bg-slate-900/80 backdrop-blur-md text-white docked full-width top-0 sticky z-50 shadow-xl shadow-slate-900/20">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-orange-500" data-icon="security">security</span>
+<span class="text-xl font-extrabold tracking-tighter text-white">ORDU ÇİLİNGİR</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-300 hover:text-orange-400 transition-colors font-sans Inter" href="#">Ana Sayfa</a>
+<a class="text-orange-500 font-bold font-sans Inter" href="#">Hizmetler</a>
+<a class="text-slate-300 hover:text-orange-400 transition-colors font-sans Inter" href="#">Blog</a>
+<a class="bg-secondary px-6 py-2 rounded-xl text-white font-bold hover:bg-secondary-container transition-all active:scale-95 duration-150" href="#">HEMEN ARA</a>
+</nav>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="relative h-[530px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover grayscale-[0.3]" data-alt="Close-up of a premium modern door handle with a metallic finish in a brightly lit architectural hallway, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-ZyQjgjYm10o8IUrl6XgYfaMe5_I70nhFuULxeRwPuUhOwySUly0vYvDzekyZn5utyN7A9gkcSSH9U3gf-9lgeuxDcbOTq39Gj-wfXQIjBof2xlhmYYTTdnGIXac-f9ljbjTLHL8RcFag-L3X6xmN4DJ9B2GWQMlHVLCgmBafmItv_3Ji4nwod-jJt24Am10p16T_TOZbnBEM_YrUiEYR5uQSuap1LhOA-dvZVRUyCh-hL9ludNG1RhYoJmqE3AHwDTSFbqxJwLRf"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
+</div>
+<div class="container mx-auto px-6 relative z-10">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary/20 border border-secondary/30 rounded-full mb-6">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-secondary text-xs font-bold tracking-widest uppercase">7/24 ACİL SERVİS</span>
+</div>
+<h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-4 tracking-tight">Kapı Açma Hizmeti</h1>
+<p class="text-xl text-slate-300 mb-8 max-w-lg">Hasarsız, hızlı ve profesyonel müdahale ile kapınızdaki sorunu dakikalar içinde çözüyoruz.</p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-secondary text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center gap-2 shadow-2xl shadow-secondary/20 hover:scale-105 transition-transform" href="tel:+905555555555">
+<span class="material-symbols-outlined">call</span>
+                            ŞİMDİ ARA
+                        </a>
+<div class="bg-white/10 backdrop-blur-md px-6 py-4 rounded-xl border border-white/10">
+<span class="block text-white/60 text-xs font-medium uppercase">BAŞLANGIÇ FİYATI</span>
+<span class="text-2xl font-bold text-white tracking-tighter">₺450.00'den başlayan</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Detail Content -->
+<section class="py-24 bg-surface">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+<!-- Content Column -->
+<div class="lg:col-span-8">
+<div class="space-y-12">
+<div>
+<h2 class="text-3xl font-bold text-primary mb-6">Neden Bizi Tercih Etmelisiniz?</h2>
+<p class="text-on-surface-variant leading-relaxed text-lg mb-8">
+                                    Ordu'nun en güvenilir çilingir servisi olarak, kapıda kalma durumunuzda yanınızdayız. Modern ekipmanlarımız ve uzman teknisyenlerimizle, kapı kilidinize veya kapı yüzeyine hiçbir zarar vermeden açma işlemini gerçekleştiriyoruz.
+                                </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="speed">speed</span>
+<h3 class="font-bold text-xl text-primary">15 Dakikada Varış</h3>
+<p class="text-sm text-on-surface-variant">Altınordu bölgesinin her noktasına en geç 15 dakika içerisinde ulaşıyoruz.</p>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl flex flex-col gap-4">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="lock_open">lock_open</span>
+<h3 class="font-bold text-xl text-primary">Hasarsız Açma</h3>
+<p class="text-sm text-on-surface-variant">Özel maymuncuk ve teknik ekipmanlarımızla kapınıza zarar vermeden işlem yapıyoruz.</p>
+</div>
+</div>
+</div>
+<div class="bg-primary text-white p-12 rounded-3xl overflow-hidden relative">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full -mr-32 -mt-32"></div>
+<h2 class="text-3xl font-bold mb-6 relative z-10 tracking-tight">Altınordu Hizmet Bölgelerimiz</h2>
+<p class="text-slate-300 mb-8 relative z-10 leading-relaxed">
+                                    Ordu Altınordu'nun tüm mahallelerinde 7/24 kesintisiz hizmet sunmaktayız. Konumunuz neresi olursa olsun profesyonel ekibimiz bir telefon uzağınızda.
+                                </p>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-8 relative z-10">
+<div class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-orange-500 text-sm">location_on</span>
+                                        Akyazı Mahallesi
+                                    </div>
+<div class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-orange-500 text-sm">location_on</span>
+                                        Bahçelievler
+                                    </div>
+<div class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-orange-500 text-sm">location_on</span>
+                                        Durugöl
+                                    </div>
+<div class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-orange-500 text-sm">location_on</span>
+                                        Cumhuriyet
+                                    </div>
+<div class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-orange-500 text-sm">location_on</span>
+                                        Şirinevler
+                                    </div>
+<div class="flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-orange-500 text-sm">location_on</span>
+                                        Yeni Mahalle
+                                    </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Info -->
+<div class="lg:col-span-4 space-y-8">
+<div class="bg-surface-container p-8 rounded-3xl shadow-sm border border-outline-variant/10">
+<h3 class="text-xl font-bold text-primary mb-6">Fiyatlandırma</h3>
+<ul class="space-y-4 mb-8">
+<li class="flex justify-between items-center text-sm border-b border-outline-variant/20 pb-3">
+<span class="text-on-surface-variant">Standart Kapı Açma</span>
+<span class="font-bold text-primary">₺450'den</span>
+</li>
+<li class="flex justify-between items-center text-sm border-b border-outline-variant/20 pb-3">
+<span class="text-on-surface-variant">Çelik Kapı (Kilitli)</span>
+<span class="font-bold text-primary">₺650'den</span>
+</li>
+<li class="flex justify-between items-center text-sm border-b border-outline-variant/20 pb-3">
+<span class="text-on-surface-variant">Gece Mesaisi Farkı</span>
+<span class="font-bold text-primary">+ ₺150</span>
+</li>
+</ul>
+<p class="text-[10px] text-on-surface-variant italic leading-tight">* Fiyatlar mesafeye ve kilit modeline göre değişiklik gösterebilir.</p>
+</div>
+<div class="bg-white p-1 rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
+<div class="aspect-square bg-slate-200">
+<img class="w-full h-full object-cover" data-alt="Stylized high-contrast map of Altinordu district in Ordu, showing central neighborhoods with orange pin markers" data-location="Altinordu, Ordu" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEEc9INvtzrD9km9bUK1uuj0g_74YYAGGz_dJd2YLXjisFJg2mnH5Ghcv8zdP-dNI2hVFFXQ5wPzryb8nMyxS7-L7yvPDWBxKnBO3hqnz5v_xOHJF66mWIZd016kKcEg8XabNiBx6SjFt8sFNaDzMt0z0DFgyy3TgFuenbd-X1xRvynZ27fUR5oNoWOEk-b-jtVDUOanuppmDS51ZMaJZzCMDUqK1lhCWkaZnzZaIEsLNhgyR5f03Tp9kQ9rHx59sphHxj0rkPqLhc"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Services Carousel Style -->
+<section class="py-24 bg-surface-container-lowest overflow-hidden">
+<div class="container mx-auto px-6">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-3xl font-bold text-primary tracking-tight">Diğer Uzmanlık Alanlarımız</h2>
+<p class="text-on-surface-variant mt-2">Güvenliğiniz için sunduğumuz diğer profesyonel çözümler.</p>
+</div>
+<div class="hidden md:flex gap-4">
+<button class="p-3 rounded-full border border-outline-variant hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<button class="p-3 rounded-full border border-outline-variant hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-8 snap-x no-scrollbar">
+<!-- Card 1 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-start bg-surface-container-low p-8 rounded-3xl flex flex-col gap-6 group hover:bg-primary transition-all duration-500">
+<div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-secondary shadow-lg">
+<span class="material-symbols-outlined text-3xl" data-icon="vpn_key">vpn_key</span>
+</div>
+<h3 class="text-2xl font-bold text-primary group-hover:text-white">Anahtar Kopyalama</h3>
+<p class="text-on-surface-variant group-hover:text-slate-300">Yüksek güvenlikli kilitler ve otomobil anahtarları için hassas kopyalama.</p>
+<a class="text-secondary font-bold inline-flex items-center gap-2 group-hover:text-orange-400" href="#">Detayları Gör <span class="material-symbols-outlined text-sm">east</span></a>
+</div>
+<!-- Card 2 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-start bg-surface-container-low p-8 rounded-3xl flex flex-col gap-6 group hover:bg-primary transition-all duration-500">
+<div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-secondary shadow-lg">
+<span class="material-symbols-outlined text-3xl" data-icon="car_repair">car_repair</span>
+</div>
+<h3 class="text-2xl font-bold text-primary group-hover:text-white">Oto Çilingir</h3>
+<p class="text-on-surface-variant group-hover:text-slate-300">Her marka ve model araç için immobilizer destekli kapı açma servisi.</p>
+<a class="text-secondary font-bold inline-flex items-center gap-2 group-hover:text-orange-400" href="#">Detayları Gör <span class="material-symbols-outlined text-sm">east</span></a>
+</div>
+<!-- Card 3 -->
+<div class="min-w-[300px] md:min-w-[400px] snap-start bg-surface-container-low p-8 rounded-3xl flex flex-col gap-6 group hover:bg-primary transition-all duration-500">
+<div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center text-secondary shadow-lg">
+<span class="material-symbols-outlined text-3xl" data-icon="garage">garage</span>
+</div>
+<h3 class="text-2xl font-bold text-primary group-hover:text-white">Kasa Açma</h3>
+<p class="text-on-surface-variant group-hover:text-slate-300">Çelik kasa ve dijital kasa sistemlerinde profesyonel açma çözümleri.</p>
+<a class="text-secondary font-bold inline-flex items-center gap-2 group-hover:text-orange-400" href="#">Detayları Gör <span class="material-symbols-outlined text-sm">east</span></a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-900 text-white w-full py-20 px-8 relative overflow-hidden">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between relative z-10 gap-12">
+<div class="max-w-xs">
+<div class="text-white font-display font-bold text-2xl mb-6">ORDU ÇİLİNGİR</div>
+<p class="text-slate-400 font-sans Inter text-sm leading-relaxed mb-8">Precision Security Solutions: Ordu'nun güvenilir kapı açma ve kilit değişim uzmanı.</p>
+<div class="flex gap-4">
+<span class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-orange-500">
+<span class="material-symbols-outlined text-xl">share</span>
+</span>
+<span class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-orange-500">
+<span class="material-symbols-outlined text-xl">location_on</span>
+</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-12">
+<div>
+<h4 class="text-orange-500 font-bold mb-6">Hızlı Menü</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-400 hover:text-orange-300 transition-all text-sm" href="#">Ana Sayfa</a></li>
+<li><a class="text-white underline transition-all text-sm" href="#">Hizmetler</a></li>
+<li><a class="text-slate-400 hover:text-orange-300 transition-all text-sm" href="#">Acil Yardım</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-orange-500 font-bold mb-6">Hizmet Bölgeleri</h4>
+<ul class="space-y-4">
+<li><a class="text-slate-400 hover:text-orange-300 transition-all text-sm" href="#">Altınordu Çilingir</a></li>
+<li><a class="text-slate-400 hover:text-orange-300 transition-all text-sm" href="#">Akyazı Anahtarcı</a></li>
+<li><a class="text-slate-400 hover:text-orange-300 transition-all text-sm" href="#">Bahçelievler Çilingir</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-slate-500 text-xs font-sans Inter">© 2024 Ordu Çilingir - Precision Security Solutions</p>
+<div class="flex gap-8">
+<a class="text-slate-500 text-xs hover:text-white" href="#">Gizlilik Politikası</a>
+<a class="text-slate-500 text-xs hover:text-white" href="#">Kullanım Şartları</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-white/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.1)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-slate-500 font-medium font-sans Inter text-[10px]" href="#">
+<span class="material-symbols-outlined">home</span>
+            Ana Sayfa
+        </a>
+<a class="flex flex-col items-center justify-center text-orange-600 font-bold font-sans Inter text-[10px]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">build</span>
+            Hizmetler
+        </a>
+<a class="flex flex-col items-center justify-center text-slate-500 font-medium font-sans Inter text-[10px]" href="#">
+<span class="material-symbols-outlined">article</span>
+            Blog
+        </a>
+<a class="flex flex-col items-center justify-center text-slate-500 font-medium font-sans Inter text-[10px]" href="#">
+<span class="material-symbols-outlined">chat</span>
+            WhatsApp
+        </a>
+</nav>
+<!-- FAB Suppression Logic: Not rendering FAB on Detail Page as per instructions -->
+</body></html>
