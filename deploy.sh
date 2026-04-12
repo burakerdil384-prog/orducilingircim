@@ -27,27 +27,14 @@ fi
 
 cd "$APP_DIR"
 
-# 2. PostgreSQL kontrolü (host'taki PostgreSQL kullanılıyor)
-echo "🔍 PostgreSQL kontrolü..."
-if ! sudo -u postgres psql -lqt | cut -d \| -f 1 | grep -qw ordu_cilingir; then
-  echo "⚠️  PostgreSQL'de ordu_cilingir DB bulunamadı!"
-  echo "   Şu komutları çalıştır:"
-  echo "   sudo -u postgres psql"
-  echo "   CREATE USER ${DB_USER} WITH PASSWORD '${DB_PASSWORD}';"
-  echo "   CREATE DATABASE ordu_cilingir OWNER ${DB_USER};"
-  echo "   GRANT ALL PRIVILEGES ON DATABASE ordu_cilingir TO ${DB_USER};"
-  echo "   \\q"
-  echo ""
-  read -p "PostgreSQL kurulumu tamamlandı mı? (y/n) " -n 1 -r
-  echo
-  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-    exit 1
-  fi
-fi
-
-# 3. Build & start
+# 2. Build & start
 echo "🔨 Container'lar build ediliyor..."
 docker compose build --no-cache app
+
+echo "🚀 PostgreSQL & Redis başlatılıyor..."
+docker compose up -d postgres redis
+echo "⏳ Veritabanı hazır olana kadar bekleniyor..."
+sleep 5
 
 # 4. Prisma migration & seed
 echo "📦 Migration çalıştırılıyor..."
