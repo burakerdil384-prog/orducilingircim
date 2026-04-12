@@ -49,23 +49,18 @@ fi
 echo "🔨 Container'lar build ediliyor..."
 docker compose build --no-cache app
 
-echo "🚀 Redis başlatılıyor..."
-docker compose up -d redis
-echo "⏳ Veritabanı hazır olana kadar bekleniyor..."
-sleep 5
-
-# 3. Prisma migration & seed
+# 4. Prisma migration & seed
 echo "📦 Migration çalıştırılıyor..."
 docker compose run --rm app npx prisma migrate deploy
 
 echo "🌱 Seed çalıştırılıyor..."
 docker compose run --rm app npx tsx scripts/seed.ts
 
-# 4. App başlat
+# 5. App başlat
 echo "🚀 Uygulama başlatılıyor..."
-docker compose up -d app
+docker compose up -d --remove-orphans app
 
-# 5. Nginx config
+# 6. Nginx config
 echo "📋 Nginx config kopyalanıyor..."
 sudo cp "$APP_DIR/nginx-site.conf" "/etc/nginx/sites-available/$DOMAIN"
 sudo ln -sf "/etc/nginx/sites-available/$DOMAIN" "/etc/nginx/sites-enabled/$DOMAIN"
