@@ -1,5 +1,7 @@
 node_modules/
 .next/
-.env*
+.env
+.env.local
 *.tsbuildinfo
 .DS_Store
+nginx/ssl/
