@@ -1,37 +1,20 @@
 services:
-  # Redis Cache (Docker internal)
-  redis:
-    image: redis:7-alpine
-    restart: unless-stopped
-    volumes:
-      - redis_data:/data
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-
-  # Next.js Application
+  # Next.js Application (host network - uses host PG & Redis directly)
   app:
     build:
       context: ./frontend
       dockerfile: Dockerfile
     restart: unless-stopped
-    ports:
-      - "127.0.0.1:3090:3000"
+    network_mode: host
     environment:
       - MOCK_DB=false
-      - DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@172.17.0.1:5432/ordu_cilingir?schema=public
-      - REDIS_URL=redis://redis:6379
+      - PORT=3090
+      - HOSTNAME=127.0.0.1
+      - DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@127.0.0.1:5432/ordu_cilingir?schema=public
+      - REDIS_URL=redis://127.0.0.1:6379
       - JWT_SECRET=${JWT_SECRET}
       - NEXT_PUBLIC_SITE_URL=https://altinorducilingircim.com.tr
       - NEXT_PUBLIC_SITE_NAME=Ordu Çilingir
       - NEXT_PUBLIC_PHONE=0554 127 92 92
       - NEXT_PUBLIC_PHONE_RAW=+905541279292
       - NEXT_PUBLIC_WHATSAPP=905541279292
-    depends_on:
-      redis:
-        condition: service_healthy
-
-volumes:
-  redis_data:

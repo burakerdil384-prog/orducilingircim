@@ -27,7 +27,7 @@ fi
 
 cd "$APP_DIR"
 
-# 2. PostgreSQL kurulum kontrolü
+# 2. PostgreSQL kontrolü
 echo "🔍 PostgreSQL kontrolü..."
 if ! sudo -u postgres psql -lqt | cut -d \| -f 1 | grep -qw ordu_cilingir; then
   echo "📦 PostgreSQL kurulumu yapılıyor..."
@@ -39,23 +39,9 @@ EOSQL
   echo "✅ PostgreSQL user ve database oluşturuldu."
 fi
 
-# PostgreSQL'in Docker'dan bağlantıya izin vermesi için pg_hba.conf kontrolü
-PG_HBA=$(sudo -u postgres psql -t -P format=unaligned -c 'SHOW hba_file')
-if ! sudo grep -q "172.17.0.0/16" "$PG_HBA"; then
-  echo "⚙️  PostgreSQL Docker ağına izin veriliyor..."
-  echo "host    ordu_cilingir    ${DB_USER}    172.17.0.0/16    md5" | sudo tee -a "$PG_HBA" > /dev/null
-  sudo systemctl reload postgresql
-  echo "✅ PostgreSQL yapılandırıldı."
-fi
-
-# 3. Build & start
-echo "🔨 Container'lar build ediliyor..."
+# 3. Build
+echo "🔨 Container build ediliyor..."
 docker compose build --no-cache app
-
-echo "🚀 Redis başlatılıyor..."
-docker compose up -d redis
-echo "⏳ Redis hazır olana kadar bekleniyor..."
-sleep 3
 
 # 4. Prisma migration & seed
 echo "📦 Migration çalıştırılıyor..."
