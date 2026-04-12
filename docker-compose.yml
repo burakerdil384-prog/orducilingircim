@@ -19,11 +19,9 @@ services:
     restart: unless-stopped
     ports:
       - "127.0.0.1:3090:3000"
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
     environment:
       - MOCK_DB=false
-      - DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@host.docker.internal:5432/ordu_cilingir?schema=public
+      - DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@172.17.0.1:5432/ordu_cilingir?schema=public
       - REDIS_URL=redis://redis:6379
       - JWT_SECRET=${JWT_SECRET}
       - NEXT_PUBLIC_SITE_URL=https://altinorducilingircim.com.tr
