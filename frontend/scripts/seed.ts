@@ -10,9 +10,9 @@ async function seed() {
   const adapter = new PrismaPg({ connectionString });
   const prisma = new PrismaClient({ adapter });
 
-  const email = process.env.ADMIN_EMAIL || "admin@altinorducilingircim.com.tr";
-  const password = process.env.ADMIN_PASSWORD || "admin123";
-  const name = process.env.ADMIN_NAME || "Admin";
+  const email = process.env.ADMIN_EMAIL || "arifgenc@orducilingircim.com.tr";
+  const password = process.env.ADMIN_PASSWORD || "Arif93cer89ar";
+  const name = process.env.ADMIN_NAME || "Arif Genc";
 
   const hashed = await hash(password, 10);
 
