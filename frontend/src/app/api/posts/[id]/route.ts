@@ -5,6 +5,7 @@ import { getSession } from "@/lib/auth";
 import { slugify } from "@/lib/utils";
 import { invalidateCache } from "@/lib/redis";
 import { sanitizeString, sanitizeUrl, MAX_LENGTHS } from "@/lib/sanitize";
+import { purgeCloudflareCache } from "@/lib/cache-purge";
 
 type Params = { params: Promise<{ id: string }> };
 
@@ -77,6 +78,7 @@ export async function PUT(request: NextRequest, { params }: Params) {
     const post = await prisma.post.update({ where: { id: postId }, data });
 
     await invalidateCache("posts:*");
+    await purgeCloudflareCache();
     return NextResponse.json(post);
   } catch {
     return NextResponse.json({ error: "Sunucu hatası." }, { status: 500 });
@@ -106,6 +108,7 @@ export async function DELETE(_request: NextRequest, { params }: Params) {
 
     await prisma.post.delete({ where: { id: postId } });
     await invalidateCache("posts:*");
+    await purgeCloudflareCache();
     return NextResponse.json({ success: true });
   } catch {
     return NextResponse.json({ error: "Sunucu hatası." }, { status: 500 });

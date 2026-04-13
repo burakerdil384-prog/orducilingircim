@@ -5,6 +5,7 @@ import { getSession } from "@/lib/auth";
 import { slugify } from "@/lib/utils";
 import { getCached, invalidateCache, CACHE_TTL } from "@/lib/redis";
 import { sanitizeString, sanitizeUrl, MAX_LENGTHS } from "@/lib/sanitize";
+import { purgeCloudflareCache } from "@/lib/cache-purge";
 
 // GET /api/services
 export async function GET() {
@@ -67,6 +68,7 @@ export async function POST(request: NextRequest) {
     });
 
     await invalidateCache("services:*");
+    await purgeCloudflareCache();
     return NextResponse.json(service, { status: 201 });
   } catch (error) {
     if (error instanceof Error && error.message.includes("Unique constraint")) {

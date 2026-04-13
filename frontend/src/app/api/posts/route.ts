@@ -5,6 +5,7 @@ import { getSession } from "@/lib/auth";
 import { slugify } from "@/lib/utils";
 import { getCached, invalidateCache, CACHE_TTL } from "@/lib/redis";
 import { sanitizeString, sanitizeUrl, MAX_LENGTHS } from "@/lib/sanitize";
+import { purgeCloudflareCache } from "@/lib/cache-purge";
 
 // GET /api/posts — list all posts (public: only published, admin: all)
 export async function GET(request: NextRequest) {
@@ -74,6 +75,7 @@ export async function POST(request: NextRequest) {
     });
 
     await invalidateCache("posts:*");
+    await purgeCloudflareCache(); // Cloudflare cache'i temizle
     return NextResponse.json(post, { status: 201 });
   } catch (error) {
     if (error instanceof Error && error.message.includes("Unique constraint")) {
