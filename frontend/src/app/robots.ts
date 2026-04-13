@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://altinorducilingircim.com.tr";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr";
 
   return {
     rules: [

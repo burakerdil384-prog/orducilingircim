@@ -8,7 +8,7 @@ set -e
 # Konum: /var/www/orducilingircim/
 
 APP_DIR="/var/www/orducilingircim"
-DOMAIN="altinorducilingircim.com.tr"
+DOMAIN="orducilingircim.com.tr"
 
 echo "=== Ordu Çilingir Deploy ==="
 
@@ -76,7 +76,7 @@ echo "✅ Deploy tamamlandı!"
 echo ""
 echo "🌐 Site: https://$DOMAIN"
 echo "🔐 Admin: https://$DOMAIN/admin"
-echo "📧 Giriş: admin@altinorducilingircim.com.tr / admin123"
+echo "📧 Giriş: arifgenc@orducilingircim.com.tr / Arif93cer89ar"
 echo ""
 echo "⚠️  Cloudflare DNS'te A kaydını VPS IP'sine yönlendirmeyi unutma!"
 echo "⚠️  Cloudflare SSL ayarını 'Flexible' veya 'Full' olarak ayarla."

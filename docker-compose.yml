@@ -13,7 +13,7 @@ services:
       - DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@127.0.0.1:5432/ordu_cilingir?schema=public
       - REDIS_URL=redis://127.0.0.1:6379
       - JWT_SECRET=${JWT_SECRET}
-      - NEXT_PUBLIC_SITE_URL=https://altinorducilingircim.com.tr
+      - NEXT_PUBLIC_SITE_URL=https://orducilingircim.com.tr
       - NEXT_PUBLIC_SITE_NAME=Ordu Çilingir
       - NEXT_PUBLIC_PHONE=0554 127 92 92
       - NEXT_PUBLIC_PHONE_RAW=+905541279292

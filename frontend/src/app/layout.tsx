@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     "Ordu Altınordu bölgesinde 7/24 profesyonel çilingir hizmeti. Kapı açma, kasa açma, oto çilingir ve anahtar kopyalama. 15 dakikada kapınızdayız.",
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://altinorducilingircim.com.tr"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr"
   ),
   alternates: {
     canonical: "/",
@@ -83,9 +83,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Locksmith",
               name: "Ordu Çilingir",
-              image: `${process.env.NEXT_PUBLIC_SITE_URL || "https://altinorducilingircim.com.tr"}/og-image.jpg`,
+              image: `${process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr"}/og-image.jpg`,
               telephone: "+905541279292",
-              url: process.env.NEXT_PUBLIC_SITE_URL || "https://altinorducilingircim.com.tr",
+              url: process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr",
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Altınordu",

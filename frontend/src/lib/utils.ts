@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || "Ordu Çilingir",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://altinorducilingircim.com.tr",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr",
   phone: process.env.NEXT_PUBLIC_PHONE || "0554 127 92 92",
   phoneRaw: process.env.NEXT_PUBLIC_PHONE_RAW || "+905541279292",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || "905541279292",

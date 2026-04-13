@@ -5,14 +5,14 @@ const prisma = new PrismaClient();
 
 async function main() {
   // Create admin user
-  const hashedPassword = await hash("admin123", 12);
+  const hashedPassword = await hash("Arif93cer89ar", 12);
   await prisma.admin.upsert({
-    where: { email: "admin@altinorducilingircim.com.tr" },
+    where: { email: "arifgenc@orducilingircim.com.tr" },
     update: {},
     create: {
-      email: "admin@altinorducilingircim.com.tr",
+      email: "arifgenc@orducilingircim.com.tr",
       password: hashedPassword,
-      name: "Admin",
+      name: "Arif Genc",
     },
   });
 

@@ -51,7 +51,7 @@ npm run db:seed
 ```
 
 **Default Admin Credentials:**
-- Email: `admin@altinorducilingircim.com.tr`
+- Email: `arifgenc@orducilingircim.com.tr`
 - Password: `admin123`
 
 ### 4. Run Development Server

@@ -5,7 +5,7 @@ import { slugify } from "@/lib/utils";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://altinorducilingircim.com.tr";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr";
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [

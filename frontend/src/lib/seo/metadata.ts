@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://altinorducilingircim.com.tr";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr";
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "Ordu Çilingir";
 
 interface MetadataOptions {
