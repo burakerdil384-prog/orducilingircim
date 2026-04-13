@@ -45,7 +45,13 @@ docker compose build --no-cache app
 
 # 4. Prisma migration & seed
 echo "📦 Migration çalıştırılıyor..."
-docker compose run --rm app npx prisma migrate deploy
+# migrate deploy önce, yoksa db push ile tabloları oluştur
+docker compose run --rm app npx prisma migrate deploy || {
+  echo "⚠️  Migration bulunamadı, db push ile tablolar oluşturuluyor..."
+  sudo -u postgres psql -c "ALTER USER ${DB_USER} CREATEDB;" 2>/dev/null || true
+  docker compose run --rm app npx prisma db push
+  sudo -u postgres psql -c "ALTER USER ${DB_USER} NOCREATEDB;" 2>/dev/null || true
+}
 
 echo "🌱 Seed çalıştırılıyor..."
 docker compose run --rm app npx tsx scripts/seed.ts

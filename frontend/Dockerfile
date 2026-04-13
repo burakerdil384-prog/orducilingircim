@@ -34,11 +34,14 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 # Copy prisma for migrations
 COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/prisma ./prisma
+COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
 COPY --from=builder /app/src/generated ./src/generated
-COPY --from=builder /app/scripts ./scripts
+COPY --from=builder --chown=nextjs:nodejs /app/scripts ./scripts
 COPY --from=builder /app/prisma.config.ts ./prisma.config.ts
 COPY --from=builder /app/package.json ./package.json
+
+# Ensure migrations directory exists and is writable
+RUN mkdir -p ./prisma/migrations && chown -R nextjs:nodejs ./prisma
 
 USER nextjs
 
