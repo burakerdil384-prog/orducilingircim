@@ -11,6 +11,7 @@ export const mockServices: Array<{
   image: string | null;
   price: string | null;
   faqs: Array<{ question: string; answer: string }>;
+  pricing: Array<{ label: string; price: string }> | null;
   createdAt: Date;
   updatedAt: Date;
 }> = [
@@ -29,6 +30,11 @@ export const mockServices: Array<{
       { question: "Kapıya zarar verir misiniz?", answer: "Hayır, modern teknik ekipmanlarımızla hasarsız açma garantisi veriyoruz." },
       { question: "Gece çağırsam gelir misiniz?", answer: "Evet, 7/24 hizmet vermekteyiz. Gece mesai farkı uygulanmaktadır." },
     ],
+    pricing: [
+      { label: "Standart Kapı Açma", price: "₺450'den" },
+      { label: "Çelik Kapı (Kilitli)", price: "₺650'den" },
+      { label: "Gece Mesaisi Farkı", price: "+ ₺150" },
+    ],
     createdAt: new Date("2024-01-01"),
     updatedAt: new Date("2024-06-01"),
   },
@@ -45,6 +51,11 @@ export const mockServices: Array<{
     faqs: [
       { question: "Hangi tip kasaları açabilirsiniz?", answer: "Mekanik şifreli, dijital, parmak izli ve anahtarlı tüm kasa tiplerini açabiliyoruz." },
       { question: "Kasa açma işlemi kasaya zarar verir mi?", answer: "Mümkün olduğunca hasarsız yöntemler kullanıyoruz." },
+    ],
+    pricing: [
+      { label: "Mekanik Kasa Açma", price: "₺800'den" },
+      { label: "Dijital Kasa Açma", price: "₺1.200'den" },
+      { label: "Acil Servis Farkı", price: "+ ₺200" },
     ],
     createdAt: new Date("2024-01-01"),
     updatedAt: new Date("2024-06-01"),
@@ -63,6 +74,11 @@ export const mockServices: Array<{
       { question: "Hangi marka araçlara hizmet veriyorsunuz?", answer: "Tüm marka ve model araçlara hizmet vermekteyiz." },
       { question: "İmmobilizer anahtar yapabilir misiniz?", answer: "Evet, çoğu araç markası için immobilizer anahtar kodlama yapabiliyoruz." },
     ],
+    pricing: [
+      { label: "Araç Kapısı Açma", price: "₺600'den" },
+      { label: "İmmobilizer Kodlama", price: "₺1.500'den" },
+      { label: "Yedek Anahtar", price: "₺800'den" },
+    ],
     createdAt: new Date("2024-01-01"),
     updatedAt: new Date("2024-06-01"),
   },
@@ -78,6 +94,11 @@ export const mockServices: Array<{
     price: "150",
     faqs: [
       { question: "Her tür anahtar kopyalanabilir mi?", answer: "Evet, ev, ofis, otomobil ve yüksek güvenlikli anahtarlar dahil tüm türlerde kopyalama yapıyoruz." },
+    ],
+    pricing: [
+      { label: "Standart Anahtar", price: "₺150'den" },
+      { label: "Çelik Kapı Anahtarı", price: "₺300'den" },
+      { label: "Oto Anahtar Kopyalama", price: "₺500'den" },
     ],
     createdAt: new Date("2024-01-01"),
     updatedAt: new Date("2024-06-01"),

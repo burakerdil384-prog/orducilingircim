@@ -18,6 +18,7 @@ export default function AdminDashboardLayout({ children }: { children: React.Rea
     { href: "/admin", icon: "dashboard", label: "Dashboard" },
     { href: "/admin/blog", icon: "article", label: "Blog" },
     { href: "/admin/services", icon: "build", label: "Hizmetler" },
+    { href: "/admin/pricing", icon: "payments", label: "Fiyatlandırma" },
     { href: "/admin/locations", icon: "location_on", label: "Mahalleler" },
     { href: "/", icon: "language", label: "Siteye Git" },
   ];

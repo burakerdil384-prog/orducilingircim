@@ -49,6 +49,7 @@ export async function PUT(request: NextRequest, { params }: Params) {
     const image = body.image !== undefined ? sanitizeUrl(body.image) : undefined;
     const price = body.price !== undefined ? sanitizeString(body.price, MAX_LENGTHS.PRICE) : undefined;
     const faqs = body.faqs;
+    const pricing = body.pricing;
 
     if (isMockMode) {
       const idx = mockServices.findIndex((s) => s.id === serviceId);
@@ -62,6 +63,7 @@ export async function PUT(request: NextRequest, { params }: Params) {
         ...(image !== undefined && { image }),
         ...(price !== undefined && { price }),
         ...(faqs !== undefined && { faqs }),
+        ...(pricing !== undefined && { pricing }),
         updatedAt: new Date(),
       };
       mockServices[idx] = updated;
@@ -76,6 +78,7 @@ export async function PUT(request: NextRequest, { params }: Params) {
     if (image !== undefined) data.image = image;
     if (price !== undefined) data.price = price;
     if (faqs !== undefined) data.faqs = faqs;
+    if (pricing !== undefined) data.pricing = pricing;
 
     const service = await prisma.service.update({ where: { id: serviceId }, data });
 

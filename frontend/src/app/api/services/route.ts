@@ -38,6 +38,7 @@ export async function POST(request: NextRequest) {
     const image = sanitizeUrl(body.image);
     const price = sanitizeString(body.price, MAX_LENGTHS.PRICE);
     const faqs = body.faqs;
+    const pricing = body.pricing;
 
     if (!title || !description || !content) {
       return NextResponse.json({ error: "Başlık, açıklama ve içerik zorunludur." }, { status: 400 });
@@ -56,6 +57,7 @@ export async function POST(request: NextRequest) {
         image: image || null,
         price: price || null,
         faqs: faqs || null,
+        pricing: pricing || null,
         createdAt: new Date(),
         updatedAt: new Date(),
       };
@@ -64,7 +66,7 @@ export async function POST(request: NextRequest) {
     }
 
     const service = await prisma.service.create({
-      data: { title, slug, description, content, icon, image, price, faqs: faqs || undefined },
+      data: { title, slug, description, content, icon, image, price, faqs: faqs || undefined, pricing: pricing || undefined },
     });
 
     await invalidateCache("services:*");

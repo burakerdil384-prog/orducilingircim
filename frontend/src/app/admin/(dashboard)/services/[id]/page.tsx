@@ -8,6 +8,11 @@ interface FAQ {
   answer: string;
 }
 
+interface PricingItem {
+  label: string;
+  price: string;
+}
+
 export default function EditServicePage() {
   const router = useRouter();
   const params = useParams<{ id: string }>();
@@ -25,6 +30,7 @@ export default function EditServicePage() {
     price: "",
   });
   const [faqs, setFaqs] = useState<FAQ[]>([]);
+  const [pricing, setPricing] = useState<PricingItem[]>([]);
 
   useEffect(() => {
     fetch(`/api/services/${params.id}`)
@@ -39,6 +45,7 @@ export default function EditServicePage() {
           price: data.price || "",
         });
         if (Array.isArray(data.faqs)) setFaqs(data.faqs);
+        if (Array.isArray(data.pricing)) setPricing(data.pricing);
         setLoading(false);
       })
       .catch(() => {
@@ -93,11 +100,24 @@ export default function EditServicePage() {
     setFaqs((prev) => prev.filter((_, i) => i !== index));
   }
 
+  function addPricingItem() {
+    setPricing((prev) => [...prev, { label: "", price: "" }]);
+  }
+
+  function updatePricingItem(index: number, field: keyof PricingItem, value: string) {
+    setPricing((prev) => prev.map((p, i) => (i === index ? { ...p, [field]: value } : p)));
+  }
+
+  function removePricingItem(index: number) {
+    setPricing((prev) => prev.filter((_, i) => i !== index));
+  }
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setSaving(true);
     setError("");
     const validFaqs = faqs.filter((f) => f.question && f.answer);
+    const validPricing = pricing.filter((p) => p.label && p.price);
     const res = await fetch(`/api/services/${params.id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -107,6 +127,7 @@ export default function EditServicePage() {
         image: form.image || null,
         price: form.price || null,
         faqs: validFaqs.length > 0 ? validFaqs : null,
+        pricing: validPricing.length > 0 ? validPricing : null,
       }),
     });
     if (res.ok) {
@@ -200,6 +221,30 @@ export default function EditServicePage() {
                 </button>
                 <input type="text" value={faq.question} onChange={(e) => updateFaq(i, "question", e.target.value)} className="w-full bg-white border-none py-2 px-3 rounded-lg text-sm text-primary focus:ring-2 focus:ring-secondary" placeholder="Soru" />
                 <textarea rows={2} value={faq.answer} onChange={(e) => updateFaq(i, "answer", e.target.value)} className="w-full bg-white border-none py-2 px-3 rounded-lg text-sm text-primary focus:ring-2 focus:ring-secondary resize-none" placeholder="Cevap" />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Fiyatlandırma */}
+        <div>
+          <div className="flex justify-between items-center mb-4">
+            <label className="text-sm font-bold text-primary">Fiyatlandırma</label>
+            <button type="button" onClick={addPricingItem} className="text-secondary text-sm font-bold flex items-center gap-1 hover:brightness-110 transition-all">
+              <span className="material-symbols-outlined text-sm">add</span>
+              Fiyat Ekle
+            </button>
+          </div>
+          <div className="space-y-4">
+            {pricing.map((item, i) => (
+              <div key={i} className="bg-surface-container-low rounded-xl p-4 space-y-3 relative">
+                <button type="button" onClick={() => removePricingItem(i)} className="absolute top-3 right-3 text-slate-400 hover:text-red-500 transition-colors">
+                  <span className="material-symbols-outlined text-sm">close</span>
+                </button>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pr-8">
+                  <input type="text" value={item.label} onChange={(e) => updatePricingItem(i, "label", e.target.value)} className="w-full bg-white border-none py-2 px-3 rounded-lg text-sm text-primary focus:ring-2 focus:ring-secondary" placeholder="Hizmet adı (ör: Standart Kapı Açma)" />
+                  <input type="text" value={item.price} onChange={(e) => updatePricingItem(i, "price", e.target.value)} className="w-full bg-white border-none py-2 px-3 rounded-lg text-sm text-primary focus:ring-2 focus:ring-secondary" placeholder="Fiyat (ör: ₺450'den)" />
+                </div>
               </div>
             ))}
           </div>

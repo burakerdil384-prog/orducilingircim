@@ -18,7 +18,7 @@ const heroImages: Record<string, string> = {
 
 const mapImage = "https://lh3.googleusercontent.com/aida-public/AB6AXuDEEc9INvtzrD9km9bUK1uuj0g_74YYAGGz_dJd2YLXjisFJg2mnH5Ghcv8zdP-dNI2hVFFXQ5wPzryb8nMyxS7-L7yvPDWBxKnBO3hqnz5v_xOHJF66mWIZd016kKcEg8XabNiBx6SjFt8sFNaDzMt0z0DFgyy3TgFuenbd-X1xRvynZ27fUR5oNoWOEk-b-jtVDUOanuppmDS51ZMaJZzCMDUqK1lhCWkaZnzZaIEsLNhgyR5f03Tp9kQ9rHx59sphHxj0rkPqLhc";
 
-const pricingData: Record<string, Array<{ label: string; price: string }>> = {
+const defaultPricingData: Record<string, Array<{ label: string; price: string }>> = {
   "kapi-acma": [
     { label: "Standart Kapı Açma", price: "₺450'den" },
     { label: "Çelik Kapı (Kilitli)", price: "₺650'den" },
@@ -81,7 +81,11 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
 
   const locations = isMockMode ? mockLocations : await prisma.location.findMany({ orderBy: { neighborhood: "asc" } });
   const relatedServices = isMockMode ? mockServices.filter((s) => s.slug !== slug) : await prisma.service.findMany({ where: { slug: { not: slug } } });
-  const pricing = pricingData[slug] || [];
+  const rawPricing = service.pricing;
+  const pricing: { label: string; price: string }[] =
+    Array.isArray(rawPricing) ? rawPricing :
+    typeof rawPricing === "string" ? JSON.parse(rawPricing) :
+    defaultPricingData[slug] || [];
   const rawFaqs = service.faqs;
   const faqs: { question: string; answer: string }[] | null =
     typeof rawFaqs === "string" ? JSON.parse(rawFaqs) :
