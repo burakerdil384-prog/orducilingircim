@@ -49,6 +49,9 @@ COPY --from=builder /app/package.json ./package.json
 # Ensure migrations directory exists and is writable
 RUN mkdir -p ./prisma/migrations && chown -R nextjs:nodejs ./prisma
 
+# Make startup script executable
+RUN chmod +x ./scripts/startup.sh
+
 USER nextjs
 
 EXPOSE 3000
@@ -56,4 +59,4 @@ EXPOSE 3000
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
-CMD ["node", "server.js"]
+CMD ["sh", "./scripts/startup.sh"]
