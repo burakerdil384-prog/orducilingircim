@@ -22,12 +22,28 @@ function slugifyDistrict(name: string) {
 }
 
 async function getLocation(district: string, neighborhood: string) {
-  if (!isMockMode) return null;
-  return mockLocations.find((loc) => {
-    const locDistrict = slugifyDistrict(loc.district);
-    const locNeighborhood = loc.slug.split("-").slice(1).join("-");
-    return locDistrict === district && locNeighborhood === neighborhood;
-  }) || null;
+  if (isMockMode) {
+    return mockLocations.find((loc) => {
+      const locDistrict = slugifyDistrict(loc.district);
+      const locNeighborhood = loc.slug.split("-").slice(1).join("-");
+      return locDistrict === district && locNeighborhood === neighborhood;
+    }) || null;
+  }
+  
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+    const res = await fetch(`${baseUrl}/api/locations`, { next: { revalidate: 60 } });
+    if (!res.ok) return null;
+    const locations = await res.json();
+    return locations.find((loc: any) => {
+      const locDistrict = slugifyDistrict(loc.district);
+      const locNeighborhood = loc.slug.split("-").slice(1).join("-");
+      return locDistrict === district && locNeighborhood === neighborhood;
+    }) || null;
+  } catch (error) {
+    console.error('Failed to fetch location:', error);
+    return null;
+  }
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ district: string; neighborhood: string }> }): Promise<Metadata> {

@@ -48,7 +48,17 @@ const relatedIcons: Record<string, string> = {
 
 async function getService(slug: string) {
   if (isMockMode) return mockServices.find((s) => s.slug === slug) || null;
-  return null;
+  
+  try {
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+    const res = await fetch(`${baseUrl}/api/services`, { next: { revalidate: 60 } });
+    if (!res.ok) return null;
+    const services = await res.json();
+    return services.find((s: any) => s.slug === slug) || null;
+  } catch (error) {
+    console.error('Failed to fetch service:', error);
+    return null;
+  }
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
