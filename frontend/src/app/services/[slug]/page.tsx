@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 import { generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema } from "@/lib/seo/schemas";
 import { JsonLd } from "@/components/seo/json-ld";
-import { isMockMode } from "@/lib/db";
+import { prisma, isMockMode } from "@/lib/db";
 import { mockServices, mockLocations } from "@/lib/mock-data";
 import { SITE_CONFIG } from "@/lib/utils";
 
@@ -48,17 +48,7 @@ const relatedIcons: Record<string, string> = {
 
 async function getService(slug: string) {
   if (isMockMode) return mockServices.find((s) => s.slug === slug) || null;
-  
-  try {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-    const res = await fetch(`${baseUrl}/api/services`, { next: { revalidate: 60 } });
-    if (!res.ok) return null;
-    const services = await res.json();
-    return services.find((s: any) => s.slug === slug) || null;
-  } catch (error) {
-    console.error('Failed to fetch service:', error);
-    return null;
-  }
+  return prisma.service.findUnique({ where: { slug } });
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -87,14 +77,15 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
     );
   }
 
-  const locations = isMockMode ? mockLocations : [];
-  const relatedServices = isMockMode ? mockServices.filter((s) => s.slug !== slug) : [];
+  const locations = isMockMode ? mockLocations : await prisma.location.findMany({ orderBy: { neighborhood: "asc" } });
+  const relatedServices = isMockMode ? mockServices.filter((s) => s.slug !== slug) : await prisma.service.findMany({ where: { slug: { not: slug } } });
   const pricing = pricingData[slug] || [];
+  const faqs = service.faqs as { question: string; answer: string }[] | null;
 
   return (
     <main className="min-h-screen">
       <JsonLd data={generateServiceSchema({ name: service.title, description: service.description ?? "", slug: service.slug, price: service.price ?? undefined })} />
-      {service.faqs && <JsonLd data={generateFAQSchema(service.faqs)} />}
+      {faqs && <JsonLd data={generateFAQSchema(faqs)} />}
       <JsonLd data={generateBreadcrumbSchema([{ name: "Ana Sayfa", url: "/" }, { name: "Hizmetler", url: "/services/kapi-acma" }, { name: service.title, url: `/services/${slug}` }])} />
 
       {/* Hero Section */}
@@ -168,10 +159,10 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               </div>
 
               {/* FAQ Accordion */}
-              {service.faqs && service.faqs.length > 0 && (
+              {faqs && faqs.length > 0 && (
                 <div className="space-y-4">
                   <h2 className="text-3xl font-bold text-primary mb-6">Sık Sorulan Sorular</h2>
-                  {service.faqs.map((faq, i) => (
+                  {faqs.map((faq: { question: string; answer: string }, i: number) => (
                     <details key={i} className="group bg-surface-container-low rounded-xl overflow-hidden">
                       <summary className="flex items-center justify-between p-6 cursor-pointer hover:bg-surface-container transition-colors">
                         <span className="font-bold text-primary">{faq.question}</span>

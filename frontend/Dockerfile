@@ -13,8 +13,13 @@ COPY . .
 # Generate Prisma client
 RUN npx prisma generate
 
-# Build Next.js
+# Build Next.js with public env vars baked in
 ENV NEXT_TELEMETRY_DISABLED=1
+ENV NEXT_PUBLIC_SITE_URL=https://altinorducilingircim.com.tr
+ENV NEXT_PUBLIC_SITE_NAME="Ordu Çilingir"
+ENV NEXT_PUBLIC_PHONE="0554 127 92 92"
+ENV NEXT_PUBLIC_PHONE_RAW="+905541279292"
+ENV NEXT_PUBLIC_WHATSAPP="905541279292"
 RUN npm run build
 
 # Stage 3: Production runner

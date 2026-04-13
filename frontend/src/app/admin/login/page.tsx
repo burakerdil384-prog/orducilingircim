@@ -66,7 +66,6 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="w-full bg-surface-container-low border-none py-4 pl-12 pr-4 rounded-xl text-primary focus:ring-2 focus:ring-secondary transition-all"
-                placeholder="admin@altinorducilingircim.com.tr"
               />
             </div>
           </div>

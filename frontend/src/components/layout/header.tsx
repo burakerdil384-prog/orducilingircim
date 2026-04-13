@@ -44,12 +44,22 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <a
-          href={`tel:${SITE_CONFIG.phoneRaw}`}
-          className="bg-secondary px-6 py-2.5 rounded-xl text-white font-bold text-sm hover:bg-secondary-container transition-all active:scale-95 duration-150 uppercase tracking-wide"
-        >
-          HEMEN ARA
-        </a>
+        {pathname.startsWith("/blog") ? (
+          <Link
+            href="/admin/login"
+            className="bg-secondary px-6 py-2.5 rounded-xl text-white font-bold text-sm hover:bg-secondary-container transition-all active:scale-95 duration-150 uppercase tracking-wide flex items-center gap-2"
+          >
+            <span className="material-symbols-outlined text-sm">login</span>
+            GİRİŞ YAP
+          </Link>
+        ) : (
+          <a
+            href={`tel:${SITE_CONFIG.phoneRaw}`}
+            className="bg-secondary px-6 py-2.5 rounded-xl text-white font-bold text-sm hover:bg-secondary-container transition-all active:scale-95 duration-150 uppercase tracking-wide"
+          >
+            HEMEN ARA
+          </a>
+        )}
       </div>
     </header>
   );

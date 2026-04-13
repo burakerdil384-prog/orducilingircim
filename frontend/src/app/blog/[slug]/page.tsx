@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/seo/schemas";
 import { JsonLd } from "@/components/seo/json-ld";
-import { isMockMode } from "@/lib/db";
+import { prisma, isMockMode } from "@/lib/db";
 import { mockPosts } from "@/lib/mock-data";
 import { formatDate, SITE_CONFIG } from "@/lib/utils";
 
@@ -17,7 +17,7 @@ const blogImages: Record<number, string> = {
 
 async function getPost(slug: string) {
   if (isMockMode) return mockPosts.find((p) => p.slug === slug && p.published) || null;
-  return null;
+  return prisma.post.findUnique({ where: { slug, published: true } });
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -46,7 +46,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     );
   }
 
-  const relatedPosts = isMockMode ? mockPosts.filter((p) => p.id !== post.id && p.published).slice(0, 3) : [];
+  const relatedPosts = isMockMode
+    ? mockPosts.filter((p) => p.id !== post.id && p.published).slice(0, 3)
+    : await prisma.post.findMany({ where: { slug: { not: slug }, published: true }, take: 3, orderBy: { createdAt: "desc" } });
 
   return (
     <main className="min-h-screen">

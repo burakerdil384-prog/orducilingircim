@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/seo/metadata";
-import { isMockMode } from "@/lib/db";
+import { prisma, isMockMode } from "@/lib/db";
 import { mockPosts } from "@/lib/mock-data";
 import { formatDate } from "@/lib/utils";
 
@@ -29,7 +29,7 @@ const categoryLabels: Record<string, { bg: string; text: string }> = {
 
 async function getPosts() {
   if (isMockMode) return mockPosts.filter((p) => p.published);
-  return [];
+  return prisma.post.findMany({ where: { published: true }, orderBy: { createdAt: "desc" } });
 }
 
 export default async function BlogPage() {
