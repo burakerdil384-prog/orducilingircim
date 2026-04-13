@@ -1,11 +1,13 @@
 import Link from "next/link";
-import { isMockMode } from "@/lib/db";
+import { prisma, isMockMode } from "@/lib/db";
 import { mockPosts, mockServices, mockLocations } from "@/lib/mock-data";
 
+export const dynamic = 'force-dynamic';
+
 export default async function AdminDashboard() {
-  const posts = isMockMode ? mockPosts : [];
-  const services = isMockMode ? mockServices : [];
-  const locations = isMockMode ? mockLocations : [];
+  const posts = isMockMode ? mockPosts : await prisma.post.findMany();
+  const services = isMockMode ? mockServices : await prisma.service.findMany();
+  const locations = isMockMode ? mockLocations : await prisma.location.findMany();
 
   const publishedCount = posts.filter((p) => p.published).length;
   const draftCount = posts.filter((p) => !p.published).length;
