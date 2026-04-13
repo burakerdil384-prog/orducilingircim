@@ -82,7 +82,11 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   const locations = isMockMode ? mockLocations : await prisma.location.findMany({ orderBy: { neighborhood: "asc" } });
   const relatedServices = isMockMode ? mockServices.filter((s) => s.slug !== slug) : await prisma.service.findMany({ where: { slug: { not: slug } } });
   const pricing = pricingData[slug] || [];
-  const faqs = service.faqs as { question: string; answer: string }[] | null;
+  const rawFaqs = service.faqs;
+  const faqs: { question: string; answer: string }[] | null =
+    typeof rawFaqs === "string" ? JSON.parse(rawFaqs) :
+    Array.isArray(rawFaqs) ? rawFaqs :
+    null;
 
   return (
     <main className="min-h-screen">
