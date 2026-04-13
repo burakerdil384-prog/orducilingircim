@@ -5,6 +5,8 @@ import { prisma, isMockMode } from "@/lib/db";
 import { mockPosts } from "@/lib/mock-data";
 import { formatDate } from "@/lib/utils";
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = generatePageMetadata({
   title: "Blog | Ordu Çilingir",
   description: "Güvenlik ipuçları, kilit bakımı ve acil durum çözümleri hakkında uzman görüşleri.",

@@ -7,6 +7,8 @@ import { prisma, isMockMode } from "@/lib/db";
 import { mockPosts } from "@/lib/mock-data";
 import { formatDate, SITE_CONFIG } from "@/lib/utils";
 
+export const dynamic = 'force-dynamic';
+
 const blogImages: Record<number, string> = {
   1: "https://lh3.googleusercontent.com/aida-public/AB6AXuC-XBJedgN0qvV8OiIeMwFG6CDLlWtjzNb780xjB3AzP3U92bcIC4jl0aJ_Y1Nk7uLJN8RiqrC25eCcY4_FXWrU4VG73lMZ1wObyGxtUFnvS6y-ZGT_OD7hlZXzBZybOr61CDytxxeIHYBdf54hwG-A3eRhS0OTcLWwV60JCrPje8uf6NUXWy6OndFPqS8zl4MgAqT0tpwSyEMiaJGhIhov-hwPd31-n1PIVUHZKLQmxK7d1CAx6v3r9Go9AUPVBcDQHZO_azk3gZ7u",
   2: "https://lh3.googleusercontent.com/aida-public/AB6AXuBWlKcrFnvuN_hl7Mp5yPSpQ3XoXrFLhvjboQkFzkzDz3jJumLrUpmlRKf0SFh2R8fQOgioTdZj6FI9aQCMR-qlcKBbHvNb58b4VC-K86X05WPWesT4gOqxEuMRypmbtKcUoDUUMxUmwEf0K9icM--AjsKf9Q1zyzzw571Zr91_w5G_BUTuqbNEDv5hvxrFYRiHp3E9hxtPI93OeDmCpw6g3r2ommZQU6XXB0cS7kGZ51vY5fw7x5uaGlFSRSPTiYVYjgfbJUCBO68y",

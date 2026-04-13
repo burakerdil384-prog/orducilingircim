@@ -7,6 +7,8 @@ import { prisma, isMockMode } from "@/lib/db";
 import { mockServices, mockLocations } from "@/lib/mock-data";
 import { SITE_CONFIG } from "@/lib/utils";
 
+export const dynamic = 'force-dynamic';
+
 const heroImages: Record<string, string> = {
   "kapi-acma": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-ZyQjgjYm10o8IUrl6XgYfaMe5_I70nhFuULxeRwPuUhOwySUly0vYvDzekyZn5utyN7A9gkcSSH9U3gf-9lgeuxDcbOTq39Gj-wfXQIjBof2xlhmYYTTdnGIXac-f9ljbjTLHL8RcFag-L3X6xmN4DJ9B2GWQMlHVLCgmBafmItv_3Ji4nwod-jJt24Am10p16T_TOZbnBEM_YrUiEYR5uQSuap1LhOA-dvZVRUyCh-hL9ludNG1RhYoJmqE3AHwDTSFbqxJwLRf",
   "kasa-acma": "https://lh3.googleusercontent.com/aida-public/AB6AXuB-ZyQjgjYm10o8IUrl6XgYfaMe5_I70nhFuULxeRwPuUhOwySUly0vYvDzekyZn5utyN7A9gkcSSH9U3gf-9lgeuxDcbOTq39Gj-wfXQIjBof2xlhmYYTTdnGIXac-f9ljbjTLHL8RcFag-L3X6xmN4DJ9B2GWQMlHVLCgmBafmItv_3Ji4nwod-jJt24Am10p16T_TOZbnBEM_YrUiEYR5uQSuap1LhOA-dvZVRUyCh-hL9ludNG1RhYoJmqE3AHwDTSFbqxJwLRf",

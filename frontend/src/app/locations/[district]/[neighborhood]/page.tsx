@@ -7,6 +7,8 @@ import { prisma, isMockMode } from "@/lib/db";
 import { mockLocations } from "@/lib/mock-data";
 import { SITE_CONFIG } from "@/lib/utils";
 
+export const dynamic = 'force-dynamic';
+
 const mapImage = "https://lh3.googleusercontent.com/aida-public/AB6AXuDxTYTVUzA3CrcHYf97Ls_gCR0rKpYw3ZSw7jvhGpGXJUt7-uiOy2Lo13SM__Ta2PMNabokwBpU0BoXI9FEt9xZNbx17JrYXbiOZeqIxpPsidudoMaX_of1uRbsndJe1j_OyIVF4upeyNR-rCcw6yQPsh9RJGn12F9TpWUZ6Zlv1fxNCMKdPPgcufZ3PmcmIn1RbyuZguh4Pc9piFaMTcrBTKcseWIkROUwfLWASrPIViF5zZxC1WGLk1LMTsRkATseHIv_KsznEANq";
 
 function slugifyDistrict(name: string) {
