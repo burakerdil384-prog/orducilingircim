@@ -3,6 +3,8 @@ import { prisma, isMockMode } from "@/lib/db";
 import { mockServices, mockPosts, mockLocations } from "@/lib/mock-data";
 import { slugify } from "@/lib/utils";
 
+export const dynamic = "force-dynamic";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr";
@@ -35,8 +37,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.9,
     }));
-  } catch {
-    // Database not available yet
+  } catch (e) {
+    console.error("Sitemap: services query failed", e);
   }
 
   // Dynamic blog pages
@@ -51,8 +53,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly" as const,
       priority: 0.7,
     }));
-  } catch {
-    // Database not available yet
+  } catch (e) {
+    console.error("Sitemap: posts query failed", e);
   }
 
   // Dynamic location pages
@@ -71,8 +73,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
       };
     });
-  } catch {
-    // Database not available yet
+  } catch (e) {
+    console.error("Sitemap: locations query failed", e);
   }
 
   return [...staticPages, ...servicePages, ...blogPages, ...locationPages];
