@@ -60,7 +60,7 @@ export default async function AdminDashboard() {
 
       {/* Charts & Messages */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 bg-surface-container-low p-8 rounded-xl space-y-6">
+        <div className="lg:col-span-2 bg-surface-container-low p-4 md:p-8 rounded-xl space-y-6">
           <div className="flex justify-between items-center">
             <h3 className="font-headline font-bold text-lg text-primary">Haftalık Trafik Analizi</h3>
             <select className="bg-surface-container-lowest border-none text-xs font-label rounded-lg focus:ring-secondary">
@@ -80,7 +80,7 @@ export default async function AdminDashboard() {
           </div>
         </div>
 
-        <div className="bg-surface-container-lowest p-8 rounded-xl shadow-[0_12px_32px_-4px_rgba(6,29,45,0.08)] flex flex-col space-y-6">
+        <div className="bg-surface-container-lowest p-4 md:p-8 rounded-xl shadow-[0_12px_32px_-4px_rgba(6,29,45,0.08)] flex flex-col space-y-6">
           <h3 className="font-headline font-bold text-lg text-primary">Son Mesajlar</h3>
           <div className="space-y-4">
             {[
@@ -112,29 +112,29 @@ export default async function AdminDashboard() {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-surface-container-low text-slate-600 text-xs font-bold uppercase tracking-wider">
-                <th className="px-8 py-4">Başlık</th>
-                <th className="px-8 py-4">Kategori</th>
-                <th className="px-8 py-4">Tarih</th>
-                <th className="px-8 py-4">Durum</th>
-                <th className="px-8 py-4 text-right">İşlemler</th>
+                <th className="px-4 md:px-8 py-3 md:py-4">Başlık</th>
+                <th className="px-4 md:px-8 py-3 md:py-4 hidden sm:table-cell">Kategori</th>
+                <th className="px-4 md:px-8 py-3 md:py-4 hidden md:table-cell">Tarih</th>
+                <th className="px-4 md:px-8 py-3 md:py-4">Durum</th>
+                <th className="px-4 md:px-8 py-3 md:py-4 text-right">İşlemler</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
               {posts.map((post) => (
                 <tr key={post.id} className="hover:bg-surface-container-lowest transition-colors">
-                  <td className="px-8 py-5">
+                  <td className="px-4 md:px-8 py-4 md:py-5">
                     <span className="text-sm font-bold text-primary">{post.title}</span>
                   </td>
-                  <td className="px-8 py-5 text-sm text-slate-600">{post.category}</td>
-                  <td className="px-8 py-5 text-sm text-slate-500">{post.createdAt.toLocaleDateString("tr-TR")}</td>
-                  <td className="px-8 py-5">
+                  <td className="px-4 md:px-8 py-4 md:py-5 text-sm text-slate-600 hidden sm:table-cell">{post.category}</td>
+                  <td className="px-4 md:px-8 py-4 md:py-5 text-sm text-slate-500 hidden md:table-cell">{post.createdAt.toLocaleDateString("tr-TR")}</td>
+                  <td className="px-4 md:px-8 py-4 md:py-5">
                     {post.published ? (
                       <span className="px-3 py-1 rounded-full text-[10px] font-bold bg-green-100 text-green-700">YAYINDA</span>
                     ) : (
                       <span className="px-3 py-1 rounded-full text-[10px] font-bold bg-surface-container-high text-on-surface-variant">TASLAK</span>
                     )}
                   </td>
-                  <td className="px-8 py-5 text-right space-x-2">
+                  <td className="px-4 md:px-8 py-4 md:py-5 text-right space-x-1 md:space-x-2">
                     <Link href={`/admin/blog/${post.id}`} className="inline-block p-2 text-slate-400 hover:text-primary transition-colors">
                       <span className="material-symbols-outlined text-sm">edit</span>
                     </Link>

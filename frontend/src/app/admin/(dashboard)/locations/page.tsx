@@ -61,14 +61,14 @@ export default function AdminLocationsPage() {
       ) : (
         Object.entries(grouped).map(([district, locs]) => (
           <div key={district} className="bg-white rounded-xl shadow-[0_12px_32px_-4px_rgba(6,29,45,0.08)] overflow-hidden">
-            <div className="px-8 py-4 bg-surface-container-low flex items-center gap-2">
+            <div className="px-4 md:px-8 py-3 md:py-4 bg-surface-container-low flex items-center gap-2">
               <span className="material-symbols-outlined text-secondary">location_city</span>
-              <h2 className="font-headline font-bold text-lg text-primary">{district}</h2>
+              <h2 className="font-headline font-bold text-base md:text-lg text-primary">{district}</h2>
               <span className="text-xs text-slate-500 ml-2">{locs.length} mahalle</span>
             </div>
             <div className="divide-y divide-slate-100">
               {locs.map((loc) => (
-                <div key={loc.id} className="px-8 py-4 flex items-center justify-between hover:bg-surface-container-lowest transition-colors">
+                <div key={loc.id} className="px-4 md:px-8 py-3 md:py-4 flex items-center justify-between hover:bg-surface-container-lowest transition-colors">
                   <div>
                     <span className="font-bold text-sm text-primary">{loc.neighborhood}</span>
                     <span className="text-xs text-slate-400 ml-3">/{loc.slug}</span>

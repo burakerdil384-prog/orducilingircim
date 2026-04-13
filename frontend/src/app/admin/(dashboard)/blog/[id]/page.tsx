@@ -84,7 +84,7 @@ export default function EditPostPage() {
         <h1 className="font-headline font-extrabold text-2xl text-primary">Yazıyı Düzenle</h1>
       </div>
 
-      <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-[0_12px_32px_-4px_rgba(6,29,45,0.08)] p-8 space-y-6">
+      <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-[0_12px_32px_-4px_rgba(6,29,45,0.08)] p-4 md:p-8 space-y-6">
         <div>
           <label className="block text-sm font-bold text-primary mb-2">Başlık *</label>
           <input type="text" required value={form.title} onChange={(e) => set("title", e.target.value)} className="w-full bg-surface-container-low border-none py-3 px-4 rounded-xl text-primary focus:ring-2 focus:ring-secondary transition-all" />
@@ -124,11 +124,11 @@ export default function EditPostPage() {
         )}
 
         <div className="flex gap-4 pt-4">
-          <button type="submit" disabled={saving} className="bg-secondary text-white px-8 py-3 rounded-xl font-bold text-sm hover:brightness-110 active:scale-95 transition-all disabled:opacity-50 flex items-center gap-2">
+          <button type="submit" disabled={saving} className="bg-secondary text-white px-4 md:px-8 py-2.5 md:py-3 rounded-xl font-bold text-sm hover:brightness-110 active:scale-95 transition-all disabled:opacity-50 flex items-center gap-2">
             {saving && <span className="material-symbols-outlined animate-spin text-sm">progress_activity</span>}
             Güncelle
           </button>
-          <button type="button" onClick={() => router.back()} className="bg-surface-container-low text-primary px-8 py-3 rounded-xl font-bold text-sm hover:bg-surface-container-high transition-all">
+          <button type="button" onClick={() => router.back()} className="bg-surface-container-low text-primary px-4 md:px-8 py-2.5 md:py-3 rounded-xl font-bold text-sm hover:bg-surface-container-high transition-all">
             İptal
           </button>
         </div>

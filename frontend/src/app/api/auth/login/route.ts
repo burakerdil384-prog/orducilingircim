@@ -6,10 +6,10 @@ import { checkRateLimit, getRateLimitKey, RATE_LIMITS } from "@/lib/rate-limit";
 
 const MOCK_ADMIN = {
   id: 1,
-  email: "admin@altinorducilingircim.com.tr",
-  // "admin123" hashed with bcrypt
-  password: "$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy",
-  name: "Admin",
+  email: "arifgenc@orducilingircim.com.tr",
+  // "Arif93cer89ar" hashed with bcrypt
+  password: "$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi", // bcrypt hash of "Arif93cer89ar"
+  name: "Arif Genc",
 };
 
 export async function POST(request: NextRequest) {
@@ -65,9 +65,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // In mock mode, accept "admin123" directly for development
+    // In mock mode, accept direct password for development
     let validPassword = false;
-    if (isMockMode && password === "admin123") {
+    if (isMockMode && password === "Arif93cer89ar") {
       validPassword = true;
     } else {
       validPassword = await compare(password, admin.password);

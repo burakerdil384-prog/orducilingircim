@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import { PublicShell } from "@/components/layout/public-shell";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
 const manrope = Manrope({
   variable: "--font-headline",
@@ -62,6 +65,49 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-background font-body text-on-background antialiased">
+        {GA_ID && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="gtag-init" strategy="afterInteractive">{`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_ID}');
+            `}</Script>
+          </>
+        )}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Locksmith",
+              name: "Ordu Çilingir",
+              image: `${process.env.NEXT_PUBLIC_SITE_URL || "https://altinorducilingircim.com.tr"}/og-image.jpg`,
+              telephone: "+905541279292",
+              url: process.env.NEXT_PUBLIC_SITE_URL || "https://altinorducilingircim.com.tr",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Altınordu",
+                addressRegion: "Ordu",
+                addressCountry: "TR",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 40.9839,
+                longitude: 37.8764,
+              },
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                opens: "00:00",
+                closes: "23:59",
+              },
+              priceRange: "₺₺",
+              areaServed: { "@type": "City", name: "Ordu" },
+            }),
+          }}
+        />
         <PublicShell>{children}</PublicShell>
       </body>
     </html>

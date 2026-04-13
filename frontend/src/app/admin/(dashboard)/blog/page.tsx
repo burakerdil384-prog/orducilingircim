@@ -68,22 +68,22 @@ export default function AdminBlogPage() {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="bg-surface-container-low text-slate-600 text-xs font-bold uppercase tracking-wider">
-                  <th className="px-8 py-4">Başlık</th>
-                  <th className="px-8 py-4">Kategori</th>
-                  <th className="px-8 py-4">Tarih</th>
-                  <th className="px-8 py-4">Durum</th>
-                  <th className="px-8 py-4 text-right">İşlemler</th>
+                  <th className="px-4 md:px-8 py-3 md:py-4">Başlık</th>
+                  <th className="px-4 md:px-8 py-3 md:py-4 hidden sm:table-cell">Kategori</th>
+                  <th className="px-4 md:px-8 py-3 md:py-4 hidden md:table-cell">Tarih</th>
+                  <th className="px-4 md:px-8 py-3 md:py-4">Durum</th>
+                  <th className="px-4 md:px-8 py-3 md:py-4 text-right">İşlemler</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
                 {posts.map((post) => (
                   <tr key={post.id} className="hover:bg-surface-container-lowest transition-colors">
-                    <td className="px-8 py-5">
+                    <td className="px-4 md:px-8 py-4 md:py-5">
                       <span className="text-sm font-bold text-primary">{post.title}</span>
                     </td>
-                    <td className="px-8 py-5 text-sm text-slate-600">{post.category || "-"}</td>
-                    <td className="px-8 py-5 text-sm text-slate-500">{new Date(post.createdAt).toLocaleDateString("tr-TR")}</td>
-                    <td className="px-8 py-5">
+                    <td className="px-4 md:px-8 py-4 md:py-5 text-sm text-slate-600 hidden sm:table-cell">{post.category || "-"}</td>
+                    <td className="px-4 md:px-8 py-4 md:py-5 text-sm text-slate-500 hidden md:table-cell">{new Date(post.createdAt).toLocaleDateString("tr-TR")}</td>
+                    <td className="px-4 md:px-8 py-4 md:py-5">
                       <button onClick={() => togglePublish(post)} title="Durumu değiştir">
                         {post.published ? (
                           <span className="px-3 py-1 rounded-full text-[10px] font-bold bg-green-100 text-green-700 cursor-pointer hover:bg-green-200 transition-colors">YAYINDA</span>
@@ -92,7 +92,7 @@ export default function AdminBlogPage() {
                         )}
                       </button>
                     </td>
-                    <td className="px-8 py-5 text-right space-x-2">
+                    <td className="px-4 md:px-8 py-4 md:py-5 text-right space-x-1 md:space-x-2">
                       <Link href={`/admin/blog/${post.id}`} className="inline-block p-2 text-slate-400 hover:text-primary transition-colors">
                         <span className="material-symbols-outlined text-sm">edit</span>
                       </Link>
