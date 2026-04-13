@@ -39,11 +39,16 @@ EOSQL
   echo "✅ PostgreSQL user ve database oluşturuldu."
 fi
 
-# 3. Build
+# 3. Nginx cache klasörü
+echo "📂 Nginx cache klasörü hazırlanıyor..."
+sudo mkdir -p /var/cache/nginx/orducilingir
+sudo chown www-data:www-data /var/cache/nginx/orducilingir
+
+# 4. Build (eski container çalışmaya devam eder, cache'den servis edilir)
 echo "🔨 Container build ediliyor..."
 docker compose build --no-cache app
 
-# 4. Prisma migration & seed
+# 5. Prisma migration & seed
 echo "📦 Migration çalıştırılıyor..."
 # migrate deploy önce, yoksa db push ile tabloları oluştur
 docker compose run --rm app npx prisma migrate deploy || {
@@ -56,11 +61,11 @@ docker compose run --rm app npx prisma migrate deploy || {
 echo "🌱 Seed çalıştırılıyor..."
 docker compose run --rm app npx tsx scripts/seed.ts
 
-# 5. App başlat
-echo "🚀 Uygulama başlatılıyor..."
-docker compose up -d --remove-orphans app
+# 6. Zero-downtime restart (eski container durur, yeni başlar, cache servis eder)
+echo "🚀 Uygulama başlatılıyor (zero-downtime)..."
+docker compose up -d --remove-orphans --force-recreate app
 
-# 6. Nginx config
+# 7. Nginx config
 echo "📋 Nginx config kopyalanıyor..."
 sudo cp "$APP_DIR/nginx-site.conf" "/etc/nginx/sites-available/$DOMAIN"
 sudo ln -sf "/etc/nginx/sites-available/$DOMAIN" "/etc/nginx/sites-enabled/$DOMAIN"
