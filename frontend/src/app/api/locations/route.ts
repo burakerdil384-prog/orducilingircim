@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     const neighborhood = sanitizeString(body.neighborhood, MAX_LENGTHS.NEIGHBORHOOD);
     const description = sanitizeString(body.description, MAX_LENGTHS.DESCRIPTION);
     const content = sanitizeString(body.content, MAX_LENGTHS.CONTENT);
-    const image = sanitizeUrl(body.image);
+    const image = sanitizeUrl(body.image, { allowRelative: true });
     const mapUrl = sanitizeUrl(body.mapUrl);
 
     if (!district || !neighborhood) {

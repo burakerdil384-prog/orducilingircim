@@ -22,12 +22,25 @@ export function isValidUrl(input: string): boolean {
   }
 }
 
+/** Validate root-relative URL path (e.g. /uploads/image.png?v=123) */
+export function isValidRelativeUrl(input: string): boolean {
+  if (!input.startsWith("/")) return false;
+  if (input.startsWith("//")) return false;
+  if (input.includes("..")) return false;
+  return !/\s/.test(input);
+}
+
 /** Validate and sanitize a URL field — returns null if invalid */
-export function sanitizeUrl(input: unknown): string | null {
+export function sanitizeUrl(
+  input: unknown,
+  options?: { allowRelative?: boolean }
+): string | null {
   if (!input || typeof input !== "string") return null;
   const trimmed = input.trim();
   if (!trimmed) return null;
-  return isValidUrl(trimmed) ? trimmed : null;
+  if (isValidUrl(trimmed)) return trimmed;
+  if (options?.allowRelative && isValidRelativeUrl(trimmed)) return trimmed;
+  return null;
 }
 
 /** Max lengths for different field types */

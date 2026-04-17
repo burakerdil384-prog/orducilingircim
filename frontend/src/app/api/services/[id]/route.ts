@@ -46,7 +46,7 @@ export async function PUT(request: NextRequest, { params }: Params) {
     const description = body.description !== undefined ? sanitizeString(body.description, MAX_LENGTHS.DESCRIPTION) : undefined;
     const content = body.content !== undefined ? sanitizeString(body.content, MAX_LENGTHS.CONTENT) : undefined;
     const icon = body.icon !== undefined ? sanitizeString(body.icon, MAX_LENGTHS.ICON) : undefined;
-    const image = body.image !== undefined ? sanitizeUrl(body.image) : undefined;
+    const image = body.image !== undefined ? sanitizeUrl(body.image, { allowRelative: true }) : undefined;
     const price = body.price !== undefined ? sanitizeString(body.price, MAX_LENGTHS.PRICE) : undefined;
     const faqs = body.faqs;
     const pricing = body.pricing;

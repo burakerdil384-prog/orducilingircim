@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
     const title = sanitizeString(body.title, MAX_LENGTHS.TITLE);
     const content = sanitizeString(body.content, MAX_LENGTHS.CONTENT);
     const excerpt = sanitizeString(body.excerpt, MAX_LENGTHS.EXCERPT);
-    const image = sanitizeUrl(body.image);
+    const image = sanitizeUrl(body.image, { allowRelative: true });
     const category = sanitizeString(body.category, MAX_LENGTHS.CATEGORY);
     const published = body.published ?? false;
 

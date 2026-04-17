@@ -46,8 +46,9 @@ COPY --from=builder --chown=nextjs:nodejs /app/scripts ./scripts
 COPY --from=builder /app/prisma.config.ts ./prisma.config.ts
 COPY --from=builder /app/package.json ./package.json
 
-# Ensure migrations directory exists and is writable
-RUN mkdir -p ./prisma/migrations && chown -R nextjs:nodejs ./prisma
+# Ensure writable directories exist for runtime tasks
+RUN mkdir -p ./prisma/migrations ./public/uploads \
+  && chown -R nextjs:nodejs ./prisma ./public/uploads
 
 # Make startup script executable
 RUN chmod +x ./scripts/startup.sh

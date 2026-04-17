@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
     const description = sanitizeString(body.description, MAX_LENGTHS.DESCRIPTION);
     const content = sanitizeString(body.content, MAX_LENGTHS.CONTENT);
     const icon = sanitizeString(body.icon, MAX_LENGTHS.ICON);
-    const image = sanitizeUrl(body.image);
+    const image = sanitizeUrl(body.image, { allowRelative: true });
     const price = sanitizeString(body.price, MAX_LENGTHS.PRICE);
     const faqs = body.faqs;
     const pricing = body.pricing;

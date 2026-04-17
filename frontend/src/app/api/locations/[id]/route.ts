@@ -46,7 +46,7 @@ export async function PUT(request: NextRequest, { params }: Params) {
     const neighborhood = body.neighborhood !== undefined ? sanitizeString(body.neighborhood, MAX_LENGTHS.NEIGHBORHOOD) : undefined;
     const description = body.description !== undefined ? sanitizeString(body.description, MAX_LENGTHS.DESCRIPTION) : undefined;
     const content = body.content !== undefined ? sanitizeString(body.content, MAX_LENGTHS.CONTENT) : undefined;
-    const image = body.image !== undefined ? sanitizeUrl(body.image) : undefined;
+    const image = body.image !== undefined ? sanitizeUrl(body.image, { allowRelative: true }) : undefined;
     const mapUrl = body.mapUrl !== undefined ? sanitizeUrl(body.mapUrl) : undefined;
 
     if (isMockMode) {
