@@ -44,6 +44,19 @@ export default function EditLocationPage() {
     setForm((prev) => ({ ...prev, [field]: value }));
   }
 
+  function normalizeImageSrc(value: string): string {
+    if (
+      value.startsWith("http://") ||
+      value.startsWith("https://") ||
+      value.startsWith("data:") ||
+      value.startsWith("blob:") ||
+      value.startsWith("/")
+    ) {
+      return value;
+    }
+    return `/${value}`;
+  }
+
   async function handleImageUpload(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
@@ -143,18 +156,20 @@ export default function EditLocationPage() {
           <div>
             <label className="block text-sm font-bold text-primary mb-2">Görsel</label>
             <div className="flex gap-2">
-              <input type="url" value={form.image} onChange={(e) => set("image", e.target.value)} className="flex-1 bg-surface-container-low border-none py-3 px-4 rounded-xl text-primary focus:ring-2 focus:ring-secondary transition-all" placeholder="URL veya yükle" />
               <input ref={fileInputRef} type="file" accept="image/*" onChange={handleImageUpload} className="hidden" />
               <button type="button" onClick={() => fileInputRef.current?.click()} disabled={uploading} className="bg-surface-container-low text-primary px-4 py-3 rounded-xl hover:bg-surface-container-high transition-all disabled:opacity-50">
                 {uploading ? <span className="material-symbols-outlined animate-spin text-sm">progress_activity</span> : <span className="material-symbols-outlined text-sm">upload</span>}
+                <span className="ml-1 text-xs font-semibold">{form.image ? "Değiştir" : "Yükle"}</span>
               </button>
+              {form.image && (
+                <button type="button" onClick={() => set("image", "")} className="bg-red-500 text-white px-3 py-3 rounded-xl hover:bg-red-600 transition-colors">
+                  <span className="material-symbols-outlined text-xs">close</span>
+                </button>
+              )}
             </div>
             {form.image && (
               <div className="mt-2 relative w-full h-24 rounded-lg overflow-hidden bg-surface-container-low">
-                <img src={form.image} alt="Preview" className="w-full h-full object-cover" />
-                <button type="button" onClick={() => set("image", "")} className="absolute top-1 right-1 bg-red-500 text-white p-1 rounded-full hover:bg-red-600 transition-colors">
-                  <span className="material-symbols-outlined text-xs">close</span>
-                </button>
+                <img src={normalizeImageSrc(form.image)} alt="Preview" className="w-full h-full object-cover" />
               </div>
             )}
           </div>
