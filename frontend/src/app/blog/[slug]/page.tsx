@@ -17,6 +17,24 @@ const blogImages: Record<number, string> = {
   5: "https://lh3.googleusercontent.com/aida-public/AB6AXuD4nM1YjAoO4RAJXZqzyw7KeD8hsUBlXQS0Wp4lNLkwt2CoVpEIBnTzzMdT2UZgO2wVViUYLVKlhTIiouqQZpmjcXzksP0gCYVN3Eg8RHVVY5C1RCXePjVQhsaNd69SZfB5HhFxyuJPsYB77nQZQMNnQGChx9dbeESfHmHIq8lRYANG4OAU1z5HWe6XLOVPucd2dO2WGAN9YHJBsZzCG2HkqkMA0UnorrggoHbbET038-qazcOxeBMTmrAwPLFsKCwqDoBBNwRdCGmZ",
 };
 
+function normalizeImageSrc(value: string | null | undefined): string | null {
+  if (!value) return null;
+  if (
+    value.startsWith("http://") ||
+    value.startsWith("https://") ||
+    value.startsWith("data:") ||
+    value.startsWith("blob:") ||
+    value.startsWith("/")
+  ) {
+    return value;
+  }
+  return `/${value}`;
+}
+
+function getPostImage(post: { id: number; image: string | null }): string | null {
+  return normalizeImageSrc(post.image) || blogImages[post.id] || null;
+}
+
 async function getPost(slug: string) {
   if (isMockMode) return mockPosts.find((p) => p.slug === slug && p.published) || null;
   return prisma.post.findUnique({ where: { slug, published: true } });
@@ -76,10 +94,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       </section>
 
       {/* Featured Image */}
-      {blogImages[post.id] && (
+      {getPostImage(post) && (
         <div className="max-w-4xl mx-auto px-6 -mt-8 relative z-10">
           <div className="aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl">
-            <img src={blogImages[post.id]} alt={post.title} className="w-full h-full object-cover" />
+            <img src={getPostImage(post) || ""} alt={post.title} className="w-full h-full object-cover" />
           </div>
         </div>
       )}
@@ -117,7 +135,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               {relatedPosts.map((rp) => (
                 <article key={rp.id} className="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden transition-all hover:bg-surface-bright">
                   <div className="aspect-[16/10] overflow-hidden relative">
-                    <img alt={rp.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={blogImages[rp.id] || ""} />
+                    <img
+                      alt={rp.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      src={getPostImage(rp) || ""}
+                    />
                     <div className="absolute top-4 left-4">
                       <span className="bg-secondary px-3 py-1 text-[10px] font-bold text-white rounded-full uppercase tracking-wider">{rp.category}</span>
                     </div>

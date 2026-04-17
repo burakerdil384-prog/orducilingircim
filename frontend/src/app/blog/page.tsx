@@ -29,6 +29,24 @@ const categoryLabels: Record<string, { bg: string; text: string }> = {
   "İş Yeri": { bg: "bg-secondary", text: "text-white" },
 };
 
+function normalizeImageSrc(value: string | null | undefined): string | null {
+  if (!value) return null;
+  if (
+    value.startsWith("http://") ||
+    value.startsWith("https://") ||
+    value.startsWith("data:") ||
+    value.startsWith("blob:") ||
+    value.startsWith("/")
+  ) {
+    return value;
+  }
+  return `/${value}`;
+}
+
+function getPostImage(post: { id: number; image: string | null }): string | null {
+  return normalizeImageSrc(post.image) || blogImages[post.id] || null;
+}
+
 async function getPosts() {
   if (isMockMode) return mockPosts.filter((p) => p.published);
   return prisma.post.findMany({ where: { published: true }, orderBy: { createdAt: "desc" } });
@@ -72,7 +90,11 @@ export default async function BlogPage() {
             {regularPosts[0] && (
               <article className="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden transition-all hover:bg-surface-bright">
                 <div className="aspect-[16/10] overflow-hidden relative">
-                  <img alt={regularPosts[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={blogImages[regularPosts[0].id] || ""} />
+                  <img
+                    alt={regularPosts[0].title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    src={getPostImage(regularPosts[0]) || ""}
+                  />
                   <div className="absolute top-4 left-4">
                     <span className={`${categoryLabels[regularPosts[0].category ?? ""]?.bg || "bg-secondary"} px-3 py-1 text-[10px] font-bold ${categoryLabels[regularPosts[0].category ?? ""]?.text || "text-white"} rounded-full uppercase tracking-wider`}>
                       {regularPosts[0].category}
@@ -97,7 +119,11 @@ export default async function BlogPage() {
               <article className="group flex flex-col bg-primary-container rounded-xl overflow-hidden md:col-span-2 lg:col-span-2 transition-all">
                 <div className="grid md:grid-cols-2 h-full">
                   <div className="h-full overflow-hidden">
-                    <img alt={featured.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={blogImages[featured.id] || ""} />
+                    <img
+                      alt={featured.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      src={getPostImage(featured) || ""}
+                    />
                   </div>
                   <div className="p-10 flex flex-col justify-center">
                     <span className="text-on-tertiary-container font-bold text-xs mb-4 flex items-center gap-2">
@@ -120,7 +146,11 @@ export default async function BlogPage() {
             {regularPosts.slice(1).map((post) => (
               <article key={post.id} className="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden transition-all hover:bg-surface-bright">
                 <div className="aspect-[16/10] overflow-hidden relative">
-                  <img alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={blogImages[post.id] || ""} />
+                  <img
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    src={getPostImage(post) || ""}
+                  />
                   <div className="absolute top-4 left-4">
                     <span className={`${categoryLabels[post.category ?? ""]?.bg || "bg-secondary"} px-3 py-1 text-[10px] font-bold ${categoryLabels[post.category ?? ""]?.text || "text-white"} rounded-full uppercase tracking-wider`}>
                       {post.category}
