@@ -39,10 +39,12 @@ EOSQL
   echo "✅ PostgreSQL user ve database oluşturuldu."
 fi
 
-# 3. Nginx cache klasörü
-echo "📂 Nginx cache klasörü hazırlanıyor..."
+# 3. Nginx cache klasörü + uploads dizini
+echo "📂 Nginx cache ve uploads klasörü hazırlanıyor..."
 sudo mkdir -p /var/cache/nginx/orducilingir
 sudo chown www-data:www-data /var/cache/nginx/orducilingir
+mkdir -p "$APP_DIR/uploads"
+chown 1001:1001 "$APP_DIR/uploads"
 
 # 4. Build (eski container çalışmaya devam eder, cache'den servis edilir)
 echo "🔨 Container build ediliyor..."
