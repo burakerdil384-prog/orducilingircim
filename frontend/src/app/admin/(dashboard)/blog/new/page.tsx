@@ -113,7 +113,7 @@ export default function NewPostPage() {
           <div>
             <label className="block text-sm font-bold text-primary mb-2">Görsel</label>
             <div className="flex flex-col sm:flex-row gap-2">
-              <input ref={fileInputRef} type="file" accept="image/*" capture="environment" onChange={handleImageUpload} className="hidden" />
+              <input ref={fileInputRef} type="file" accept="image/*" onChange={handleImageUpload} className="hidden" />
               <button type="button" onClick={() => fileInputRef.current?.click()} disabled={uploading} className="bg-surface-container-low text-primary px-4 py-3 rounded-xl font-bold text-sm hover:bg-surface-container-high transition-all disabled:opacity-50 flex items-center gap-2 justify-center touch-manipulation">
                 {uploading ? (
                   <span className="material-symbols-outlined animate-spin text-sm">progress_activity</span>
