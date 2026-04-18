@@ -54,7 +54,7 @@ async function getPosts() {
 
 export default async function BlogPage() {
   const posts = await getPosts();
-  const featured = posts[1]; // "Akilli Kilitler" as featured
+  const featured = posts[0];
   const regularPosts = posts.filter((p) => p.id !== featured?.id);
 
   return (
@@ -90,11 +90,17 @@ export default async function BlogPage() {
             {regularPosts[0] && (
               <article className="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden transition-all hover:bg-surface-bright">
                 <div className="aspect-[16/10] overflow-hidden relative">
-                  <img
-                    alt={regularPosts[0].title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    src={getPostImage(regularPosts[0]) || ""}
-                  />
+                  {getPostImage(regularPosts[0]) ? (
+                    <img
+                      alt={regularPosts[0].title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      src={getPostImage(regularPosts[0])!}
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-surface-container-high flex items-center justify-center">
+                      <span className="material-symbols-outlined text-6xl text-outline">article</span>
+                    </div>
+                  )}
                   <div className="absolute top-4 left-4">
                     <span className={`${categoryLabels[regularPosts[0].category ?? ""]?.bg || "bg-secondary"} px-3 py-1 text-[10px] font-bold ${categoryLabels[regularPosts[0].category ?? ""]?.text || "text-white"} rounded-full uppercase tracking-wider`}>
                       {regularPosts[0].category}
@@ -119,11 +125,17 @@ export default async function BlogPage() {
               <article className="group flex flex-col bg-primary-container rounded-xl overflow-hidden md:col-span-2 lg:col-span-2 transition-all">
                 <div className="grid md:grid-cols-2 h-full">
                   <div className="h-full overflow-hidden">
-                    <img
-                      alt={featured.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      src={getPostImage(featured) || ""}
-                    />
+                    {getPostImage(featured) ? (
+                      <img
+                        alt={featured.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        src={getPostImage(featured)!}
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-primary flex items-center justify-center min-h-[200px]">
+                        <span className="material-symbols-outlined text-8xl text-primary-fixed-dim">article</span>
+                      </div>
+                    )}
                   </div>
                   <div className="p-10 flex flex-col justify-center">
                     <span className="text-on-tertiary-container font-bold text-xs mb-4 flex items-center gap-2">
@@ -146,11 +158,17 @@ export default async function BlogPage() {
             {regularPosts.slice(1).map((post) => (
               <article key={post.id} className="group flex flex-col bg-surface-container-low rounded-xl overflow-hidden transition-all hover:bg-surface-bright">
                 <div className="aspect-[16/10] overflow-hidden relative">
-                  <img
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    src={getPostImage(post) || ""}
-                  />
+                  {getPostImage(post) ? (
+                    <img
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      src={getPostImage(post)!}
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-surface-container-high flex items-center justify-center">
+                      <span className="material-symbols-outlined text-6xl text-outline">article</span>
+                    </div>
+                  )}
                   <div className="absolute top-4 left-4">
                     <span className={`${categoryLabels[post.category ?? ""]?.bg || "bg-secondary"} px-3 py-1 text-[10px] font-bold ${categoryLabels[post.category ?? ""]?.text || "text-white"} rounded-full uppercase tracking-wider`}>
                       {post.category}

@@ -135,11 +135,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               {relatedPosts.map((rp) => (
                 <article key={rp.id} className="group flex flex-col bg-surface-container-lowest rounded-xl overflow-hidden transition-all hover:bg-surface-bright">
                   <div className="aspect-[16/10] overflow-hidden relative">
-                    <img
-                      alt={rp.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      src={getPostImage(rp) || ""}
-                    />
+                    {getPostImage(rp) ? (
+                      <img
+                        alt={rp.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        src={getPostImage(rp)!}
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-surface-container-high flex items-center justify-center">
+                        <span className="material-symbols-outlined text-6xl text-outline">article</span>
+                      </div>
+                    )}
                     <div className="absolute top-4 left-4">
                       <span className="bg-secondary px-3 py-1 text-[10px] font-bold text-white rounded-full uppercase tracking-wider">{rp.category}</span>
                     </div>
