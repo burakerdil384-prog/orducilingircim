@@ -112,24 +112,26 @@ export default function NewPostPage() {
           </div>
           <div>
             <label className="block text-sm font-bold text-primary mb-2">Görsel</label>
-            <div className="flex gap-2">
-              <input ref={fileInputRef} type="file" accept="image/*" onChange={handleImageUpload} className="hidden" />
-              <button type="button" onClick={() => fileInputRef.current?.click()} disabled={uploading} className="bg-surface-container-low text-primary px-4 py-3 rounded-xl font-bold text-sm hover:bg-surface-container-high transition-all disabled:opacity-50 flex items-center gap-1">
+            <div className="flex flex-col sm:flex-row gap-2">
+              <input ref={fileInputRef} type="file" accept="image/*" capture="environment" onChange={handleImageUpload} className="hidden" />
+              <button type="button" onClick={() => fileInputRef.current?.click()} disabled={uploading} className="bg-surface-container-low text-primary px-4 py-3 rounded-xl font-bold text-sm hover:bg-surface-container-high transition-all disabled:opacity-50 flex items-center gap-2 justify-center touch-manipulation">
                 {uploading ? (
                   <span className="material-symbols-outlined animate-spin text-sm">progress_activity</span>
                 ) : (
                   <span className="material-symbols-outlined text-sm">upload</span>
                 )}
-                {form.image ? "Görseli Değiştir" : "Görsel Yükle"}
+                <span className="hidden sm:inline">{form.image ? "Görseli Değiştir" : "Görsel Yükle"}</span>
+                <span className="sm:hidden">{form.image ? "Değiştir" : "Yükle"}</span>
               </button>
               {form.image && (
-                <button type="button" onClick={() => set("image", "")} className="bg-red-500 text-white px-3 py-3 rounded-xl hover:bg-red-600 transition-colors">
+                <button type="button" onClick={() => set("image", "")} className="bg-red-500 text-white px-4 py-3 rounded-xl hover:bg-red-600 transition-colors touch-manipulation flex items-center gap-2 justify-center">
                   <span className="material-symbols-outlined text-sm">close</span>
+                  <span className="sm:hidden">Kaldır</span>
                 </button>
               )}
             </div>
             {form.image && (
-              <div className="mt-2 relative w-full h-32 rounded-lg overflow-hidden bg-surface-container-low">
+              <div className="mt-3 relative w-full h-40 sm:h-32 rounded-lg overflow-hidden bg-surface-container-low">
                 <img src={normalizeImageSrc(form.image)} alt="Preview" className="w-full h-full object-cover" />
               </div>
             )}
