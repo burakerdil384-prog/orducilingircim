@@ -62,7 +62,7 @@ export function Footer() {
       </div>
       <div className="max-w-7xl mx-auto px-8 pb-8 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <span className="text-slate-500 text-xs">
-          © {new Date().getFullYear()} Ordu Çilingir - Precision Security Solutions
+          <Link href="https://lemoria.com.tr" target="_blank" rel="dofollow" title="Ordu Web Tasarım ve SEO" className="hover:text-slate-400 transition-colors">©</Link> {new Date().getFullYear()} Ordu Çilingir - Precision Security Solutions
         </span>
         <div className="flex gap-8">
           <Link href="#" className="text-slate-500 text-xs hover:text-white">Gizlilik Politikası</Link>

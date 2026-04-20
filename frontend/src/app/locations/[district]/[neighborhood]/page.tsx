@@ -84,9 +84,15 @@ export default async function LocationPage({ params }: { params: Promise<{ distr
             <h1 className="text-5xl md:text-7xl font-headline font-extrabold text-primary tracking-tight leading-[1.1]">
               {location.neighborhood} Mahallesi <span className="text-secondary">Çilingir</span> Hizmeti
             </h1>
-            <p className="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
-              {location.neighborhood} Mahallesi&apos;nde anahtarınızı mı unuttunuz? Panik yapmayın. Uzman ekibimizle <span className="font-bold text-primary">15 dakikada yanınızdayız.</span> Hasarsız kapı açma garantisi.
-            </p>
+            {location.description ? (
+              <p className="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                {location.description}
+              </p>
+            ) : (
+              <p className="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                {location.neighborhood} Mahallesi&apos;nde anahtarınızı mı unuttunuz? Panik yapmayın. Uzman ekibimizle <span className="font-bold text-primary">15 dakikada yanınızdayız.</span> Hasarsız kapı açma garantisi.
+              </p>
+            )}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a href={`tel:${SITE_CONFIG.phoneRaw}`} className="bg-secondary text-on-secondary px-8 py-4 rounded-xl text-lg font-bold flex items-center justify-center gap-3 shadow-2xl shadow-secondary/30 hover:brightness-110 transition-all">
                 <span className="material-symbols-outlined">call</span>
@@ -107,8 +113,13 @@ export default async function LocationPage({ params }: { params: Promise<{ distr
         </div>
       </section>
 
-      {/* Feature Cards */}
+      {/* Feature Cards / Content */}
       <section className="mt-24 max-w-7xl mx-auto px-6">
+        {location.content ? (
+          <div className="bg-white p-8 rounded-2xl shadow-sm border border-outline-variant/10 prose prose-lg max-w-none text-on-surface-variant mb-12">
+            <p>{location.content}</p>
+          </div>
+        ) : null}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/10">
             <span className="material-symbols-outlined text-4xl text-secondary mb-4" style={{ fontVariationSettings: "'FILL' 1" }}>speed</span>
