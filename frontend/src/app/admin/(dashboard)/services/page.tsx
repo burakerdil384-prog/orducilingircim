@@ -18,7 +18,7 @@ export default function AdminServicesPage() {
 
   async function fetchServices() {
     setLoading(true);
-    const res = await fetch("/api/services");
+    const res = await fetch("/api/services", { cache: "no-store" });
     if (res.ok) setServices(await res.json());
     setLoading(false);
   }

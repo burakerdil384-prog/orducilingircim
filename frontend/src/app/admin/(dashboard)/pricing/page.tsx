@@ -24,7 +24,7 @@ export default function PricingPage() {
   const [pricingMap, setPricingMap] = useState<Record<number, PricingItem[]>>({});
 
   useEffect(() => {
-    fetch("/api/services")
+    fetch("/api/services", { cache: "no-store" })
       .then((r) => r.json())
       .then((data: Service[]) => {
         setServices(data);
@@ -73,6 +73,10 @@ export default function PricingPage() {
       setSuccess(serviceId);
       setTimeout(() => setSuccess(null), 2000);
     } else {
+      if (res.status === 401) {
+        window.location.href = "/admin/login";
+        return;
+      }
       setError("Kaydetme başarısız oldu.");
     }
     setSaving(null);

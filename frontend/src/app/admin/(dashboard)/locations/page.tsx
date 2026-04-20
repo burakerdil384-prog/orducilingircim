@@ -17,7 +17,7 @@ export default function AdminLocationsPage() {
 
   async function fetchLocations() {
     setLoading(true);
-    const res = await fetch("/api/locations");
+    const res = await fetch("/api/locations", { cache: "no-store" });
     if (res.ok) setLocations(await res.json());
     setLoading(false);
   }
