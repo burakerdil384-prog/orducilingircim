@@ -18,7 +18,7 @@ export default function AdminBlogPage() {
 
   async function fetchPosts() {
     setLoading(true);
-    const res = await fetch("/api/posts?all=true");
+    const res = await fetch("/api/posts?all=true", { cache: "no-store" });
     if (res.ok) setPosts(await res.json());
     setLoading(false);
   }

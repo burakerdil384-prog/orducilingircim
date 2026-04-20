@@ -7,10 +7,10 @@ const secret = new TextEncoder().encode(
 
 const PUBLIC_ADMIN_PATHS = ["/admin/login"];
 
-export default async function proxy(request: NextRequest) {
+export default async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Only protect /admin routes (except login)
+  // Only protect /admin (except login)
   if (!pathname.startsWith("/admin")) return NextResponse.next();
   if (PUBLIC_ADMIN_PATHS.some((p) => pathname.startsWith(p))) return NextResponse.next();
 

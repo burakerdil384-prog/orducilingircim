@@ -76,6 +76,10 @@ export default function EditPostPage() {
         const data = await res.json();
         set("image", data.url);
       } else {
+        if (res.status === 401) {
+          router.push("/admin/login");
+          return;
+        }
         const data = await res.json().catch(() => null);
         setError(data?.error || "Resim yüklenemedi.");
       }
@@ -105,6 +109,10 @@ export default function EditPostPage() {
       router.push("/admin/blog");
       router.refresh();
     } else {
+      if (res.status === 401) {
+        router.push("/admin/login");
+        return;
+      }
       const data = await res.json().catch(() => null);
       setError(data?.error || "Bir hata oluştu.");
     }
