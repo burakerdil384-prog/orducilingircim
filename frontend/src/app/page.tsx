@@ -3,6 +3,8 @@ import { generateLocalBusinessSchema } from "@/lib/seo";
 import { prisma, isMockMode } from "@/lib/db";
 import { mockPosts } from "@/lib/mock-data";
 
+export const dynamic = "force-dynamic";
+
 import {
   HeroSection,
   ServicesGridSection,
