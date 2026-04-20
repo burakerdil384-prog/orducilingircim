@@ -6,7 +6,7 @@ interface Post {
   title: string;
   slug: string;
   excerpt: string | null;
-  category: string;
+  category: string | null;
   createdAt: Date;
 }
 
@@ -32,7 +32,7 @@ export function BlogSection({ posts }: BlogSectionProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {posts.map((post) => (
             <Link key={post.id} href={`/blog/${post.slug}`} className="group bg-surface-container-lowest p-6 rounded-2xl shadow-sm hover:shadow-xl transition-all border border-outline-variant/10">
-              <span className="text-xs font-bold text-secondary uppercase tracking-wider">{post.category}</span>
+              {post.category && <span className="text-xs font-bold text-secondary uppercase tracking-wider">{post.category}</span>}
               <h3 className="font-headline font-bold text-xl text-primary mt-3 mb-2 group-hover:text-secondary transition-colors line-clamp-2">{post.title}</h3>
               <p className="text-sm text-on-surface-variant mb-4 line-clamp-3">{post.excerpt}</p>
               <div className="text-xs text-outline font-medium">{formatDate(post.createdAt)}</div>
