@@ -40,11 +40,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Benzersiz dosya adı oluştur
+    // Benzersiz asıl dosya adı
     const timestamp = Date.now();
     const randomStr = Math.random().toString(36).substring(2, 8);
-    const ext = path.extname(file.name);
-    const fileName = `${timestamp}-${randomStr}${ext}`;
+    const originalExt = path.extname(file.name).toLowerCase();
+    
+    // Sadece statik görselleri WebP'ye çevir (GIF'ler hariç)
+    const shouldConvertToWebP = [".jpg", ".jpeg", ".png"].includes(originalExt);
+    const fileName = shouldConvertToWebP ? `${timestamp}-${randomStr}.webp` : `${timestamp}-${randomStr}${originalExt}`;
 
     // Upload dizinini oluştur (yoksa)
     const uploadDir = path.join(process.cwd(), "public", "uploads");
@@ -54,20 +57,41 @@ export async function POST(request: NextRequest) {
       // Dizin zaten varsa hata vermez
     }
 
-    // Dosyayı kaydet
     const filePath = path.join(uploadDir, fileName);
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
-    await writeFile(filePath, buffer);
+
+    let finalFileName = fileName;
+    let finalSize = file.size;
+
+    if (shouldConvertToWebP) {
+      try {
+        const sharp = (await import("sharp")).default;
+        const webpBuffer = await sharp(buffer)
+          .webp({ quality: 90, effort: 6, smartSubsample: true })
+          .toBuffer();
+        
+        await writeFile(filePath, webpBuffer);
+        finalSize = webpBuffer.length;
+      } catch (err) {
+        console.error("Sharp WebP dönüşüm hatası, orijinal dosya kaydediliyor (Fallback):", err);
+        // Canlıda Sharp kütüphanesi eksikse veya çökerse, orijinal dosyayı kurtar (Fallback)
+        finalFileName = `${timestamp}-${randomStr}${originalExt}`;
+        const fallbackPath = path.join(uploadDir, finalFileName);
+        await writeFile(fallbackPath, buffer);
+      }
+    } else {
+      await writeFile(filePath, buffer);
+    }
 
     // Public URL'i döndür (cache-busting query ile)
-    const publicUrl = `/uploads/${fileName}?v=${timestamp}`;
+    const publicUrl = `/uploads/${finalFileName}?v=${timestamp}`;
 
     return NextResponse.json({
       success: true,
       url: publicUrl,
-      fileName,
-      size: file.size,
+      fileName: finalFileName,
+      size: finalSize,
     });
   } catch (error) {
     console.error("Upload error:", error);

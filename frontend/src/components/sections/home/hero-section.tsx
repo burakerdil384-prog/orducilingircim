@@ -7,7 +7,7 @@ export function HeroSection() {
         <img
           className="w-full h-full object-cover opacity-40"
           alt="Modern high-security door lock close-up"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJUZE28LalSIsmwRkkkEnzKgr1XFHrBYqyOke1g_CwYdH7N727oP8DJfGmnCQVuUrcO9lwhIkjQkTwGLwVtXCBQBX69tWOhfRecMTubFZNz55fhHVU8giCH_DAerxoqAHNF6K3-QJKc66hOWTvRmjsoaoM5oqTstXQy_cWRBlcD2YclZTl7wdYGVqCHkmAqrVXN7Wv7GbyDL96kKSyihiiLBl60yuAZLp5jRGcz3HtH9eMMKUzpWsTEiijvD8d3Mp6geDZn4wd0jlB"
+          src="/images/hero-door.webp"
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/80 to-transparent"></div>
       </div>

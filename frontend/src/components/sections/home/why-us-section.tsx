@@ -4,7 +4,7 @@ export function WhyUsSection() {
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         <div className="relative">
           <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-            <img className="w-full h-[500px] object-cover" alt="Professional locksmith working" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB12p3AJxWgVbJczYePgkk6fH-w1PuumLEKpzJ3JtZWle_KqXPCdXNPAEmVRg4DAlCrG4Pu3dys9j_SGvf47PzaRxfoyJb5FJc0nM0pPZxMe3lYy_wIeHQuCMIxpk7IFBgwnrGzra0cnrl3ILkwTXwYNVot81nzqP76SxFQcoHmeAN3-O11ayKyweWH8evx28DIl1eA_9q-rDHu7Yko90qmJKSaBFZ-oc8IrYT4v6IrtI2prvjZcRbFr_MVFo4ygRJQxSWWaK4Q_Jf0" />
+            <img className="w-full h-[500px] object-cover" alt="Ordu Çilingir, Profesyonel kapı açma hizmeti" src="/images/professional-locksmith.webp" />
           </div>
           <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
           <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>

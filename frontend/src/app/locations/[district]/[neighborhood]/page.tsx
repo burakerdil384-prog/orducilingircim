@@ -9,7 +9,7 @@ import { SITE_CONFIG } from "@/lib/utils";
 
 export const dynamic = 'force-dynamic';
 
-const mapImage = "https://lh3.googleusercontent.com/aida-public/AB6AXuDxTYTVUzA3CrcHYf97Ls_gCR0rKpYw3ZSw7jvhGpGXJUt7-uiOy2Lo13SM__Ta2PMNabokwBpU0BoXI9FEt9xZNbx17JrYXbiOZeqIxpPsidudoMaX_of1uRbsndJe1j_OyIVF4upeyNR-rCcw6yQPsh9RJGn12F9TpWUZ6Zlv1fxNCMKdPPgcufZ3PmcmIn1RbyuZguh4Pc9piFaMTcrBTKcseWIkROUwfLWASrPIViF5zZxC1WGLk1LMTsRkATseHIv_KsznEANq";
+const mapImage = "/images/location-map.webp";
 
 function slugifyDistrict(name: string) {
   return name
@@ -106,7 +106,7 @@ export default async function LocationPage({ params }: { params: Promise<{ distr
           </div>
           <div className="lg:col-span-5 relative">
             <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 bg-surface-container-low p-2">
-              <img alt={`${location.neighborhood} Mahallesi Ordu Haritası`} className="w-full h-full object-cover rounded-2xl" src={mapImage} />
+              <img alt={`${location.neighborhood} Mahallesi Ordu Haritası, Acil Çilingir`} className="w-full h-full object-cover rounded-2xl" src={mapImage} />
               <div className="absolute inset-0 pointer-events-none border-[12px] border-white/20 rounded-3xl" />
             </div>
           </div>
@@ -153,6 +153,7 @@ export default async function LocationPage({ params }: { params: Promise<{ distr
               const isActive = locDistrict === district && locNeighborhood === neighborhood;
               return (
                 <Link
+                  prefetch={false}
                   key={loc.id}
                   href={`/locations/${locDistrict}/${locNeighborhood}`}
                   className={`p-4 rounded-xl text-center text-sm font-semibold transition-all shadow-sm ${

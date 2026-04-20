@@ -6,7 +6,7 @@ export function CoverageMapSection() {
       <div className="max-w-7xl mx-auto px-6 py-24">
         <div className="rounded-3xl overflow-hidden shadow-2xl relative h-[450px] bg-slate-200">
           <div className="absolute inset-0 z-0 grayscale contrast-125 opacity-70">
-            <img className="w-full h-full object-cover" alt="Aerial view map" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMjoR8OL0wBCx39WLKD5cIF9_9SKyuZY10nI4i0U2H6l-hf6E3cXZHpw39teHC0Hnwnx2VYQBKgz1ZMCQPPW_0aWzmhPp7n9D-i56aQxzJUyY-51tLRzWFyPbl9t7kA9ePrN71gzE67EGpboqUAYdZ-SMbqXtJY-S8XJVcVJ_xCcyZpZpKj3FYdA_cu4963QuH_ObfyGTn6Afs1gwWEt-krtVzpvXzE5azlUq_0wpYeNutLmbO3pI_CT31WbhVwTonfkisbozMVy0N" />
+            <img className="w-full h-full object-cover" alt="Ordu Altınordu haritası ve hizmet bölgeleri" src="/images/aerial-map.webp" />
           </div>
           <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="bg-primary p-8 rounded-2xl shadow-2xl max-w-md mx-6 border border-white/10 backdrop-blur-md">
@@ -18,7 +18,7 @@ export function CoverageMapSection() {
                   const slug = n.toLowerCase().replace(/ğ/g, "g").replace(/ü/g, "u").replace(/ş/g, "s").replace(/ı/g, "i").replace(/ö/g, "o").replace(/ç/g, "c");
                   const url = n === "Altınordu" ? "/locations/altinordu/altinordu-merkez" : `/locations/altinordu/${slug}`;
                   return (
-                    <Link key={n} href={url} className="px-3 py-1 bg-primary-container text-primary-fixed text-xs rounded-full hover:bg-secondary hover:text-white transition-colors">
+                    <Link prefetch={false} key={n} href={url} className="px-3 py-1 bg-primary-container text-primary-fixed text-xs rounded-full hover:bg-secondary hover:text-white transition-colors">
                       {n}
                     </Link>
                   );
