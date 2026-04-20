@@ -12,7 +12,7 @@ if (!fs.existsSync(dir)) {
 const files = fs.readdirSync(dir).filter(f => f.toLowerCase().endsWith('.jpg') || f.toLowerCase().endsWith('.jpeg') || f.toLowerCase().endsWith('.png'));
 
 async function compressExisting() {
-  console.log(\`\${files.length} adet eski yüklenmiş resim bulundu. In-place (yerinde) sıkıştırma başlıyor...\`);
+  console.log(`${files.length} adet eski yüklenmiş resim bulundu. In-place (yerinde) sıkıştırma başlıyor...`);
   
   for (const file of files) {
     const filePath = path.join(dir, file);
@@ -39,10 +39,10 @@ async function compressExisting() {
       const newSize = fs.statSync(filePath).size;
       const savedKb = ((originalSize - newSize) / 1024).toFixed(1);
       
-      console.log(\`[Başarılı] \${file} | Eskisi: \${(originalSize/1024).toFixed(1)}KB -> Yenisi: \${(newSize/1024).toFixed(1)}KB (%\${Math.floor(100 - (newSize/originalSize)*100)} Kazanç)\`);
+      console.log(`[Başarılı] ${file} | Eskisi: ${(originalSize/1024).toFixed(1)}KB -> Yenisi: ${(newSize/1024).toFixed(1)}KB (%${Math.floor(100 - (newSize/originalSize)*100)} Kazanç)`);
       
     } catch (err) {
-      console.error(\`[\${file}] Sıkıştırılırken hata: \`, err);
+      console.error(`[${file}] Sıkıştırılırken hata: `, err);
       if (fs.existsSync(tempPath)) fs.unlinkSync(tempPath);
     }
   }
