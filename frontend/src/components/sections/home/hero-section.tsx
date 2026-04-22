@@ -13,10 +13,15 @@ export function HeroSection() {
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 md:py-32 grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary-fixed-dim font-medium text-sm">
+          <a
+            href={SITE_CONFIG.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary-fixed-dim font-medium text-sm hover:bg-secondary/20 transition-colors"
+          >
             <span className="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
             Ordu Geneli 7/24 Aktif - Altınordu Merkez
-          </div>
+          </a>
           <h1 className="font-headline font-extrabold text-5xl md:text-7xl text-white leading-[1.1] tracking-tight">
             Ordu&apos;da{" "}
             <span className="text-secondary-fixed-dim">7/24 Acil</span>{" "}
