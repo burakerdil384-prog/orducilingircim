@@ -14,7 +14,7 @@ export const SITE_CONFIG = {
   },
   mapsUrl:
     process.env.NEXT_PUBLIC_MAPS_URL ||
-    "https://maps.app.goo.gl/goewe3A26KSmXKdh7?g_st=awb",
+    "https://www.google.com/maps/dir/?api=1&destination=%C5%9Earkiye%20Mahallesi%20Bucak%20Caddesi%20No%3A20%2FA%20Alt%C4%B1nordu%20Ordu&travelmode=driving",
   mapsEmbedUrl:
     process.env.NEXT_PUBLIC_MAPS_EMBED_URL ||
     "https://www.google.com/maps?q=%C5%9Earkiye%20Mahallesi%20Bucak%20Caddesi%20No%2020%2FA%20Alt%C4%B1nordu%20Ordu&output=embed",
