@@ -37,7 +37,12 @@ function getPostImage(post: { id: number; image: string | null }): string | null
 
 async function getPost(slug: string) {
   if (isMockMode) return mockPosts.find((p) => p.slug === slug && p.published) || null;
-  return prisma.post.findUnique({ where: { slug, published: true } });
+  try {
+    return await prisma.post.findUnique({ where: { slug, published: true } });
+  } catch (error) {
+    console.error(`BlogPostPage: post query failed for slug "${slug}".`, error);
+    return mockPosts.find((p) => p.slug === slug && p.published) || null;
+  }
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -68,7 +73,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
   const relatedPosts = isMockMode
     ? mockPosts.filter((p) => p.id !== post.id && p.published).slice(0, 3)
-    : await prisma.post.findMany({ where: { slug: { not: slug }, published: true }, take: 3, orderBy: { createdAt: "desc" } });
+    : await prisma.post
+        .findMany({ where: { slug: { not: slug }, published: true }, take: 3, orderBy: { createdAt: "desc" } })
+        .catch((error) => {
+          console.error("BlogPostPage: related posts query failed, falling back to mock data.", error);
+          return mockPosts.filter((p) => p.id !== post.id && p.published).slice(0, 3);
+        });
 
   return (
     <main className="min-h-screen">

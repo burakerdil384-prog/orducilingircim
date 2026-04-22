@@ -8,6 +8,7 @@ const navLinks = [
   { href: "/", label: "Ana Sayfa" },
   { href: "/services/kapi-acma", label: "Hizmetler" },
   { href: "/blog", label: "Blog" },
+  { href: "/iletisim", label: "İletişim" },
 ];
 
 export function Header() {

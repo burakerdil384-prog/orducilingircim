@@ -19,11 +19,16 @@ export default async function HomePage() {
 
   const recentPosts = isMockMode
     ? mockPosts.filter((p) => p.published).slice(0, 3)
-    : await prisma.post.findMany({
-        where: { published: true },
-        take: 3,
-        orderBy: { createdAt: "desc" },
-      });
+    : await prisma.post
+        .findMany({
+          where: { published: true },
+          take: 3,
+          orderBy: { createdAt: "desc" },
+        })
+        .catch((error) => {
+          console.error("HomePage: posts query failed, falling back to mock data.", error);
+          return mockPosts.filter((p) => p.published).slice(0, 3);
+        });
 
   return (
     <>

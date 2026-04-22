@@ -10,8 +10,7 @@ export default function GlobalError({
   reset: () => void;
 }) {
   useEffect(() => {
-    // Tarayıcı eklentisinden (ör. Adblock, çeviri) kaynaklı hataları sessizce logla
-    console.error("Tarayıcı eklentisi veya ağ hatası yakalandı:", error);
+    console.error("Uygulama hatası yakalandı:", error);
   }, [error]);
 
   return (
@@ -21,9 +20,9 @@ export default function GlobalError({
         <div className="absolute inset-0 bg-red-100 rounded-full blur-xl scale-150 animate-pulse z-0"></div>
       </div>
       
-      <h2 className="text-3xl font-headline font-bold text-primary mb-4">Ufak Bir İletişim Kopukluğu</h2>
+      <h2 className="text-3xl font-headline font-bold text-primary mb-4">Geçici Bir Sorun Oluştu</h2>
       <p className="text-on-surface-variant mb-8 max-w-md mx-auto">
-        Telefonunuzdaki bir tarayıcı eklentisi (reklam engelleyici, çeviri vb.) veya ağ bağlantısı sayfa geçişini anlık olarak engelledi.
+        Sunucuya erişimde kısa süreli bir aksaklık olmuş olabilir. Lütfen sayfayı yenileyip tekrar deneyin.
       </p>
       
       <button

@@ -10,6 +10,7 @@ services:
       - MOCK_DB=false
       - PORT=3090
       - HOSTNAME=127.0.0.1
+      - RUN_DB_PUSH_ON_STARTUP=false
       - DATABASE_URL=postgresql://${DB_USER}:${DB_PASSWORD}@127.0.0.1:5432/ordu_cilingir?schema=public
       - REDIS_URL=redis://127.0.0.1:6379
       - JWT_SECRET=${JWT_SECRET}

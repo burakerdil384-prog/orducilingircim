@@ -50,7 +50,12 @@ const relatedIcons: Record<string, string> = {
 
 async function getService(slug: string) {
   if (isMockMode) return mockServices.find((s) => s.slug === slug) || null;
-  return prisma.service.findUnique({ where: { slug } });
+  try {
+    return await prisma.service.findUnique({ where: { slug } });
+  } catch (error) {
+    console.error(`ServiceDetailPage: service query failed for slug "${slug}".`, error);
+    return mockServices.find((s) => s.slug === slug) || null;
+  }
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
@@ -79,8 +84,23 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
     );
   }
 
-  const locations = isMockMode ? mockLocations : await prisma.location.findMany({ orderBy: { neighborhood: "asc" } });
-  const relatedServices = isMockMode ? mockServices.filter((s) => s.slug !== slug) : await prisma.service.findMany({ where: { slug: { not: slug } } });
+  const locations = isMockMode
+    ? mockLocations
+    : await prisma.location
+        .findMany({ orderBy: { neighborhood: "asc" } })
+        .catch((error) => {
+          console.error("ServiceDetailPage: locations query failed, falling back to mock data.", error);
+          return mockLocations;
+        });
+
+  const relatedServices = isMockMode
+    ? mockServices.filter((s) => s.slug !== slug)
+    : await prisma.service
+        .findMany({ where: { slug: { not: slug } } })
+        .catch((error) => {
+          console.error("ServiceDetailPage: related services query failed, falling back to mock data.", error);
+          return mockServices.filter((s) => s.slug !== slug);
+        });
   const rawPricing = service.pricing;
   const pricing: { label: string; price: string }[] =
     Array.isArray(rawPricing) ? rawPricing :

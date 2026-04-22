@@ -1,24 +1,9 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import { PublicShell } from "@/components/layout/public-shell";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
-
-const manrope = Manrope({
-  variable: "--font-headline",
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "700", "800"],
-  display: "swap",
-});
-
-const inter = Inter({
-  variable: "--font-body",
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -57,8 +42,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className={`${manrope.variable} ${inter.variable}`}>
+    <html lang="tr">
       <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;700;800&display=swap"
+          rel="stylesheet"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"

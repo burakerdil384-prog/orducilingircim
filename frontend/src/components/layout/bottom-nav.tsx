@@ -8,6 +8,7 @@ const navItems = [
   { href: "/", icon: "home", label: "Ana Sayfa" },
   { href: "/services/kapi-acma", icon: "build", label: "Hizmetler" },
   { href: "/blog", icon: "article", label: "Blog" },
+  { href: "/iletisim", icon: "call", label: "İletişim" },
   { href: `https://wa.me/${SITE_CONFIG.whatsapp}`, icon: "chat", label: "WhatsApp", external: true },
 ];
 
@@ -21,7 +22,7 @@ export function BottomNav() {
   };
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-t-3xl shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+    <nav className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-4 pt-2 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-t-3xl shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
       {navItems.map((item) => {
         const active = isActive(item.href);
         const Component = item.external ? "a" : Link;
@@ -43,7 +44,7 @@ export function BottomNav() {
             >
               {item.icon}
             </span>
-            <span className="text-[10px] font-medium font-sans">{item.label}</span>
+            <span className="text-[9px] font-medium font-sans whitespace-nowrap">{item.label}</span>
           </Component>
         );
       })}

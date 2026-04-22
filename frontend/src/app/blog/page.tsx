@@ -49,7 +49,12 @@ function getPostImage(post: { id: number; image: string | null }): string | null
 
 async function getPosts() {
   if (isMockMode) return mockPosts.filter((p) => p.published);
-  return prisma.post.findMany({ where: { published: true }, orderBy: { createdAt: "desc" } });
+  return prisma.post
+    .findMany({ where: { published: true }, orderBy: { createdAt: "desc" } })
+    .catch((error) => {
+      console.error("BlogPage: posts query failed, falling back to mock data.", error);
+      return mockPosts.filter((p) => p.published);
+    });
 }
 
 export default async function BlogPage() {

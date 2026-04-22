@@ -48,6 +48,11 @@ export function Footer() {
                   Acil Kapı Açma
                 </Link>
               </li>
+              <li>
+                <Link href="/iletisim" className="text-slate-400 hover:text-orange-300 font-sans text-sm transition-all duration-300">
+                  İletişim
+                </Link>
+              </li>
             </ul>
           </div>
           <div>
