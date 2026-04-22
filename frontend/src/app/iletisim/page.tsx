@@ -68,7 +68,7 @@ export default function ContactPage() {
                 Mobil ekiplerimizle ilçenin tüm mahallelerine 7/24 hizmet veriyoruz.
               </p>
               <a
-                href={SITE_CONFIG.mapsUrl}
+                href={SITE_CONFIG.mapsPlaceUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-4 text-secondary font-semibold hover:text-secondary-container"
