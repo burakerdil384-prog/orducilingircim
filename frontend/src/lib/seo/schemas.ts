@@ -1,3 +1,5 @@
+import { SITE_CONFIG } from "@/lib/utils";
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr";
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "Ordu Çilingir";
 const PHONE_DISPLAY = process.env.NEXT_PUBLIC_PHONE || "0554 127 92 92";
@@ -7,7 +9,7 @@ const SAME_AS = [
   process.env.NEXT_PUBLIC_INSTAGRAM_URL,
   process.env.NEXT_PUBLIC_FACEBOOK_URL,
 ].filter(Boolean) as string[];
-const HAS_MAP = process.env.NEXT_PUBLIC_GBP_MAP_URL || undefined;
+const HAS_MAP = process.env.NEXT_PUBLIC_GBP_MAP_URL || SITE_CONFIG.mapsUrl;
 
 function slugifySegment(value: string) {
   return value
@@ -41,6 +43,7 @@ export function generateLocalBusinessSchema() {
     ],
     address: {
       "@type": "PostalAddress",
+      streetAddress: SITE_CONFIG.address.line,
       addressLocality: "Altınordu",
       addressRegion: "Ordu",
       addressCountry: "TR",

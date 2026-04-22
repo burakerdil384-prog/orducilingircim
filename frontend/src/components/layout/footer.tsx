@@ -69,9 +69,19 @@ export function Footer() {
             <h4 className="text-orange-500 dark:text-orange-400 font-bold mb-4 uppercase text-xs tracking-widest">
               İletişim
             </h4>
-            <p className="text-slate-400 text-sm mb-2">Ordu geneli servis | Altınordu merkez</p>
+            <p className="text-slate-400 text-sm mb-1">{SITE_CONFIG.address.line}</p>
+            <p className="text-slate-400 text-sm mb-2">{SITE_CONFIG.address.district} / {SITE_CONFIG.address.city}</p>
             <p className="text-white font-bold text-lg mb-2">{SITE_CONFIG.phone}</p>
             <p className="text-slate-400 text-xs uppercase">7/24 Acil Çilingir Hattı</p>
+            <Link
+              href={SITE_CONFIG.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-xs text-orange-300 hover:text-orange-200 mt-2"
+            >
+              <span className="material-symbols-outlined text-sm">map</span>
+              Google Maps Konum
+            </Link>
           </div>
         </div>
       </div>

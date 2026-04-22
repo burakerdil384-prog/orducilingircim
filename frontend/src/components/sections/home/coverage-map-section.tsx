@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SITE_CONFIG } from "@/lib/utils";
 
 export function CoverageMapSection() {
   return (
@@ -17,11 +18,19 @@ export function CoverageMapSection() {
                 {[
                   { label: "Ordu Geneli", url: "/iletisim" },
                   { label: "Altınordu Merkez", url: "/locations/altinordu" },
+                  { label: "Google Maps", url: SITE_CONFIG.mapsUrl },
                   { label: "Ünye", url: "/iletisim" },
                   { label: "Fatsa", url: "/iletisim" },
                 ].map((item) => {
                   return (
-                    <Link prefetch={false} key={item.label} href={item.url} className="px-3 py-1 bg-primary-container text-primary-fixed text-xs rounded-full hover:bg-secondary hover:text-white transition-colors">
+                    <Link
+                      prefetch={false}
+                      key={item.label}
+                      href={item.url}
+                      className="px-3 py-1 bg-primary-container text-primary-fixed text-xs rounded-full hover:bg-secondary hover:text-white transition-colors"
+                      target={item.label === "Google Maps" ? "_blank" : undefined}
+                      rel={item.label === "Google Maps" ? "noopener noreferrer" : undefined}
+                    >
                       {item.label}
                     </Link>
                   );

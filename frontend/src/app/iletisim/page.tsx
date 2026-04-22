@@ -61,11 +61,21 @@ export default function ContactPage() {
             <div className="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/20 shadow-sm sm:col-span-2">
               <span className="material-symbols-outlined text-secondary text-4xl mb-4">location_on</span>
               <h2 className="text-2xl font-headline font-bold text-primary mb-2">Konum</h2>
-              <p className="text-on-surface-variant text-sm mb-3">Hizmet bölgemiz</p>
-              <p className="text-primary text-lg font-bold">Altınordu / Ordu</p>
+              <p className="text-on-surface-variant text-sm mb-3">Adres</p>
+              <p className="text-primary text-lg font-bold">{SITE_CONFIG.address.line}</p>
+              <p className="text-on-surface-variant text-sm">{SITE_CONFIG.address.district} / {SITE_CONFIG.address.city}</p>
               <p className="text-on-surface-variant text-sm mt-2">
                 Mobil ekiplerimizle ilçenin tüm mahallelerine 7/24 hizmet veriyoruz.
               </p>
+              <a
+                href={SITE_CONFIG.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-4 text-secondary font-semibold hover:text-secondary-container"
+              >
+                <span className="material-symbols-outlined text-base">map</span>
+                Google Maps&apos;te Aç
+              </a>
             </div>
           </div>
 
@@ -110,6 +120,27 @@ export default function ContactPage() {
                   <span className="font-semibold text-white">Hizmet Bölgesi:</span> Altınordu ve çevresi
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-surface-container-low rounded-3xl border border-outline-variant/20 shadow-sm overflow-hidden">
+            <div className="p-6 border-b border-outline-variant/20">
+              <h2 className="text-2xl font-headline font-bold text-primary">Harita Konumumuz</h2>
+              <p className="text-on-surface-variant text-sm mt-1">{SITE_CONFIG.address.line}, {SITE_CONFIG.address.district} / {SITE_CONFIG.address.city}</p>
+            </div>
+            <div className="aspect-[16/9]">
+              <iframe
+                title="Ordu Çilingir Google Maps Konum"
+                src={SITE_CONFIG.mapsEmbedUrl}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full border-0"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
