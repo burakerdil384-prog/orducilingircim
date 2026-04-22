@@ -13,9 +13,9 @@ export function WhyUsSection() {
           <h2 className="font-headline font-extrabold text-4xl text-primary tracking-tight">Neden Bizi Seçmelisiniz?</h2>
           <div className="space-y-8">
             {[
-              { icon: "schedule", title: "Hızlı Varış (15 Dakika)", desc: "Altınordu'nun her noktasına, trafik ne olursa olsun en hızlı şekilde ulaşıyoruz." },
+              { icon: "schedule", title: "Hızlı Yönlendirme (15-30 Dakika)", desc: "Altınordu merkezde hızlı müdahale, Ordu geneline mesafeye göre planlı ekip yönlendirmesi yapıyoruz." },
               { icon: "emergency", title: "7/24 Kesintisiz Hizmet", desc: "Günün her saati, resmi tatiller dahil bir telefon uzağınızdayız." },
-              { icon: "verified", title: "Profesyonel Kadro", desc: "Kapınıza ve kilidinize zarar vermeden, son teknoloji ekipmanlarla çalışıyoruz." },
+              { icon: "verified", title: "Profesyonel ve Şeffaf Süreç", desc: "Hasarsız açma önceliğiyle çalışır, işlem öncesi süre ve fiyat bilgisini net paylaşırız." },
             ].map((item) => (
               <div key={item.icon} className="flex gap-6">
                 <div className="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-secondary">

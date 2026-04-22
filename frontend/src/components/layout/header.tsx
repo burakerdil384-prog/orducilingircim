@@ -6,7 +6,8 @@ import { SITE_CONFIG } from "@/lib/utils";
 
 const navLinks = [
   { href: "/", label: "Ana Sayfa" },
-  { href: "/services/kapi-acma", label: "Hizmetler" },
+  { href: "/hizmetler", label: "Hizmetler" },
+  { href: "/ordu-cilingir", label: "Ordu Çilingir" },
   { href: "/blog", label: "Blog" },
   { href: "/iletisim", label: "İletişim" },
 ];
@@ -58,7 +59,7 @@ export function Header() {
             href={`tel:${SITE_CONFIG.phoneRaw}`}
             className="bg-secondary px-6 py-2.5 rounded-xl text-white font-bold text-sm hover:bg-secondary-container transition-all active:scale-95 duration-150 uppercase tracking-wide"
           >
-            HEMEN ARA
+            ACİL ARA
           </a>
         )}
       </div>

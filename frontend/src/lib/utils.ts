@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
   phoneRaw: process.env.NEXT_PUBLIC_PHONE_RAW || "+905541279292",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP || "905541279292",
   description:
-    "Ordu Altınordu bölgesinde 7/24 profesyonel çilingir hizmeti. Kapı açma, kasa açma, oto çilingir ve anahtar kopyalama.",
+    "Ordu genelinde 7/24 profesyonel çilingir hizmeti. Altınordu merkezli mobil ekip ile kapı açma, oto çilingir, kilit değişimi ve anahtarcı desteği.",
   address: {
     district: "Altınordu",
     city: "Ordu",

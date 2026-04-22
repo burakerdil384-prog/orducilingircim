@@ -15,16 +15,16 @@ export function HeroSection() {
         <div className="space-y-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary-fixed-dim font-medium text-sm">
             <span className="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
-            Ordu Altınordu&apos;da 7/24 Aktif
+            Ordu Geneli 7/24 Aktif - Altınordu Merkez
           </div>
           <h1 className="font-headline font-extrabold text-5xl md:text-7xl text-white leading-[1.1] tracking-tight">
-            Ordu Altınordu&apos;da{" "}
-            <span className="text-secondary-fixed-dim">7/24 Güvenilir</span>{" "}
-            Çilingir
+            Ordu&apos;da{" "}
+            <span className="text-secondary-fixed-dim">7/24 Acil</span>{" "}
+            Çilingir ve Anahtarcı
           </h1>
           <p className="text-primary-fixed text-lg md:text-xl max-w-lg leading-relaxed opacity-90">
-            Kapıda mı kaldınız? Anahtarınız mı bozuldu? Ordu&apos;nun en
-            hızlı ve güvenilir ekibiyle 15 dakikada yanınızdayız.
+            Kapıda mı kaldınız, anahtar sorunu mu yaşıyorsunuz? Altınordu
+            merkezli mobil ekibimiz Ordu genelinde hızlı yönlendirme sağlar.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <a
@@ -32,22 +32,22 @@ export function HeroSection() {
               className="flex items-center justify-center gap-3 bg-secondary text-white px-8 py-5 rounded-xl text-lg font-extrabold shadow-lg shadow-secondary/20 hover:scale-105 transition-transform"
             >
               <span className="material-symbols-outlined">call</span>
-              HEMEN ARA
+              ACİL ARA
             </a>
             <a
               href={`https://wa.me/${SITE_CONFIG.whatsapp}`}
               className="flex items-center justify-center gap-3 bg-surface-container-lowest text-primary px-8 py-5 rounded-xl text-lg font-bold hover:bg-surface-bright transition-colors"
             >
               <span className="material-symbols-outlined text-green-600">chat</span>
-              WhatsApp Destek
+              WhatsApp Konum Gönder
             </a>
           </div>
         </div>
         <div className="hidden lg:grid grid-cols-2 gap-4">
           <div className="bg-primary-container/40 backdrop-blur-xl p-8 rounded-2xl border border-white/5 flex flex-col justify-end min-h-[240px]">
             <span className="material-symbols-outlined text-secondary-fixed-dim mb-4 text-4xl">speed</span>
-            <h3 className="text-white font-bold text-xl">15 Dakika</h3>
-            <p className="text-primary-fixed/70 text-sm">Ortalama varış süremiz ile en hızlı servis.</p>
+            <h3 className="text-white font-bold text-xl">15-30 Dakika</h3>
+            <p className="text-primary-fixed/70 text-sm">Altınordu merkez hızlı müdahale, Ordu geneli planlı servis.</p>
           </div>
           <div className="bg-secondary/10 backdrop-blur-xl p-8 rounded-2xl border border-secondary/20 flex flex-col justify-end mt-8">
             <span className="material-symbols-outlined text-white mb-4 text-4xl">workspace_premium</span>

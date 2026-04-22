@@ -174,17 +174,23 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
               {/* Location Links */}
               <div className="bg-primary text-white p-12 rounded-3xl overflow-hidden relative">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full -mr-32 -mt-32" />
-                <h2 className="text-3xl font-bold mb-6 relative z-10 tracking-tight">Altınordu Hizmet Bölgelerimiz</h2>
+                <h2 className="text-3xl font-bold mb-6 relative z-10 tracking-tight">Hizmet Verdiğimiz Mahalleler</h2>
                 <p className="text-slate-300 mb-8 relative z-10 leading-relaxed">
-                  Ordu Altınordu&apos;nun tüm mahallelerinde 7/24 kesintisiz hizmet sunmaktayız. Konumunuz neresi olursa olsun profesyonel ekibimiz bir telefon uzağınızda.
+                  Admin panelden eklenen tüm aktif mahalleleri aşağıda görebilirsiniz. Bulunduğunuz lokasyona göre ekip yönlendirmesi yapıyoruz.
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-8 relative z-10">
-                  {locations.slice(0, 6).map((loc) => (
+                  {locations.map((loc) => (
                     <Link key={loc.id} href={`/locations/${loc.district.toLowerCase().replace(/ı/g, "i").replace(/ş/g, "s").replace(/ğ/g, "g").replace(/ü/g, "u").replace(/ö/g, "o").replace(/ç/g, "c")}/${loc.slug.split("-").slice(1).join("-")}`} className="flex items-center gap-2 text-sm hover:text-secondary transition-colors">
                       <span className="material-symbols-outlined text-orange-500 text-sm">location_on</span>
                       {loc.neighborhood} Mahallesi
                     </Link>
                   ))}
+                </div>
+                <div className="mt-8 relative z-10">
+                  <Link href="/hizmetler" className="inline-flex items-center gap-2 text-secondary hover:text-orange-400 font-semibold">
+                    Tüm hizmet ve mahalleleri görüntüle
+                    <span className="material-symbols-outlined text-sm">east</span>
+                  </Link>
                 </div>
               </div>
 

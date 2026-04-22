@@ -6,10 +6,11 @@ import { SITE_CONFIG } from "@/lib/utils";
 
 const navItems = [
   { href: "/", icon: "home", label: "Ana Sayfa" },
-  { href: "/services/kapi-acma", icon: "build", label: "Hizmetler" },
+  { href: "/hizmetler", icon: "handyman", label: "Hizmetler" },
   { href: "/blog", icon: "article", label: "Blog" },
+  { href: "/ordu-cilingir", icon: "lock", label: "Çilingir" },
+  { href: `https://wa.me/${SITE_CONFIG.whatsapp}?text=Merhaba%2C%20Ordu%27da%20acil%20%C3%A7ilingir%20deste%C4%9Fine%20ihtiyac%C4%B1m%20var.%20Konum%20payla%C5%9Faca%C4%9F%C4%B1m.`, icon: "chat", label: "WhatsApp", external: true, newTab: true },
   { href: "/iletisim", icon: "call", label: "İletişim" },
-  { href: `https://wa.me/${SITE_CONFIG.whatsapp}`, icon: "chat", label: "WhatsApp", external: true },
 ];
 
 export function BottomNav() {
@@ -26,7 +27,10 @@ export function BottomNav() {
       {navItems.map((item) => {
         const active = isActive(item.href);
         const Component = item.external ? "a" : Link;
-        const extraProps = item.external ? { target: "_blank", rel: "noopener noreferrer" } : {};
+        const extraProps =
+          item.external && item.newTab
+            ? { target: "_blank", rel: "noopener noreferrer" }
+            : {};
         return (
           <Component
             key={item.label}

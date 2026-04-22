@@ -1,16 +1,44 @@
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr";
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "Ordu Çilingir";
-const PHONE = process.env.NEXT_PUBLIC_PHONE || "0500 000 00 00";
+const PHONE_DISPLAY = process.env.NEXT_PUBLIC_PHONE || "0554 127 92 92";
+const PHONE_E164 = process.env.NEXT_PUBLIC_PHONE_RAW || "+905541279292";
+const SAME_AS = [
+  process.env.NEXT_PUBLIC_GBP_URL,
+  process.env.NEXT_PUBLIC_INSTAGRAM_URL,
+  process.env.NEXT_PUBLIC_FACEBOOK_URL,
+].filter(Boolean) as string[];
+const HAS_MAP = process.env.NEXT_PUBLIC_GBP_MAP_URL || undefined;
+
+function slugifySegment(value: string) {
+  return value
+    .toLowerCase()
+    .replace(/ğ/g, "g")
+    .replace(/ü/g, "u")
+    .replace(/ş/g, "s")
+    .replace(/ı/g, "i")
+    .replace(/ö/g, "o")
+    .replace(/ç/g, "c")
+    .replace(/\s+/g, "-");
+}
 
 export function generateLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Locksmith",
+    "@type": ["Locksmith", "LocalBusiness"],
+    "@id": `${SITE_URL}/#locksmith`,
     name: SITE_NAME,
     description:
-      "Ordu Altınordu bölgesinde 7/24 profesyonel çilingir hizmeti. Kapı açma, kasa açma, oto çilingir ve anahtar kopyalama.",
+      "Ordu genelinde 7/24 profesyonel çilingir hizmeti. Altınordu merkezli mobil ekip ile kapı açma, oto çilingir, kilit değişimi ve anahtarcı desteği.",
     url: SITE_URL,
-    telephone: PHONE,
+    telephone: PHONE_E164,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "customer service",
+        telephone: PHONE_E164,
+        availableLanguage: ["tr-TR"],
+      },
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Altınordu",
@@ -24,12 +52,20 @@ export function generateLocalBusinessSchema() {
     },
     areaServed: [
       {
-        "@type": "City",
+        "@type": "AdministrativeArea",
         name: "Ordu",
       },
       {
         "@type": "AdministrativeArea",
         name: "Altınordu",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Ünye",
+      },
+      {
+        "@type": "AdministrativeArea",
+        name: "Fatsa",
       },
     ],
     openingHoursSpecification: {
@@ -48,7 +84,15 @@ export function generateLocalBusinessSchema() {
     },
     priceRange: "₺₺",
     image: `${SITE_URL}/og-image.jpg`,
-    sameAs: [],
+    hasMap: HAS_MAP,
+    sameAs: SAME_AS,
+    additionalProperty: [
+      {
+        "@type": "PropertyValue",
+        name: "displayPhone",
+        value: PHONE_DISPLAY,
+      },
+    ],
   };
 }
 
@@ -67,10 +111,10 @@ export function generateServiceSchema(service: {
     provider: {
       "@type": "Locksmith",
       name: SITE_NAME,
-      telephone: PHONE,
+      telephone: PHONE_E164,
     },
     areaServed: {
-      "@type": "City",
+      "@type": "AdministrativeArea",
       name: "Ordu",
     },
     ...(service.price && {
@@ -151,13 +195,15 @@ export function generateLocationSchema(location: {
   district: string;
   neighborhood: string;
 }) {
+  const districtSlug = slugifySegment(location.district);
+  const neighborhoodSlug = slugifySegment(location.neighborhood);
   return {
     "@context": "https://schema.org",
     "@type": "Locksmith",
     name: `${location.neighborhood} Çilingir - ${SITE_NAME}`,
     description: `${location.neighborhood}, ${location.district} bölgesinde 7/24 profesyonel çilingir hizmeti.`,
-    url: `${SITE_URL}/locations/${encodeURIComponent(location.district.toLowerCase())}/${encodeURIComponent(location.neighborhood.toLowerCase())}`,
-    telephone: PHONE,
+    url: `${SITE_URL}/locations/${districtSlug}/${neighborhoodSlug}`,
+    telephone: PHONE_E164,
     address: {
       "@type": "PostalAddress",
       addressLocality: location.district,

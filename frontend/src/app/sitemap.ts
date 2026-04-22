@@ -18,6 +18,48 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
+      url: `${siteUrl}/ordu-cilingir`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
+      url: `${siteUrl}/ordu-anahtarci`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/ordu-oto-cilingir`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/ordu-acil-cilingir-7-24`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/altinordu-cilingir`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
+      url: `${siteUrl}/ordu-hizmet-bolgeleri`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${siteUrl}/hizmetler`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
       url: `${siteUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: "daily",
@@ -65,6 +107,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // Dynamic location pages
   let locationPages: MetadataRoute.Sitemap = [];
+  let districtPages: MetadataRoute.Sitemap = [];
   try {
     const locations = isMockMode
       ? mockLocations
@@ -79,9 +122,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
       };
     });
+
+    const districtLastModified = new Map<string, Date>();
+    for (const loc of locations) {
+      const district = slugify(loc.district);
+      const prev = districtLastModified.get(district);
+      if (!prev || loc.updatedAt > prev) {
+        districtLastModified.set(district, loc.updatedAt);
+      }
+    }
+
+    districtPages = Array.from(districtLastModified.entries()).map(([district, updatedAt]) => ({
+      url: `${siteUrl}/locations/${district}`,
+      lastModified: updatedAt,
+      changeFrequency: "monthly" as const,
+      priority: 0.75,
+    }));
   } catch (e) {
     console.error("Sitemap: locations query failed", e);
   }
 
-  return [...staticPages, ...servicePages, ...blogPages, ...locationPages];
+  return [...staticPages, ...servicePages, ...blogPages, ...districtPages, ...locationPages];
 }

@@ -11,6 +11,27 @@ interface MetadataOptions {
   noIndex?: boolean;
 }
 
+function composeTitleWithBrand(title: string): string {
+  const cleanTitle = title.trim();
+  const cleanSiteName = SITE_NAME.trim();
+
+  if (!cleanTitle) return cleanSiteName;
+
+  const normalizedTitle = cleanTitle.toLocaleLowerCase("tr-TR");
+  const normalizedSiteName = cleanSiteName.toLocaleLowerCase("tr-TR");
+
+  if (
+    normalizedTitle === normalizedSiteName ||
+    normalizedTitle.includes(`| ${normalizedSiteName}`) ||
+    normalizedTitle.includes(`- ${normalizedSiteName}`) ||
+    normalizedTitle.includes(`— ${normalizedSiteName}`)
+  ) {
+    return cleanTitle;
+  }
+
+  return `${cleanTitle} | ${cleanSiteName}`;
+}
+
 export function generatePageMetadata({
   title,
   description,
@@ -20,15 +41,16 @@ export function generatePageMetadata({
 }: MetadataOptions): Metadata {
   const url = `${SITE_URL}${path}`;
   const ogImage = image || `${SITE_URL}/og-image.jpg`;
+  const fullTitle = composeTitleWithBrand(title);
 
   return {
-    title: `${title} | ${SITE_NAME}`,
+    title: fullTitle,
     description,
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: `${title} | ${SITE_NAME}`,
+      title: fullTitle,
       description,
       url,
       siteName: SITE_NAME,
@@ -45,7 +67,7 @@ export function generatePageMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | ${SITE_NAME}`,
+      title: fullTitle,
       description,
       images: [ogImage],
     },

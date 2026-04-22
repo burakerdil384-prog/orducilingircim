@@ -2,16 +2,18 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { PublicShell } from "@/components/layout/public-shell";
+import { generateLocalBusinessSchema } from "@/lib/seo/schemas";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const localBusinessSchema = generateLocalBusinessSchema();
 
 export const metadata: Metadata = {
   title: {
-    default: "Ordu Çilingir | 7/24 Acil Çilingir Hizmeti - Altınordu",
+    default: "Ordu Çilingir | 7/24 Acil Çilingir ve Anahtarcı Hizmeti",
     template: "%s | Ordu Çilingir",
   },
   description:
-    "Ordu Altınordu bölgesinde 7/24 profesyonel çilingir hizmeti. Kapı açma, kasa açma, oto çilingir ve anahtar kopyalama. 15 dakikada kapınızdayız.",
+    "Ordu genelinde 7/24 profesyonel çilingir hizmeti. Altınordu merkezli mobil ekip ile kapı açma, oto çilingir, kilit değişimi ve anahtarcı desteği.",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr"
   ),
@@ -68,33 +70,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Locksmith",
-              name: "Ordu Çilingir",
-              image: `${process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr"}/og-image.jpg`,
-              telephone: "+905541279292",
-              url: process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Altınordu",
-                addressRegion: "Ordu",
-                addressCountry: "TR",
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: 40.9839,
-                longitude: 37.8764,
-              },
-              openingHoursSpecification: {
-                "@type": "OpeningHoursSpecification",
-                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                opens: "00:00",
-                closes: "23:59",
-              },
-              priceRange: "₺₺",
-              areaServed: { "@type": "City", name: "Ordu" },
-            }),
+            __html: JSON.stringify(localBusinessSchema),
           }}
         />
         <PublicShell>{children}</PublicShell>
