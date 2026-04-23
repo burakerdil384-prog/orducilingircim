@@ -139,6 +139,21 @@ export default async function LocationPage({ params }: { params: Promise<{ distr
         </div>
       </section>
 
+      <section className="mt-12 max-w-7xl mx-auto px-6">
+        <div className="bg-surface-container-low rounded-2xl border border-outline-variant/20 p-6 md:p-8">
+          <h2 className="text-2xl font-bold text-primary mb-3">Ordu Geneli Sayfalar</h2>
+          <p className="text-on-surface-variant mb-5">
+            İlçe/mahalle detayından sonra genel sayfalara buradan geçebilirsiniz.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/ordu-cilingir" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu Çilingir</Link>
+            <Link href="/ordu-acil-cilingir-7-24" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu Acil Çilingir 7/24</Link>
+            <Link href="/ordu-hizmet-bolgeleri" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu Hizmet Bölgeleri</Link>
+            <Link href="/hizmetler" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Hizmetler</Link>
+          </div>
+        </div>
+      </section>
+
       {/* All Neighborhoods Grid */}
       <section className="mt-24 py-20 bg-surface-container-low">
         <div className="max-w-7xl mx-auto px-6">

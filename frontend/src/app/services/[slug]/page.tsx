@@ -194,6 +194,20 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 </div>
               </div>
 
+              <div className="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/20">
+                <h2 className="text-2xl font-bold text-primary mb-3">Ordu Çilingir Rehber Sayfaları</h2>
+                <p className="text-on-surface-variant mb-5">
+                  Bu hizmete yakın aranan sayfalara buradan geçebilirsiniz.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link href="/ordu-cilingir" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu Çilingir</Link>
+                  <Link href="/ordu-anahtarci" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu Anahtarcı</Link>
+                  <Link href="/ordu-oto-cilingir" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu Oto Çilingir</Link>
+                  <Link href="/ordu-acil-cilingir-7-24" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu Acil Çilingir 7/24</Link>
+                  <Link href="/altinordu-cilingir" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Altınordu Çilingir</Link>
+                </div>
+              </div>
+
               {/* FAQ Accordion */}
               {faqs && faqs.length > 0 && (
                 <div className="space-y-4">

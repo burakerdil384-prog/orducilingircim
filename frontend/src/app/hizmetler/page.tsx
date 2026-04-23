@@ -155,6 +155,32 @@ export default async function HizmetlerPage() {
           })}
         </div>
       </section>
+
+      <section className="container mx-auto px-6 pb-24">
+        <div className="bg-surface-container-low rounded-2xl border border-outline-variant/20 p-6 md:p-8">
+          <h2 className="text-2xl font-bold text-primary mb-3">Ordu Genelinde Öne Çıkan Çilingir Sayfaları</h2>
+          <p className="text-on-surface-variant mb-5 leading-relaxed">
+            Ordu genelinde en çok aranan hizmet başlıklarına bu sayfalardan hızlıca ulaşabilirsiniz.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/ordu-cilingir" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">
+              Ordu Çilingir
+            </Link>
+            <Link href="/ordu-anahtarci" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">
+              Ordu Anahtarcı
+            </Link>
+            <Link href="/ordu-oto-cilingir" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">
+              Ordu Oto Çilingir
+            </Link>
+            <Link href="/ordu-acil-cilingir-7-24" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">
+              Ordu Acil Çilingir 7/24
+            </Link>
+            <Link href="/altinordu-cilingir" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">
+              Altınordu Çilingir
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

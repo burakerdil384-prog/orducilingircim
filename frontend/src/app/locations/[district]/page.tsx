@@ -118,6 +118,20 @@ export default async function DistrictLocationsPage({ params }: { params: Promis
           </div>
         )}
       </section>
+
+      <section className="container mx-auto px-6 mt-12">
+        <div className="bg-surface-container-low rounded-2xl border border-outline-variant/20 p-6 md:p-8">
+          <h2 className="text-2xl font-bold text-primary mb-3">Hızlı Geçiş</h2>
+          <p className="text-on-surface-variant mb-5">
+            Genel hizmet ve bölge sayfalarından ihtiyacınıza uygun akışı seçebilirsiniz.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/ordu-cilingir" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu Çilingir</Link>
+            <Link href="/ordu-hizmet-bolgeleri" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu Hizmet Bölgeleri</Link>
+            <Link href="/hizmetler" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Hizmetler</Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

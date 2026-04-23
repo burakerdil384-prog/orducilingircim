@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbSchema, generateLocalBusinessSchema } from "@/lib/seo/schemas";
@@ -142,6 +143,20 @@ export default function ContactPage() {
                 allowFullScreen
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-24 px-6">
+        <div className="max-w-7xl mx-auto bg-surface-container-low rounded-2xl border border-outline-variant/20 p-6 md:p-8">
+          <h2 className="text-2xl font-headline font-extrabold text-primary mb-3">Öne Çıkan Hizmet Sayfaları</h2>
+          <p className="text-on-surface-variant mb-5">İhtiyacınıza göre doğru hizmet sayfasına gidip daha hızlı aksiyon alabilirsiniz.</p>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/ordu-cilingir" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu Çilingir</Link>
+            <Link href="/ordu-anahtarci" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu Anahtarcı</Link>
+            <Link href="/ordu-oto-cilingir" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu Oto Çilingir</Link>
+            <Link href="/ordu-acil-cilingir-7-24" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu Acil Çilingir 7/24</Link>
+            <Link href="/hizmetler" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Tüm Hizmetler</Link>
           </div>
         </div>
       </section>
