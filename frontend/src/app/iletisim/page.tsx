@@ -133,15 +133,16 @@ export default function ContactPage() {
               <h2 className="text-2xl font-headline font-bold text-primary">Harita Konumumuz</h2>
               <p className="text-on-surface-variant text-sm mt-1">{SITE_CONFIG.address.line}, {SITE_CONFIG.address.district} / {SITE_CONFIG.address.city}</p>
             </div>
-            <div className="aspect-[16/9]">
-              <iframe
-                title="Ordu Çilingir Google Maps Konum"
-                src={SITE_CONFIG.mapsEmbedUrl}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full border-0"
-                allowFullScreen
-              />
+            <div className="aspect-[16/9] flex items-center justify-center bg-surface-container">
+              <a
+                href={SITE_CONFIG.mapsPlaceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-4 text-secondary font-semibold hover:text-secondary-container"
+              >
+                <span className="material-symbols-outlined text-base">map</span>
+                Google Maps&apos;te Aç
+              </a>
             </div>
           </div>
         </div>
