@@ -14,7 +14,8 @@ export const SITE_CONFIG = {
   },
   mapsUrl: "https://maps.app.goo.gl/goewe3A26KSmXKdh7?g_st=awb",
   mapsPlaceUrl: "https://maps.app.goo.gl/goewe3A26KSmXKdh7?g_st=awb",
-  mapsEmbedUrl: "https://maps.app.goo.gl/goewe3A26KSmXKdh7?g_st=awb",
+  mapsEmbedUrl:
+    "https://www.google.com/maps?q=Ordu%C3%A7ilingircim%2C%20%C5%9Earkiye%2C%20Alt%C4%B1nordu%2FOrdu&output=embed",
 } as const;
 
 export function slugify(text: string): string {
