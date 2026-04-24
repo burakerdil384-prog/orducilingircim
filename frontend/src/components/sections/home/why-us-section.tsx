@@ -22,7 +22,7 @@ export function WhyUsSection() {
                   <span className="material-symbols-outlined">{item.icon}</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg text-primary mb-1">{item.title}</h4>
+                  <h3 className="font-bold text-lg text-primary mb-1">{item.title}</h3>
                   <p className="text-on-surface-variant leading-relaxed">{item.desc}</p>
                 </div>
               </div>

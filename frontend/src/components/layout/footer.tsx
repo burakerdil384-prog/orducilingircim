@@ -24,9 +24,9 @@ export function Footer() {
         </div>
         <div className="grid grid-cols-2 gap-8 md:gap-16">
           <div>
-            <h4 className="text-orange-500 dark:text-orange-400 font-bold mb-4 uppercase text-xs tracking-widest">
+            <h3 className="text-orange-500 dark:text-orange-400 font-bold mb-4 uppercase text-xs tracking-widest">
               Hızlı Bağlantılar
-            </h4>
+            </h3>
             <ul className="space-y-3">
               <li>
                 <Link href="/hizmetler" className="text-slate-400 hover:text-orange-300 font-sans text-sm transition-all duration-300">
@@ -66,9 +66,9 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h4 className="text-orange-500 dark:text-orange-400 font-bold mb-4 uppercase text-xs tracking-widest">
+            <h3 className="text-orange-500 dark:text-orange-400 font-bold mb-4 uppercase text-xs tracking-widest">
               İletişim
-            </h4>
+            </h3>
             <p className="text-slate-400 text-sm mb-1">{SITE_CONFIG.address.line}</p>
             <p className="text-slate-400 text-sm mb-2">{SITE_CONFIG.address.district} / {SITE_CONFIG.address.city}</p>
             <p className="text-white font-bold text-lg mb-2">{SITE_CONFIG.phone}</p>
@@ -86,12 +86,12 @@ export function Footer() {
         </div>
       </div>
       <div className="max-w-7xl mx-auto px-8 pb-8 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <span className="text-slate-500 text-xs">
-          <Link href="https://lemoria.com.tr" target="_blank" rel="dofollow" title="Ordu Web Tasarım ve SEO" className="hover:text-slate-400 transition-colors">©</Link> {new Date().getFullYear()} Ordu Çilingir - Precision Security Solutions
+        <span className="text-slate-300 text-xs">
+          <Link href="https://lemoria.com.tr" target="_blank" rel="dofollow" title="Ordu Web Tasarım ve SEO" className="hover:text-white transition-colors">©</Link> {new Date().getFullYear()} Ordu Çilingir - Precision Security Solutions
         </span>
         <div className="flex gap-8">
-          <Link href="#" className="text-slate-500 text-xs hover:text-white">Gizlilik Politikası</Link>
-          <Link href="#" className="text-slate-500 text-xs hover:text-white">Kullanım Şartları</Link>
+          <Link href="#" className="text-slate-300 text-xs hover:text-white">Gizlilik Politikası</Link>
+          <Link href="#" className="text-slate-300 text-xs hover:text-white">Kullanım Şartları</Link>
         </div>
       </div>
     </footer>

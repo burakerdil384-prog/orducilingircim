@@ -1,11 +1,16 @@
+import Image from "next/image";
 import { SITE_CONFIG } from "@/lib/utils";
 
 export function HeroSection() {
   return (
     <section className="relative min-h-[751px] flex items-center overflow-hidden bg-primary">
       <div className="absolute inset-0 z-0">
-        <img
-          className="w-full h-full object-cover opacity-40"
+        <Image
+          fill
+          priority
+          fetchPriority="high"
+          sizes="100vw"
+          className="object-cover opacity-40"
           alt="Modern high-security door lock close-up"
           src="/images/hero-door.webp"
         />
