@@ -46,8 +46,14 @@ async function seed() {
   const locations = buildAllLocationRecords();
   for (const location of locations) {
     await prisma.location.upsert({
-      where: { slug: location.slug },
+      where: {
+        district_neighborhood: {
+          district: location.district,
+          neighborhood: location.neighborhood,
+        },
+      },
       update: {
+        slug: location.slug,
         district: location.district,
         neighborhood: location.neighborhood,
         description: location.description,
