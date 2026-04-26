@@ -1,4 +1,4 @@
-import { SITE_CONFIG } from "@/lib/utils";
+import { SITE_CONFIG, slugify } from "@/lib/utils";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr";
 const SITE_NAME = process.env.NEXT_PUBLIC_SITE_NAME || "Ordu Çilingir";
@@ -10,18 +10,6 @@ const SAME_AS = [
   process.env.NEXT_PUBLIC_FACEBOOK_URL,
 ].filter(Boolean) as string[];
 const HAS_MAP = process.env.NEXT_PUBLIC_GBP_MAP_URL || SITE_CONFIG.mapsUrl;
-
-function slugifySegment(value: string) {
-  return value
-    .toLowerCase()
-    .replace(/ğ/g, "g")
-    .replace(/ü/g, "u")
-    .replace(/ş/g, "s")
-    .replace(/ı/g, "i")
-    .replace(/ö/g, "o")
-    .replace(/ç/g, "c")
-    .replace(/\s+/g, "-");
-}
 
 export function generateLocalBusinessSchema() {
   return {
@@ -173,7 +161,7 @@ export function generateArticleSchema(article: {
       name: SITE_NAME,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/logo.png`,
+        url: `${SITE_URL}/og-image.jpg`,
       },
     },
   };
@@ -197,15 +185,17 @@ export function generateBreadcrumbSchema(
 export function generateLocationSchema(location: {
   district: string;
   neighborhood: string;
+  basePath?: string;
 }) {
-  const districtSlug = slugifySegment(location.district);
-  const neighborhoodSlug = slugifySegment(location.neighborhood);
+  const districtSlug = slugify(location.district);
+  const neighborhoodSlug = slugify(location.neighborhood);
+  const basePath = location.basePath || "/locations";
   return {
     "@context": "https://schema.org",
     "@type": "Locksmith",
     name: `${location.neighborhood} Çilingir - ${SITE_NAME}`,
     description: `${location.neighborhood}, ${location.district} bölgesinde 7/24 profesyonel çilingir hizmeti.`,
-    url: `${SITE_URL}/locations/${districtSlug}/${neighborhoodSlug}`,
+    url: `${SITE_URL}${basePath}/${districtSlug}/${neighborhoodSlug}`,
     telephone: PHONE_E164,
     address: {
       "@type": "PostalAddress",

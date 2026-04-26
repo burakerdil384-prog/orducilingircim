@@ -1,3 +1,5 @@
+import { slugify as slugifyLocation } from "@/lib/locations/slug";
+
 export const SITE_CONFIG = {
   name: process.env.NEXT_PUBLIC_SITE_NAME || "Ordu Çilingir",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr",
@@ -19,20 +21,7 @@ export const SITE_CONFIG = {
 } as const;
 
 export function slugify(text: string): string {
-  return text
-    .toString()
-    .toLowerCase()
-    .replace(/ğ/g, "g")
-    .replace(/ü/g, "u")
-    .replace(/ş/g, "s")
-    .replace(/ı/g, "i")
-    .replace(/ö/g, "o")
-    .replace(/ç/g, "c")
-    .replace(/\s+/g, "-")
-    .replace(/[^\w-]+/g, "")
-    .replace(/--+/g, "-")
-    .replace(/^-+/, "")
-    .replace(/-+$/, "");
+  return slugifyLocation(text);
 }
 
 export function formatDate(date: Date | string): string {

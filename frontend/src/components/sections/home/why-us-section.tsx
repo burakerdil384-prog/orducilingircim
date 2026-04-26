@@ -1,10 +1,20 @@
+import Image from "next/image";
+
 export function WhyUsSection() {
   return (
     <section className="py-24 bg-surface-container-low overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         <div className="relative">
           <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
-            <img className="w-full h-[500px] object-cover" alt="Ordu Çilingir, Profesyonel kapı açma hizmeti" src="/images/professional-locksmith.webp" />
+            <Image
+              width={960}
+              height={640}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              quality={68}
+              className="w-full h-[500px] object-cover"
+              alt="Ordu Çilingir, Profesyonel kapı açma hizmeti"
+              src="/images/professional-locksmith.webp"
+            />
           </div>
           <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
           <div className="absolute -top-10 -left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>

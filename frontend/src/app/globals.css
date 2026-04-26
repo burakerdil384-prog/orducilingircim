@@ -65,9 +65,9 @@
   --color-inverse-on-surface: #e6f2ff;
 
   /* Fonts */
-  --font-headline: "Manrope", sans-serif;
-  --font-body: "Inter", sans-serif;
-  --font-label: "Inter", sans-serif;
+  --font-headline: var(--font-manrope), sans-serif;
+  --font-body: var(--font-inter), sans-serif;
+  --font-label: var(--font-inter), sans-serif;
 
   /* Border radius */
   --radius-DEFAULT: 0.25rem;
@@ -88,5 +88,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
 }

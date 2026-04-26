@@ -16,7 +16,6 @@ export function DeferredGa({ gaId }: DeferredGaProps) {
     }
 
     let timeoutId: ReturnType<typeof setTimeout> | null = null;
-    let idleId: number | null = null;
 
     const load = () => setShouldLoad(true);
 
@@ -29,25 +28,15 @@ export function DeferredGa({ gaId }: DeferredGaProps) {
       window.removeEventListener("pointerdown", onFirstInteraction);
       window.removeEventListener("keydown", onFirstInteraction);
       window.removeEventListener("touchstart", onFirstInteraction);
-      window.removeEventListener("scroll", onFirstInteraction);
       if (timeoutId) {
         clearTimeout(timeoutId);
-      }
-      if (idleId !== null && "cancelIdleCallback" in window) {
-        window.cancelIdleCallback(idleId);
       }
     };
 
     window.addEventListener("pointerdown", onFirstInteraction, { once: true, passive: true });
     window.addEventListener("keydown", onFirstInteraction, { once: true });
     window.addEventListener("touchstart", onFirstInteraction, { once: true, passive: true });
-    window.addEventListener("scroll", onFirstInteraction, { once: true, passive: true });
-
-    if ("requestIdleCallback" in window) {
-      idleId = window.requestIdleCallback(load, { timeout: 7000 });
-    } else {
-      timeoutId = setTimeout(load, 7000);
-    }
+    timeoutId = setTimeout(load, 30000);
 
     return cleanup;
   }, [gaId, shouldLoad]);

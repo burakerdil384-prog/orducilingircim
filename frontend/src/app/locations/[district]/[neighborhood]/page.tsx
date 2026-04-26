@@ -1,41 +1,23 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 import { generateLocationSchema, generateBreadcrumbSchema } from "@/lib/seo/schemas";
 import { JsonLd } from "@/components/seo/json-ld";
-import { prisma, isMockMode } from "@/lib/db";
-import { mockLocations } from "@/lib/mock-data";
 import { SITE_CONFIG } from "@/lib/utils";
+import { getCanonicalNeighborhoodSlug } from "@/lib/locations/ordu-data";
+import { slugify } from "@/lib/locations/slug";
+import { getAllLocations } from "@/lib/locations/repository";
 
 export const dynamic = 'force-dynamic';
 
 const mapImage = "/images/location-map.webp";
 
-function slugifyDistrict(name: string) {
-  return name
-    .toLowerCase()
-    .replace(/ğ/g, "g")
-    .replace(/ü/g, "u")
-    .replace(/ş/g, "s")
-    .replace(/ı/g, "i")
-    .replace(/ö/g, "o")
-    .replace(/ç/g, "c")
-    .replace(/\s+/g, "-");
-}
-
 async function getLocation(district: string, neighborhood: string) {
-  if (isMockMode) {
-    return mockLocations.find((loc) => {
-      const locDistrict = slugifyDistrict(loc.district);
-      const locNeighborhood = loc.slug.split("-").slice(1).join("-");
-      return locDistrict === district && locNeighborhood === neighborhood;
-    }) || null;
-  }
-
-  const locations = await prisma.location.findMany();
+  const locations = await getAllLocations();
   return locations.find((loc) => {
-    const locDistrict = slugifyDistrict(loc.district);
-    const locNeighborhood = loc.slug.split("-").slice(1).join("-");
+    const locDistrict = slugify(loc.district);
+    const locNeighborhood = getCanonicalNeighborhoodSlug(loc.slug, loc.neighborhood);
     return locDistrict === district && locNeighborhood === neighborhood;
   }) || null;
 }
@@ -56,17 +38,11 @@ export default async function LocationPage({ params }: { params: Promise<{ distr
   const location = await getLocation(district, neighborhood);
 
   if (!location) {
-    return (
-      <main className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-headline font-extrabold text-primary mb-4">Mahalle Bulunamadı</h1>
-          <Link href="/" className="text-secondary font-bold">Ana Sayfaya Dön</Link>
-        </div>
-      </main>
-    );
+    notFound();
   }
 
-  const allLocations = isMockMode ? mockLocations : await prisma.location.findMany({ orderBy: { neighborhood: "asc" } });
+  const allLocations = await getAllLocations();
+  const districtLocations = allLocations.filter((loc) => slugify(loc.district) === district);
 
   return (
     <main className="min-h-screen pt-24 pb-32">
@@ -158,13 +134,13 @@ export default async function LocationPage({ params }: { params: Promise<{ distr
       <section className="mt-24 py-20 bg-surface-container-low">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-headline font-extrabold text-primary mb-4">Altınordu&apos;nun Tüm Mahallelerindeyiz</h2>
+            <h2 className="text-3xl font-headline font-extrabold text-primary mb-4">{location.district}&apos;daki Diğer Mahalleler</h2>
             <p className="text-on-surface-variant">Ordu&apos;nun neresinde olursanız olun bir telefon uzağınızdayız.</p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {allLocations.map((loc) => {
-              const locDistrict = slugifyDistrict(loc.district);
-              const locNeighborhood = loc.slug.split("-").slice(1).join("-");
+            {districtLocations.map((loc) => {
+              const locDistrict = slugify(loc.district);
+              const locNeighborhood = getCanonicalNeighborhoodSlug(loc.slug, loc.neighborhood);
               const isActive = locDistrict === district && locNeighborhood === neighborhood;
               return (
                 <Link

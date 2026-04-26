@@ -39,7 +39,7 @@ export function generatePageMetadata({
   image,
   noIndex = false,
 }: MetadataOptions): Metadata {
-  const url = `${SITE_URL}${path}`;
+  const url = new URL(path || "/", SITE_URL).toString();
   const ogImage = image || `${SITE_URL}/og-image.jpg`;
   const fullTitle = composeTitleWithBrand(title);
 

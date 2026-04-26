@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/utils";
 
@@ -7,7 +8,14 @@ export function CoverageMapSection() {
       <div className="max-w-7xl mx-auto px-6 py-24">
         <div className="rounded-3xl overflow-hidden shadow-2xl relative h-[450px] bg-slate-200">
           <div className="absolute inset-0 z-0 grayscale contrast-125 opacity-70">
-            <img className="w-full h-full object-cover" alt="Ordu hizmet bölgeleri haritası" src="/images/aerial-map.webp" />
+            <Image
+              fill
+              sizes="(max-width: 768px) 100vw, 1200px"
+              quality={65}
+              className="object-cover"
+              alt="Ordu hizmet bölgeleri haritası"
+              src="/images/aerial-map.webp"
+            />
           </div>
           <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="bg-primary p-8 rounded-2xl shadow-2xl max-w-md mx-6 border border-white/10 backdrop-blur-md">

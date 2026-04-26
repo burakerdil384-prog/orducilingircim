@@ -1,6 +1,8 @@
 // Mock data for local development without DB/Redis
 // Used when MOCK_DB=true in .env
 
+import { buildAllLocationRecords } from "@/lib/locations/ordu-data";
+
 export const mockServices: Array<{
   id: number;
   title: string;
@@ -116,20 +118,7 @@ export const mockLocations: Array<{
   mapUrl: string | null;
   createdAt: Date;
   updatedAt: Date;
-}> = [
-  { id: 1, district: "Altınordu", neighborhood: "Akyazı", slug: "altinordu-akyazi", description: "Akyazı mahallesi ve çevresinde 7/24 profesyonel çilingir hizmeti.", content: "Akyazı bölgesinde kapıda mı kaldınız? Panik yapmayın. Uzman ekibimizle 15 dakikada yanınızdayız.", image: null, mapUrl: null, createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-06-01") },
-  { id: 2, district: "Altınordu", neighborhood: "Bahçelievler", slug: "altinordu-bahcelievler", description: "Bahçelievler mahallesi ve çevresinde 7/24 profesyonel çilingir hizmeti.", content: "Bahçelievler bölgesinde kapıda mı kaldınız? Uzman ekibimizle 15 dakikada yanınızdayız.", image: null, mapUrl: null, createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-06-01") },
-  { id: 3, district: "Altınordu", neighborhood: "Durugöl", slug: "altinordu-durugol", description: "Durugöl mahallesi ve çevresinde 7/24 profesyonel çilingir hizmeti.", content: "Durugöl bölgesinde kapıda mı kaldınız? Uzman ekibimizle 15 dakikada yanınızdayız.", image: null, mapUrl: null, createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-06-01") },
-  { id: 4, district: "Altınordu", neighborhood: "Cumhuriyet", slug: "altinordu-cumhuriyet", description: "Cumhuriyet mahallesi ve çevresinde 7/24 profesyonel çilingir hizmeti.", content: "Cumhuriyet bölgesinde kapıda mı kaldınız? Uzman ekibimizle 15 dakikada yanınızdayız.", image: null, mapUrl: null, createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-06-01") },
-  { id: 5, district: "Altınordu", neighborhood: "Şirinevler", slug: "altinordu-sirinevler", description: "Şirinevler mahallesi ve çevresinde 7/24 profesyonel çilingir hizmeti.", content: "Şirinevler bölgesinde kapıda mı kaldınız? Uzman ekibimizle 15 dakikada yanınızdayız.", image: null, mapUrl: null, createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-06-01") },
-  { id: 6, district: "Altınordu", neighborhood: "Yeni Mahalle", slug: "altinordu-yeni-mahalle", description: "Yeni Mahalle ve çevresinde 7/24 profesyonel çilingir hizmeti.", content: "Yeni Mahalle bölgesinde kapıda mı kaldınız? Uzman ekibimizle 15 dakikada yanınızdayız.", image: null, mapUrl: null, createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-06-01") },
-  { id: 7, district: "Altınordu", neighborhood: "Karşıyaka", slug: "altinordu-karsiyaka", description: "Karşıyaka mahallesi ve çevresinde 7/24 profesyonel çilingir hizmeti.", content: "Karşıyaka bölgesinde kapıda mı kaldınız? Uzman ekibimizle 15 dakikada yanınızdayız.", image: null, mapUrl: null, createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-06-01") },
-  { id: 8, district: "Altınordu", neighborhood: "Selimiye", slug: "altinordu-selimiye", description: "Selimiye mahallesi ve çevresinde 7/24 profesyonel çilingir hizmeti.", content: "Selimiye bölgesinde kapıda mı kaldınız? Uzman ekibimizle 15 dakikada yanınızdayız.", image: null, mapUrl: null, createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-06-01") },
-  { id: 9, district: "Altınordu", neighborhood: "Eskipazar", slug: "altinordu-eskipazar", description: "Eskipazar mahallesi ve çevresinde 7/24 profesyonel çilingir hizmeti.", content: "Eskipazar bölgesinde kapıda mı kaldınız? Uzman ekibimizle 15 dakikada yanınızdayız.", image: null, mapUrl: null, createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-06-01") },
-  { id: 10, district: "Altınordu", neighborhood: "Subaşı", slug: "altinordu-subasi", description: "Subaşı mahallesi ve çevresinde 7/24 profesyonel çilingir hizmeti.", content: "Subaşı bölgesinde kapıda mı kaldınız? Uzman ekibimizle 15 dakikada yanınızdayız.", image: null, mapUrl: null, createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-06-01") },
-  { id: 11, district: "Altınordu", neighborhood: "Hürriyet", slug: "altinordu-hurriyet", description: "Hürriyet mahallesi ve çevresinde 7/24 profesyonel çilingir hizmeti.", content: "Hürriyet bölgesinde kapıda mı kaldınız? Uzman ekibimizle 15 dakikada yanınızdayız.", image: null, mapUrl: null, createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-06-01") },
-  { id: 12, district: "Altınordu", neighborhood: "Altınordu Merkez", slug: "altinordu-altinordu-merkez", description: "Altınordu Merkez bölgesinde 7/24 profesyonel çilingir hizmeti.", content: "Altınordu Merkez bölgesinde kapıda mı kaldınız? Uzman ekibimizle 15 dakikada yanınızdayız.", image: null, mapUrl: null, createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-06-01") },
-];
+}> = buildAllLocationRecords();
 
 export const mockPosts: Array<{
   id: number;

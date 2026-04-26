@@ -1,6 +1,7 @@
 import { hash } from "bcryptjs";
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+import { buildAllLocationRecords } from "../src/lib/locations/ordu-data";
 
 async function seed() {
   const connectionString =
@@ -41,23 +42,31 @@ async function seed() {
   }
   console.log(`✓ ${services.length} hizmet oluşturuldu.`);
 
-  // Seed locations
-  const neighborhoods = ["Akyazı", "Bahçelievler", "Durugöl", "Cumhuriyet", "Şirinevler", "Yeni Mahalle", "Karşıyaka", "Selimiye", "Eskipazar", "Subaşı", "Hürriyet", "Altınordu Merkez"];
-  for (const n of neighborhoods) {
-    const slug = `altinordu-${n.toLowerCase().replace(/ğ/g, "g").replace(/ü/g, "u").replace(/ş/g, "s").replace(/ı/g, "i").replace(/ö/g, "o").replace(/ç/g, "c").replace(/\s+/g, "-")}`;
+  // Seed locations (all Ordu districts + neighborhoods)
+  const locations = buildAllLocationRecords();
+  for (const location of locations) {
     await prisma.location.upsert({
-      where: { slug },
-      update: { district: "Altınordu", neighborhood: n },
+      where: { slug: location.slug },
+      update: {
+        district: location.district,
+        neighborhood: location.neighborhood,
+        description: location.description,
+        content: location.content,
+        image: location.image,
+        mapUrl: location.mapUrl,
+      },
       create: {
-        district: "Altınordu",
-        neighborhood: n,
-        slug,
-        description: `${n} mahallesi ve çevresinde 7/24 profesyonel çilingir hizmeti.`,
-        content: `${n} bölgesinde kapıda mı kaldınız? Uzman ekibimizle 15 dakikada yanınızdayız.`,
+        district: location.district,
+        neighborhood: location.neighborhood,
+        slug: location.slug,
+        description: location.description,
+        content: location.content,
+        image: location.image,
+        mapUrl: location.mapUrl,
       },
     });
   }
-  console.log(`✓ ${neighborhoods.length} mahalle oluşturuldu.`);
+  console.log(`✓ ${locations.length} mahalle oluşturuldu.`);
 
   // Seed blog posts
   const posts = [

@@ -64,9 +64,9 @@ export default function OrduCilingirPage() {
           description: "Acil durumlar için hızlı erişim sayfası.",
         },
         {
-          href: "/altinordu-cilingir",
-          label: "Altınordu Çilingir",
-          description: "Merkez bölge hızlı müdahale detayları.",
+          href: "/ordu",
+          label: "Ordu İlçe Sayfaları",
+          description: "Tüm ilçe ve mahalle SEO hizmet sayfalarına geçiş.",
         },
       ]}
     />

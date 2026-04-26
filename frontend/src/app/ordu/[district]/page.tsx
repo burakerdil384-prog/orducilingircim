@@ -4,20 +4,20 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/json-ld";
 import { generateBreadcrumbSchema } from "@/lib/seo/schemas";
 import { generatePageMetadata } from "@/lib/seo/metadata";
-import { getCanonicalNeighborhoodSlug, getDistrictBySlug, isOrduDistrictSlug } from "@/lib/locations/ordu-data";
-import { slugify } from "@/lib/locations/slug";
 import { getAllLocations } from "@/lib/locations/repository";
+import { getCanonicalNeighborhoodSlug, getDistrictBySlug } from "@/lib/locations/ordu-data";
+import { slugify } from "@/lib/locations/slug";
 
 export const dynamic = "force-dynamic";
 
 async function getDistrictLocations(districtSlug: string) {
   const allLocations = await getAllLocations();
-
   const locations = allLocations.filter((loc) => slugify(loc.district) === districtSlug);
-  const knownDistrict = getDistrictBySlug(districtSlug);
+  const districtInfo = getDistrictBySlug(districtSlug);
 
   return {
-    districtName: locations[0]?.district ?? knownDistrict?.name ?? districtSlug.replace(/-/g, " "),
+    districtName: locations[0]?.district ?? districtInfo?.name ?? districtSlug.replace(/-/g, " "),
+    districtInfo,
     locations,
   };
 }
@@ -27,19 +27,20 @@ export async function generateMetadata({ params }: { params: Promise<{ district:
   const { districtName, locations } = await getDistrictLocations(district);
 
   return generatePageMetadata({
-    title: `${districtName} Mahalleleri`,
+    title: `${districtName} Çilingir Mahalleleri`,
     description:
       locations.length > 0
-        ? `${districtName} ilçesindeki hizmet verdiğimiz mahalleleri görüntüleyin ve ilgili mahalle sayfasından hızlıca iletişime geçin.`
-        : `${districtName} ilçesi için hizmet bölgeleri ve iletişim bilgileri.`,
-    path: `/locations/${district}`,
+        ? `${districtName} ilçesindeki tüm mahalle çilingir sayfalarını görüntüleyin, bulunduğunuz mahalle detayına hızlıca geçin.`
+        : `${districtName} ilçesi için çilingir hizmet bölgesi bilgileri.`,
+    path: `/ordu/${district}`,
   });
 }
 
-export default async function DistrictLocationsPage({ params }: { params: Promise<{ district: string }> }) {
+export default async function OrduDistrictPage({ params }: { params: Promise<{ district: string }> }) {
   const { district } = await params;
-  const { districtName, locations } = await getDistrictLocations(district);
-  if (locations.length === 0 && !isOrduDistrictSlug(district)) {
+  const { districtName, districtInfo, locations } = await getDistrictLocations(district);
+
+  if (!districtInfo) {
     notFound();
   }
 
@@ -48,8 +49,8 @@ export default async function DistrictLocationsPage({ params }: { params: Promis
       <JsonLd
         data={generateBreadcrumbSchema([
           { name: "Ana Sayfa", url: "/" },
-          { name: "Hizmetler", url: "/hizmetler" },
-          { name: districtName, url: `/locations/${district}` },
+          { name: "Ordu", url: "/ordu" },
+          { name: districtName, url: `/ordu/${district}` },
         ])}
       />
 
@@ -59,10 +60,10 @@ export default async function DistrictLocationsPage({ params }: { params: Promis
             İlçe Lokasyonları
           </span>
           <h1 className="text-4xl md:text-5xl font-headline font-extrabold text-primary tracking-tight mb-4">
-            {districtName} Mahalle Sayfaları
+            {districtName} Mahalle Çilingir Sayfaları
           </h1>
           <p className="text-on-surface-variant text-lg leading-relaxed">
-            Bu ilçede hizmet verdiğimiz mahalleleri aşağıdan seçerek ilgili mahalle sayfasına gidebilirsiniz.
+            {districtName} ilçesinde hizmet verdiğimiz mahallelerin detay sayfaları aşağıda listelenmiştir.
           </p>
         </div>
       </section>
@@ -70,11 +71,9 @@ export default async function DistrictLocationsPage({ params }: { params: Promis
       <section className="container mx-auto px-6">
         {locations.length === 0 ? (
           <div className="bg-surface-container-low p-8 rounded-2xl border border-outline-variant/10">
-            <p className="text-on-surface-variant">
-              Bu ilçe için henüz mahalle kaydı bulunmuyor. Yeni mahalleler admin panelden eklendiğinde burada otomatik görünür.
-            </p>
-            <Link href="/hizmetler" className="inline-flex items-center gap-2 mt-4 text-secondary font-semibold hover:text-orange-400">
-              Hizmetler sayfasına dön
+            <p className="text-on-surface-variant">Bu ilçe için henüz mahalle kaydı bulunmuyor.</p>
+            <Link href="/ordu" className="inline-flex items-center gap-2 mt-4 text-secondary font-semibold hover:text-orange-400">
+              İlçe listesine dön
               <span className="material-symbols-outlined text-sm">west</span>
             </Link>
           </div>
@@ -85,7 +84,7 @@ export default async function DistrictLocationsPage({ params }: { params: Promis
               return (
                 <Link
                   key={location.id}
-                  href={`/locations/${district}/${neighborhoodSlug}`}
+                  href={`/ordu/${district}/${neighborhoodSlug}`}
                   className="bg-white p-4 rounded-xl border border-outline-variant/20 shadow-sm hover:bg-primary transition-colors group"
                 >
                   <p className="text-sm font-bold text-primary group-hover:text-white">{location.neighborhood}</p>
@@ -101,9 +100,10 @@ export default async function DistrictLocationsPage({ params }: { params: Promis
         <div className="bg-surface-container-low rounded-2xl border border-outline-variant/20 p-6 md:p-8">
           <h2 className="text-2xl font-bold text-primary mb-3">Hızlı Geçiş</h2>
           <p className="text-on-surface-variant mb-5">
-            Genel hizmet ve bölge sayfalarından ihtiyacınıza uygun akışı seçebilirsiniz.
+            İlçe detayından sonra genel hizmet sayfalarına buradan geçebilirsiniz.
           </p>
           <div className="flex flex-wrap gap-3">
+            <Link href="/ordu" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu İlçeleri</Link>
             <Link href="/ordu-cilingir" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu Çilingir</Link>
             <Link href="/ordu-hizmet-bolgeleri" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Ordu Hizmet Bölgeleri</Link>
             <Link href="/hizmetler" className="px-4 py-2 rounded-full bg-white border border-outline-variant/30 text-primary hover:bg-primary hover:text-white transition-colors">Hizmetler</Link>

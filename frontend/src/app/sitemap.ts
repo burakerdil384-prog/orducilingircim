@@ -2,74 +2,96 @@ import type { MetadataRoute } from "next";
 import { prisma, isMockMode } from "@/lib/db";
 import { mockServices, mockPosts, mockLocations } from "@/lib/mock-data";
 import { slugify } from "@/lib/utils";
+import { neighborhoodSlugFromLocationSlug } from "@/lib/locations/slug";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "https://orducilingircim.com.tr";
+  const staticLastModified = new Date(
+    process.env.NEXT_PUBLIC_SITEMAP_STATIC_LASTMOD || "2026-04-24T00:00:00.000Z"
+  );
 
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: siteUrl,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${siteUrl}/ordu-cilingir`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 0.95,
     },
     {
       url: `${siteUrl}/ordu-anahtarci`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${siteUrl}/ordu-oto-cilingir`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${siteUrl}/ordu-acil-cilingir-7-24`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${siteUrl}/altinordu-cilingir`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 0.85,
     },
     {
       url: `${siteUrl}/ordu-hizmet-bolgeleri`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
+      url: `${siteUrl}/ordu`,
+      lastModified: staticLastModified,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: `${siteUrl}/hizmetler`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${siteUrl}/blog`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "daily",
       priority: 0.8,
     },
     {
       url: `${siteUrl}/iletisim`,
-      lastModified: new Date(),
+      lastModified: staticLastModified,
       changeFrequency: "monthly",
       priority: 0.7,
+    },
+    {
+      url: `${siteUrl}/gizlilik-politikasi`,
+      lastModified: staticLastModified,
+      changeFrequency: "yearly",
+      priority: 0.4,
+    },
+    {
+      url: `${siteUrl}/kullanim-sartlari`,
+      lastModified: staticLastModified,
+      changeFrequency: "yearly",
+      priority: 0.4,
     },
   ];
 
@@ -114,12 +136,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       : await prisma.location.findMany({ select: { district: true, slug: true, updatedAt: true } });
     locationPages = locations.map((loc) => {
       const district = slugify(loc.district);
-      const neighborhood = loc.slug.split("-").slice(1).join("-");
+      const neighborhood = neighborhoodSlugFromLocationSlug(loc.slug);
       return {
         url: `${siteUrl}/locations/${district}/${neighborhood}`,
         lastModified: loc.updatedAt,
         changeFrequency: "monthly" as const,
         priority: 0.8,
+      };
+    });
+
+    const orduLocationPages = locations.map((loc) => {
+      const district = slugify(loc.district);
+      const neighborhood = neighborhoodSlugFromLocationSlug(loc.slug);
+      return {
+        url: `${siteUrl}/ordu/${district}/${neighborhood}`,
+        lastModified: loc.updatedAt,
+        changeFrequency: "monthly" as const,
+        priority: 0.82,
       };
     });
 
@@ -138,6 +171,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.75,
     }));
+    districtPages.push(
+      ...Array.from(districtLastModified.entries()).map(([district, updatedAt]) => ({
+        url: `${siteUrl}/ordu/${district}`,
+        lastModified: updatedAt,
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+      }))
+    );
+    locationPages.push(...orduLocationPages);
   } catch (e) {
     console.error("Sitemap: locations query failed", e);
   }

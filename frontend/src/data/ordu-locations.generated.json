@@ -1,0 +1,4817 @@
+{
+  "source": {
+    "provider": "TurkiyeAPI",
+    "baseUrl": "https://api.turkiyeapi.dev/v1",
+    "province": "Ordu",
+    "generatedAt": "2026-04-26T22:56:17.817Z"
+  },
+  "districts": [
+    {
+      "id": 1119,
+      "name": "Akkuş",
+      "slug": "akkus",
+      "population": 22456,
+      "area": 697,
+      "neighborhoods": [
+        {
+          "id": 150921,
+          "name": "Akpınar",
+          "slug": "akpinar",
+          "population": 1896
+        },
+        {
+          "id": 199007,
+          "name": "Alan",
+          "slug": "alan",
+          "population": 352
+        },
+        {
+          "id": 150929,
+          "name": "Ambargürgen",
+          "slug": "ambargurgen",
+          "population": 308
+        },
+        {
+          "id": 150931,
+          "name": "Ceyhanlı",
+          "slug": "ceyhanli",
+          "population": 204
+        },
+        {
+          "id": 99706,
+          "name": "Çaldere",
+          "slug": "caldere",
+          "population": 182
+        },
+        {
+          "id": 99859,
+          "name": "Çamalan",
+          "slug": "camalan",
+          "population": 452
+        },
+        {
+          "id": 150933,
+          "name": "Çamlıca",
+          "slug": "camlica",
+          "population": 199
+        },
+        {
+          "id": 150935,
+          "name": "Çavdar",
+          "slug": "cavdar",
+          "population": 153
+        },
+        {
+          "id": 150919,
+          "name": "Çayıralan",
+          "slug": "cayiralan",
+          "population": 1207
+        },
+        {
+          "id": 150937,
+          "name": "Çökek",
+          "slug": "cokek",
+          "population": 440
+        },
+        {
+          "id": 150939,
+          "name": "Çukurköy",
+          "slug": "cukurkoy",
+          "population": 159
+        },
+        {
+          "id": 150941,
+          "name": "Dağyolu",
+          "slug": "dagyolu",
+          "population": 603
+        },
+        {
+          "id": 150943,
+          "name": "Damyeri",
+          "slug": "damyeri",
+          "population": 1088
+        },
+        {
+          "id": 150945,
+          "name": "Düğencili",
+          "slug": "dugencili",
+          "population": 536
+        },
+        {
+          "id": 150947,
+          "name": "Esentepe",
+          "slug": "esentepe",
+          "population": 196
+        },
+        {
+          "id": 150949,
+          "name": "Gedikli",
+          "slug": "gedikli",
+          "population": 169
+        },
+        {
+          "id": 150951,
+          "name": "Gökçebayır",
+          "slug": "gokcebayir",
+          "population": 453
+        },
+        {
+          "id": 150953,
+          "name": "Gürgenliyatak",
+          "slug": "gurgenliyatak",
+          "population": 248
+        },
+        {
+          "id": 150955,
+          "name": "Haliluşağı",
+          "slug": "halilusagi",
+          "population": 648
+        },
+        {
+          "id": 150957,
+          "name": "Karaçal",
+          "slug": "karacal",
+          "population": 757
+        },
+        {
+          "id": 150959,
+          "name": "Kargı",
+          "slug": "kargi",
+          "population": 564
+        },
+        {
+          "id": 150961,
+          "name": "Kemikgeriş",
+          "slug": "kemikgeris",
+          "population": 130
+        },
+        {
+          "id": 150963,
+          "name": "Ketendere",
+          "slug": "ketendere",
+          "population": 113
+        },
+        {
+          "id": 150927,
+          "name": "Kızılelma",
+          "slug": "kizilelma",
+          "population": 939
+        },
+        {
+          "id": 150965,
+          "name": "Koçcuvaz",
+          "slug": "koccuvaz",
+          "population": 686
+        },
+        {
+          "id": 150967,
+          "name": "Kurtboğaz",
+          "slug": "kurtbogaz",
+          "population": 883
+        },
+        {
+          "id": 150969,
+          "name": "Kuşçulu",
+          "slug": "kusculu",
+          "population": 219
+        },
+        {
+          "id": 150971,
+          "name": "Külekçili",
+          "slug": "kulekcili",
+          "population": 111
+        },
+        {
+          "id": 60846,
+          "name": "Merkez",
+          "slug": "merkez",
+          "population": 713
+        },
+        {
+          "id": 150973,
+          "name": "Meyvalı",
+          "slug": "meyvali",
+          "population": 280
+        },
+        {
+          "id": 150975,
+          "name": "Muratlı",
+          "slug": "muratli",
+          "population": 134
+        },
+        {
+          "id": 150977,
+          "name": "Ormancık",
+          "slug": "ormancik",
+          "population": 255
+        },
+        {
+          "id": 199009,
+          "name": "Ortabölme",
+          "slug": "ortabolme",
+          "population": 321
+        },
+        {
+          "id": 150923,
+          "name": "Salman",
+          "slug": "salman",
+          "population": 1856
+        },
+        {
+          "id": 150925,
+          "name": "Seferli",
+          "slug": "seferli",
+          "population": 776
+        },
+        {
+          "id": 60847,
+          "name": "Subaşı",
+          "slug": "subasi",
+          "population": 707
+        },
+        {
+          "id": 150979,
+          "name": "Şahinköy",
+          "slug": "sahinkoy",
+          "population": 379
+        },
+        {
+          "id": 150981,
+          "name": "Tuzakköy",
+          "slug": "tuzakkoy",
+          "population": 368
+        },
+        {
+          "id": 60848,
+          "name": "Yazlıkbelen",
+          "slug": "yazlikbelen",
+          "population": 988
+        },
+        {
+          "id": 60849,
+          "name": "Yeni",
+          "slug": "yeni",
+          "population": 567
+        },
+        {
+          "id": 150983,
+          "name": "Yeşilgüneycik",
+          "slug": "yesilguneycik",
+          "population": 587
+        },
+        {
+          "id": 150985,
+          "name": "Yeşilköy",
+          "slug": "yesilkoy",
+          "population": 207
+        },
+        {
+          "id": 150987,
+          "name": "Yolbaşı",
+          "slug": "yolbasi",
+          "population": 252
+        },
+        {
+          "id": 150989,
+          "name": "Yukarıdüğencili",
+          "slug": "yukaridugencili",
+          "population": 171
+        }
+      ]
+    },
+    {
+      "id": 2103,
+      "name": "Altınordu",
+      "slug": "altinordu",
+      "population": 225349,
+      "area": 410,
+      "neighborhoods": [
+        {
+          "id": 150781,
+          "name": "Akçatepe",
+          "slug": "akcatepe",
+          "population": 2010
+        },
+        {
+          "id": 150869,
+          "name": "Akkise",
+          "slug": "akkise",
+          "population": 482
+        },
+        {
+          "id": 60816,
+          "name": "Akyazı",
+          "slug": "akyazi",
+          "population": 14975
+        },
+        {
+          "id": 150871,
+          "name": "Alembey",
+          "slug": "alembey",
+          "population": 378
+        },
+        {
+          "id": 150783,
+          "name": "Alınca",
+          "slug": "alinca",
+          "population": 533
+        },
+        {
+          "id": 150785,
+          "name": "Alisayvan",
+          "slug": "alisayvan",
+          "population": 159
+        },
+        {
+          "id": 150873,
+          "name": "Altunyurt",
+          "slug": "altunyurt",
+          "population": 647
+        },
+        {
+          "id": 150875,
+          "name": "Arpaköy",
+          "slug": "arpakoy",
+          "population": 592
+        },
+        {
+          "id": 150877,
+          "name": "Artıklı",
+          "slug": "artikli",
+          "population": 490
+        },
+        {
+          "id": 150787,
+          "name": "Ataköy",
+          "slug": "atakoy",
+          "population": 161
+        },
+        {
+          "id": 150789,
+          "name": "Aydınlık",
+          "slug": "aydinlik",
+          "population": 330
+        },
+        {
+          "id": 60817,
+          "name": "Aziziye",
+          "slug": "aziziye",
+          "population": 969
+        },
+        {
+          "id": 150791,
+          "name": "Bahariye",
+          "slug": "bahariye",
+          "population": 335
+        },
+        {
+          "id": 60818,
+          "name": "Bahçelievler",
+          "slug": "bahcelievler",
+          "population": 7368
+        },
+        {
+          "id": 150879,
+          "name": "Bayadı",
+          "slug": "bayadi",
+          "population": 985
+        },
+        {
+          "id": 150793,
+          "name": "Bayramlı",
+          "slug": "bayramli",
+          "population": 471
+        },
+        {
+          "id": 150795,
+          "name": "Boztepe",
+          "slug": "boztepe",
+          "population": 623
+        },
+        {
+          "id": 60819,
+          "name": "Bucak",
+          "slug": "bucak",
+          "population": 16378
+        },
+        {
+          "id": 150797,
+          "name": "Burhanettinköy",
+          "slug": "burhanettinkoy",
+          "population": 351
+        },
+        {
+          "id": 60820,
+          "name": "Cumhuriyet",
+          "slug": "cumhuriyet",
+          "population": 16967
+        },
+        {
+          "id": 150799,
+          "name": "Cumhuriyet (köy)",
+          "slug": "cumhuriyet-koy",
+          "population": 450
+        },
+        {
+          "id": 150881,
+          "name": "Çavuşlar",
+          "slug": "cavuslar",
+          "population": 604
+        },
+        {
+          "id": 150883,
+          "name": "Dedeli",
+          "slug": "dedeli",
+          "population": 413
+        },
+        {
+          "id": 150885,
+          "name": "Delikkaya",
+          "slug": "delikkaya",
+          "population": 539
+        },
+        {
+          "id": 150801,
+          "name": "Dikence",
+          "slug": "dikence",
+          "population": 512
+        },
+        {
+          "id": 60821,
+          "name": "Durugöl",
+          "slug": "durugol",
+          "population": 9258
+        },
+        {
+          "id": 60822,
+          "name": "Düz",
+          "slug": "duz",
+          "population": 1417
+        },
+        {
+          "id": 150887,
+          "name": "Düzköy",
+          "slug": "duzkoy",
+          "population": 185
+        },
+        {
+          "id": 150803,
+          "name": "Emen",
+          "slug": "emen",
+          "population": 127
+        },
+        {
+          "id": 150805,
+          "name": "Erenli",
+          "slug": "erenli",
+          "population": 683
+        },
+        {
+          "id": 150889,
+          "name": "Eskipazar",
+          "slug": "eskipazar",
+          "population": 5926
+        },
+        {
+          "id": 150807,
+          "name": "Eyüplü",
+          "slug": "eyuplu",
+          "population": 930
+        },
+        {
+          "id": 150809,
+          "name": "Gerce",
+          "slug": "gerce",
+          "population": 411
+        },
+        {
+          "id": 150811,
+          "name": "Gökömer",
+          "slug": "gokomer",
+          "population": 810
+        },
+        {
+          "id": 150891,
+          "name": "Gümüşköy",
+          "slug": "gumuskoy",
+          "population": 292
+        },
+        {
+          "id": 150813,
+          "name": "Günören",
+          "slug": "gunoren",
+          "population": 871
+        },
+        {
+          "id": 60823,
+          "name": "Güzelyalı",
+          "slug": "guzelyali",
+          "population": 2889
+        },
+        {
+          "id": 150893,
+          "name": "Güzelyalı (uzunisa)",
+          "slug": "guzelyali-uzunisa",
+          "population": 250
+        },
+        {
+          "id": 150895,
+          "name": "Hacılar",
+          "slug": "hacilar",
+          "population": 552
+        },
+        {
+          "id": 150897,
+          "name": "Hatipli",
+          "slug": "hatipli",
+          "population": 333
+        },
+        {
+          "id": 150815,
+          "name": "Hürriyet",
+          "slug": "hurriyet",
+          "population": 258
+        },
+        {
+          "id": 150817,
+          "name": "Işıklı",
+          "slug": "isikli",
+          "population": 395
+        },
+        {
+          "id": 150899,
+          "name": "Karaağaç",
+          "slug": "karaagac",
+          "population": 358
+        },
+        {
+          "id": 150901,
+          "name": "Karacaömer",
+          "slug": "karacaomer",
+          "population": 5010
+        },
+        {
+          "id": 150819,
+          "name": "Karaoluk",
+          "slug": "karaoluk",
+          "population": 438
+        },
+        {
+          "id": 60824,
+          "name": "Karapınar",
+          "slug": "karapinar",
+          "population": 3303
+        },
+        {
+          "id": 60825,
+          "name": "Karşıyaka",
+          "slug": "karsiyaka",
+          "population": 17409
+        },
+        {
+          "id": 150821,
+          "name": "Kayabaşı",
+          "slug": "kayabasi",
+          "population": 2320
+        },
+        {
+          "id": 150903,
+          "name": "Kayadibi",
+          "slug": "kayadibi",
+          "population": 572
+        },
+        {
+          "id": 150823,
+          "name": "Kısacık",
+          "slug": "kisacik",
+          "population": 422
+        },
+        {
+          "id": 150825,
+          "name": "Kızılhisar",
+          "slug": "kizilhisar",
+          "population": 687
+        },
+        {
+          "id": 60826,
+          "name": "Kirazlimanı",
+          "slug": "kirazlimani",
+          "population": 990
+        },
+        {
+          "id": 150905,
+          "name": "Kovancı",
+          "slug": "kovanci",
+          "population": 535
+        },
+        {
+          "id": 150907,
+          "name": "Kökenli",
+          "slug": "kokenli",
+          "population": 1374
+        },
+        {
+          "id": 60827,
+          "name": "Kumbaşı",
+          "slug": "kumbasi",
+          "population": 2337
+        },
+        {
+          "id": 150827,
+          "name": "Kurtulmuş",
+          "slug": "kurtulmus",
+          "population": 299
+        },
+        {
+          "id": 150909,
+          "name": "Kuylu",
+          "slug": "kuylu",
+          "population": 434
+        },
+        {
+          "id": 150829,
+          "name": "Mubarek",
+          "slug": "mubarek",
+          "population": 538
+        },
+        {
+          "id": 60828,
+          "name": "Nizamettin",
+          "slug": "nizamettin",
+          "population": 4373
+        },
+        {
+          "id": 150831,
+          "name": "Oğmaca",
+          "slug": "ogmaca",
+          "population": 428
+        },
+        {
+          "id": 150833,
+          "name": "Orhaniye",
+          "slug": "orhaniye",
+          "population": 286
+        },
+        {
+          "id": 150835,
+          "name": "Ortaköy",
+          "slug": "ortakoy",
+          "population": 394
+        },
+        {
+          "id": 150837,
+          "name": "Osmaniye",
+          "slug": "osmaniye",
+          "population": 332
+        },
+        {
+          "id": 150839,
+          "name": "Öceli",
+          "slug": "oceli",
+          "population": 2042
+        },
+        {
+          "id": 150841,
+          "name": "Örencik",
+          "slug": "orencik",
+          "population": 324
+        },
+        {
+          "id": 150911,
+          "name": "Övündük",
+          "slug": "ovunduk",
+          "population": 143
+        },
+        {
+          "id": 150843,
+          "name": "Pelitli",
+          "slug": "pelitli",
+          "population": 197
+        },
+        {
+          "id": 150845,
+          "name": "Sağırlı",
+          "slug": "sagirli",
+          "population": 260
+        },
+        {
+          "id": 60829,
+          "name": "Saray",
+          "slug": "saray",
+          "population": 1200
+        },
+        {
+          "id": 150779,
+          "name": "Saraycık",
+          "slug": "saraycik",
+          "population": 1724
+        },
+        {
+          "id": 60830,
+          "name": "Selimiye",
+          "slug": "selimiye",
+          "population": 8091
+        },
+        {
+          "id": 60831,
+          "name": "Subaşı",
+          "slug": "subasi",
+          "population": 6578
+        },
+        {
+          "id": 60832,
+          "name": "Şahincili",
+          "slug": "sahincili",
+          "population": 28309
+        },
+        {
+          "id": 60833,
+          "name": "Şarkiye",
+          "slug": "sarkiye",
+          "population": 2828
+        },
+        {
+          "id": 150847,
+          "name": "Şenköy",
+          "slug": "senkoy",
+          "population": 194
+        },
+        {
+          "id": 150849,
+          "name": "Şenocak",
+          "slug": "senocak",
+          "population": 508
+        },
+        {
+          "id": 60834,
+          "name": "Şirinevler",
+          "slug": "sirinevler",
+          "population": 15414
+        },
+        {
+          "id": 60835,
+          "name": "Taşbaşı",
+          "slug": "tasbasi",
+          "population": 1191
+        },
+        {
+          "id": 150851,
+          "name": "Terzili",
+          "slug": "terzili",
+          "population": 633
+        },
+        {
+          "id": 150913,
+          "name": "Teyneli",
+          "slug": "teyneli",
+          "population": 1046
+        },
+        {
+          "id": 150853,
+          "name": "Topluca",
+          "slug": "topluca",
+          "population": 428
+        },
+        {
+          "id": 150867,
+          "name": "Uzunisa",
+          "slug": "uzunisa",
+          "population": 336
+        },
+        {
+          "id": 150855,
+          "name": "Uzunmusa",
+          "slug": "uzunmusa",
+          "population": 385
+        },
+        {
+          "id": 150857,
+          "name": "Yağızlı",
+          "slug": "yagizli",
+          "population": 467
+        },
+        {
+          "id": 150859,
+          "name": "Yaraşlı",
+          "slug": "yarasli",
+          "population": 532
+        },
+        {
+          "id": 150915,
+          "name": "Yemişli",
+          "slug": "yemisli",
+          "population": 839
+        },
+        {
+          "id": 60836,
+          "name": "Yeni",
+          "slug": "yeni",
+          "population": 12068
+        },
+        {
+          "id": 150861,
+          "name": "Yeşilköy",
+          "slug": "yesilkoy",
+          "population": 179
+        },
+        {
+          "id": 150917,
+          "name": "Yıldızlı",
+          "slug": "yildizli",
+          "population": 682
+        },
+        {
+          "id": 150863,
+          "name": "Yukarıtepe",
+          "slug": "yukaritepe",
+          "population": 995
+        },
+        {
+          "id": 150865,
+          "name": "Zafer",
+          "slug": "zafer",
+          "population": 611
+        },
+        {
+          "id": 60837,
+          "name": "Zaferimilli",
+          "slug": "zaferimilli",
+          "population": 990
+        }
+      ]
+    },
+    {
+      "id": 1158,
+      "name": "Aybastı",
+      "slug": "aybasti",
+      "population": 20966,
+      "area": 250,
+      "neighborhoods": [
+        {
+          "id": 150991,
+          "name": "Alacalar",
+          "slug": "alacalar",
+          "population": 1594
+        },
+        {
+          "id": 60874,
+          "name": "Armutlu",
+          "slug": "armutlu",
+          "population": 1349
+        },
+        {
+          "id": 150997,
+          "name": "Beştam",
+          "slug": "bestam",
+          "population": 510
+        },
+        {
+          "id": 150995,
+          "name": "Çakırlı",
+          "slug": "cakirli",
+          "population": 1419
+        },
+        {
+          "id": 60875,
+          "name": "Çukur",
+          "slug": "cukur",
+          "population": 562
+        },
+        {
+          "id": 60876,
+          "name": "Esenli",
+          "slug": "esenli",
+          "population": 5950
+        },
+        {
+          "id": 60877,
+          "name": "Fatih",
+          "slug": "fatih",
+          "population": 698
+        },
+        {
+          "id": 150999,
+          "name": "Hisarcık",
+          "slug": "hisarcik",
+          "population": 296
+        },
+        {
+          "id": 60878,
+          "name": "Karamanlı",
+          "slug": "karamanli",
+          "population": 484
+        },
+        {
+          "id": 151011,
+          "name": "Kayabaşı",
+          "slug": "kayabasi",
+          "population": 272
+        },
+        {
+          "id": 60879,
+          "name": "Koyunculu",
+          "slug": "koyunculu",
+          "population": 458
+        },
+        {
+          "id": 60880,
+          "name": "Kutlular",
+          "slug": "kutlular",
+          "population": 361
+        },
+        {
+          "id": 60881,
+          "name": "Küçükyaka",
+          "slug": "kucukyaka",
+          "population": 881
+        },
+        {
+          "id": 60882,
+          "name": "Ortaköy",
+          "slug": "ortakoy",
+          "population": 1337
+        },
+        {
+          "id": 150993,
+          "name": "Pelitözü",
+          "slug": "pelitozu",
+          "population": 1193
+        },
+        {
+          "id": 60883,
+          "name": "Sağlık",
+          "slug": "saglik",
+          "population": 622
+        },
+        {
+          "id": 151003,
+          "name": "Sarıyar",
+          "slug": "sariyar",
+          "population": 484
+        },
+        {
+          "id": 151001,
+          "name": "Sefalık",
+          "slug": "sefalik",
+          "population": 336
+        },
+        {
+          "id": 151005,
+          "name": "Toygar",
+          "slug": "toygar",
+          "population": 840
+        },
+        {
+          "id": 151007,
+          "name": "Uzundere",
+          "slug": "uzundere",
+          "population": 693
+        },
+        {
+          "id": 151009,
+          "name": "Zaferimilli",
+          "slug": "zaferimilli",
+          "population": 627
+        }
+      ]
+    },
+    {
+      "id": 1891,
+      "name": "Çamaş",
+      "slug": "camas",
+      "population": 10232,
+      "area": 81,
+      "neighborhoods": [
+        {
+          "id": 60890,
+          "name": "Akköy",
+          "slug": "akkoy",
+          "population": 286
+        },
+        {
+          "id": 60891,
+          "name": "Akpınar",
+          "slug": "akpinar",
+          "population": 337
+        },
+        {
+          "id": 151013,
+          "name": "Budak",
+          "slug": "budak",
+          "population": 639
+        },
+        {
+          "id": 60892,
+          "name": "Burhan Güneyi",
+          "slug": "burhan-guneyi",
+          "population": 216
+        },
+        {
+          "id": 60893,
+          "name": "Çavuşbaşı",
+          "slug": "cavusbasi",
+          "population": 472
+        },
+        {
+          "id": 60894,
+          "name": "Danışman",
+          "slug": "danisman",
+          "population": 546
+        },
+        {
+          "id": 151015,
+          "name": "Edirli",
+          "slug": "edirli",
+          "population": 209
+        },
+        {
+          "id": 60895,
+          "name": "Giden",
+          "slug": "giden",
+          "population": 386
+        },
+        {
+          "id": 60896,
+          "name": "Gümüşlü",
+          "slug": "gumuslu",
+          "population": 323
+        },
+        {
+          "id": 151017,
+          "name": "Hisarbey",
+          "slug": "hisarbey",
+          "population": 388
+        },
+        {
+          "id": 60897,
+          "name": "Kemal Paşa",
+          "slug": "kemal-pasa",
+          "population": 643
+        },
+        {
+          "id": 60905,
+          "name": "Kestaneyokuşu",
+          "slug": "kestaneyokusu",
+          "population": 502
+        },
+        {
+          "id": 151023,
+          "name": "Kocaman",
+          "slug": "kocaman",
+          "population": 328
+        },
+        {
+          "id": 60898,
+          "name": "Örmeli",
+          "slug": "ormeli",
+          "population": 583
+        },
+        {
+          "id": 60906,
+          "name": "Sakargeriş",
+          "slug": "sakargeris",
+          "population": 1032
+        },
+        {
+          "id": 60899,
+          "name": "Sarıyakup",
+          "slug": "sariyakup",
+          "population": 736
+        },
+        {
+          "id": 151021,
+          "name": "Söken",
+          "slug": "soken",
+          "population": 415
+        },
+        {
+          "id": 60900,
+          "name": "Sucuali",
+          "slug": "sucuali",
+          "population": 242
+        },
+        {
+          "id": 60901,
+          "name": "Taşoluk",
+          "slug": "tasoluk",
+          "population": 845
+        },
+        {
+          "id": 60902,
+          "name": "Tepeli",
+          "slug": "tepeli",
+          "population": 156
+        },
+        {
+          "id": 60903,
+          "name": "Uzunali",
+          "slug": "uzunali",
+          "population": 386
+        },
+        {
+          "id": 60904,
+          "name": "Yeni",
+          "slug": "yeni",
+          "population": 417
+        },
+        {
+          "id": 151019,
+          "name": "Yeşilvadi",
+          "slug": "yesilvadi",
+          "population": 145
+        }
+      ]
+    },
+    {
+      "id": 1897,
+      "name": "Çatalpınar",
+      "slug": "catalpinar",
+      "population": 14014,
+      "area": 101,
+      "neighborhoods": [
+        {
+          "id": 151027,
+          "name": "Akkaya",
+          "slug": "akkaya",
+          "population": 369
+        },
+        {
+          "id": 60907,
+          "name": "Dere",
+          "slug": "dere",
+          "population": 380
+        },
+        {
+          "id": 151029,
+          "name": "Elmaköy",
+          "slug": "elmakoy",
+          "population": 412
+        },
+        {
+          "id": 151025,
+          "name": "Göller",
+          "slug": "goller",
+          "population": 1781
+        },
+        {
+          "id": 151031,
+          "name": "Gündoğdu",
+          "slug": "gundogdu",
+          "population": 718
+        },
+        {
+          "id": 60908,
+          "name": "Güney",
+          "slug": "guney",
+          "population": 308
+        },
+        {
+          "id": 60909,
+          "name": "Güneyce",
+          "slug": "guneyce",
+          "population": 466
+        },
+        {
+          "id": 60910,
+          "name": "Haşal",
+          "slug": "hasal",
+          "population": 254
+        },
+        {
+          "id": 60911,
+          "name": "Hatipler",
+          "slug": "hatipler",
+          "population": 263
+        },
+        {
+          "id": 60912,
+          "name": "İncirli",
+          "slug": "incirli",
+          "population": 270
+        },
+        {
+          "id": 151033,
+          "name": "Karahamza",
+          "slug": "karahamza",
+          "population": 905
+        },
+        {
+          "id": 151035,
+          "name": "Karahasan",
+          "slug": "karahasan",
+          "population": 507
+        },
+        {
+          "id": 60913,
+          "name": "Karşıyaka",
+          "slug": "karsiyaka",
+          "population": 585
+        },
+        {
+          "id": 151037,
+          "name": "Kayatepe",
+          "slug": "kayatepe",
+          "population": 600
+        },
+        {
+          "id": 151039,
+          "name": "Keçili",
+          "slug": "kecili",
+          "population": 930
+        },
+        {
+          "id": 60914,
+          "name": "Kıran",
+          "slug": "kiran",
+          "population": 805
+        },
+        {
+          "id": 151041,
+          "name": "Madenköy",
+          "slug": "madenkoy",
+          "population": 336
+        },
+        {
+          "id": 60915,
+          "name": "Merkez",
+          "slug": "merkez",
+          "population": 1570
+        },
+        {
+          "id": 151043,
+          "name": "Ortaköy",
+          "slug": "ortakoy",
+          "population": 822
+        },
+        {
+          "id": 151045,
+          "name": "Sayacatürk",
+          "slug": "sayacaturk",
+          "population": 739
+        },
+        {
+          "id": 151047,
+          "name": "Şirinköy",
+          "slug": "sirinkoy",
+          "population": 525
+        },
+        {
+          "id": 60916,
+          "name": "Terimli",
+          "slug": "terimli",
+          "population": 208
+        },
+        {
+          "id": 60917,
+          "name": "Yeni",
+          "slug": "yeni",
+          "population": 261
+        }
+      ]
+    },
+    {
+      "id": 1900,
+      "name": "Çaybaşı",
+      "slug": "caybasi",
+      "population": 12625,
+      "area": 102,
+      "neighborhoods": [
+        {
+          "id": 151051,
+          "name": "Akbaba",
+          "slug": "akbaba",
+          "population": 436
+        },
+        {
+          "id": 197837,
+          "name": "Aşıklı Çakıllı",
+          "slug": "asikli-cakilli",
+          "population": 915
+        },
+        {
+          "id": 60937,
+          "name": "Boras",
+          "slug": "boras",
+          "population": 144
+        },
+        {
+          "id": 60938,
+          "name": "Cemallı",
+          "slug": "cemalli",
+          "population": 157
+        },
+        {
+          "id": 197841,
+          "name": "Cevizliyatak",
+          "slug": "cevizliyatak",
+          "population": 460
+        },
+        {
+          "id": 60934,
+          "name": "Çağlayan",
+          "slug": "caglayan",
+          "population": 277
+        },
+        {
+          "id": 60931,
+          "name": "Çandır",
+          "slug": "candir",
+          "population": 233
+        },
+        {
+          "id": 60936,
+          "name": "Çay",
+          "slug": "cay",
+          "population": 321
+        },
+        {
+          "id": 60935,
+          "name": "Çayır",
+          "slug": "cayir",
+          "population": 349
+        },
+        {
+          "id": 60924,
+          "name": "Çınar",
+          "slug": "cinar",
+          "population": 1263
+        },
+        {
+          "id": 151053,
+          "name": "Eğribel",
+          "slug": "egribel",
+          "population": 417
+        },
+        {
+          "id": 151055,
+          "name": "Göksu",
+          "slug": "goksu",
+          "population": 995
+        },
+        {
+          "id": 60933,
+          "name": "Gürcek",
+          "slug": "gurcek",
+          "population": 98
+        },
+        {
+          "id": 60932,
+          "name": "Hacıali",
+          "slug": "haciali",
+          "population": 225
+        },
+        {
+          "id": 151057,
+          "name": "İçeribükü",
+          "slug": "iceribuku",
+          "population": 304
+        },
+        {
+          "id": 151049,
+          "name": "İlküvez",
+          "slug": "ilkuvez",
+          "population": 1218
+        },
+        {
+          "id": 151059,
+          "name": "Kapılı",
+          "slug": "kapili",
+          "population": 936
+        },
+        {
+          "id": 60925,
+          "name": "Kargalı",
+          "slug": "kargali",
+          "population": 203
+        },
+        {
+          "id": 151061,
+          "name": "Köklük",
+          "slug": "kokluk",
+          "population": 971
+        },
+        {
+          "id": 60930,
+          "name": "Kurudere",
+          "slug": "kurudere",
+          "population": 290
+        },
+        {
+          "id": 60926,
+          "name": "Kuşlu",
+          "slug": "kuslu",
+          "population": 154
+        },
+        {
+          "id": 197839,
+          "name": "Mollalı",
+          "slug": "mollali",
+          "population": 699
+        },
+        {
+          "id": 60927,
+          "name": "Namazlı",
+          "slug": "namazli",
+          "population": 227
+        },
+        {
+          "id": 197835,
+          "name": "Taşkesiği",
+          "slug": "taskesigi",
+          "population": 890
+        },
+        {
+          "id": 60928,
+          "name": "Tekke",
+          "slug": "tekke",
+          "population": 299
+        },
+        {
+          "id": 60929,
+          "name": "Yenicuma",
+          "slug": "yenicuma",
+          "population": 144
+        }
+      ]
+    },
+    {
+      "id": 1328,
+      "name": "Fatsa",
+      "slug": "fatsa",
+      "population": 125399,
+      "area": 363,
+      "neighborhoods": [
+        {
+          "id": 151079,
+          "name": "Ahmetler",
+          "slug": "ahmetler",
+          "population": 197
+        },
+        {
+          "id": 151081,
+          "name": "Arpalık",
+          "slug": "arpalik",
+          "population": 276
+        },
+        {
+          "id": 151073,
+          "name": "Aslancami",
+          "slug": "aslancami",
+          "population": 1118
+        },
+        {
+          "id": 151083,
+          "name": "Aşağıardıç",
+          "slug": "asagiardic",
+          "population": 96
+        },
+        {
+          "id": 151085,
+          "name": "Aşağıtepe",
+          "slug": "asagitepe",
+          "population": 434
+        },
+        {
+          "id": 151193,
+          "name": "Aşağıyavaş",
+          "slug": "asagiyavas",
+          "population": 444
+        },
+        {
+          "id": 60948,
+          "name": "Ayazlı",
+          "slug": "ayazli",
+          "population": 7121
+        },
+        {
+          "id": 151087,
+          "name": "Bacanak",
+          "slug": "bacanak",
+          "population": 155
+        },
+        {
+          "id": 151161,
+          "name": "Bağlarca",
+          "slug": "baglarca",
+          "population": 579
+        },
+        {
+          "id": 151089,
+          "name": "Bahçeler",
+          "slug": "bahceler",
+          "population": 816
+        },
+        {
+          "id": 151091,
+          "name": "Başköy",
+          "slug": "baskoy",
+          "population": 207
+        },
+        {
+          "id": 151093,
+          "name": "Beyceli",
+          "slug": "beyceli",
+          "population": 825
+        },
+        {
+          "id": 151071,
+          "name": "Bolaman",
+          "slug": "bolaman",
+          "population": 1301
+        },
+        {
+          "id": 151095,
+          "name": "Bozdağı",
+          "slug": "bozdagi",
+          "population": 195
+        },
+        {
+          "id": 151097,
+          "name": "Bucaklı",
+          "slug": "bucakli",
+          "population": 256
+        },
+        {
+          "id": 151163,
+          "name": "Buhari",
+          "slug": "buhari",
+          "population": 542
+        },
+        {
+          "id": 151165,
+          "name": "Bülbül",
+          "slug": "bulbul",
+          "population": 159
+        },
+        {
+          "id": 151099,
+          "name": "Büyükkoç",
+          "slug": "buyukkoc",
+          "population": 851
+        },
+        {
+          "id": 151101,
+          "name": "Çömlekli",
+          "slug": "comlekli",
+          "population": 230
+        },
+        {
+          "id": 151103,
+          "name": "Çötelü",
+          "slug": "cotelu",
+          "population": 501
+        },
+        {
+          "id": 151167,
+          "name": "Demirci",
+          "slug": "demirci",
+          "population": 332
+        },
+        {
+          "id": 151169,
+          "name": "Dereyurt",
+          "slug": "dereyurt",
+          "population": 154
+        },
+        {
+          "id": 60949,
+          "name": "Dolunay",
+          "slug": "dolunay",
+          "population": 11004
+        },
+        {
+          "id": 151105,
+          "name": "Duayeri",
+          "slug": "duayeri",
+          "population": 266
+        },
+        {
+          "id": 60950,
+          "name": "Dumlupınar",
+          "slug": "dumlupinar",
+          "population": 6529
+        },
+        {
+          "id": 151107,
+          "name": "Düğünlük",
+          "slug": "dugunluk",
+          "population": 510
+        },
+        {
+          "id": 151109,
+          "name": "Eskiordu",
+          "slug": "eskiordu",
+          "population": 267
+        },
+        {
+          "id": 60951,
+          "name": "Evkaf",
+          "slug": "evkaf",
+          "population": 16029
+        },
+        {
+          "id": 60952,
+          "name": "Fatih",
+          "slug": "fatih",
+          "population": 6646
+        },
+        {
+          "id": 151063,
+          "name": "Geyikçeli",
+          "slug": "geyikceli",
+          "population": 1157
+        },
+        {
+          "id": 151111,
+          "name": "Gölköy",
+          "slug": "golkoy",
+          "population": 313
+        },
+        {
+          "id": 198465,
+          "name": "Güvercinlik",
+          "slug": "guvercinlik",
+          "population": 1070
+        },
+        {
+          "id": 183188,
+          "name": "Hacıköy",
+          "slug": "hacikoy",
+          "population": 380
+        },
+        {
+          "id": 60953,
+          "name": "Hamlık",
+          "slug": "hamlik",
+          "population": 282
+        },
+        {
+          "id": 151065,
+          "name": "Hatipli",
+          "slug": "hatipli",
+          "population": 784
+        },
+        {
+          "id": 151113,
+          "name": "Hıdırbeyli",
+          "slug": "hidirbeyli",
+          "population": 166
+        },
+        {
+          "id": 151115,
+          "name": "Hoylu",
+          "slug": "hoylu",
+          "population": 164
+        },
+        {
+          "id": 151075,
+          "name": "Ilıca",
+          "slug": "ilica",
+          "population": 933
+        },
+        {
+          "id": 151171,
+          "name": "İnönü",
+          "slug": "inonu",
+          "population": 295
+        },
+        {
+          "id": 151067,
+          "name": "İslamdağ",
+          "slug": "islamdag",
+          "population": 926
+        },
+        {
+          "id": 151173,
+          "name": "Kabakdağı",
+          "slug": "kabakdagi",
+          "population": 474
+        },
+        {
+          "id": 151117,
+          "name": "Kaleönü",
+          "slug": "kaleonu",
+          "population": 284
+        },
+        {
+          "id": 151119,
+          "name": "Karataş",
+          "slug": "karatas",
+          "population": 215
+        },
+        {
+          "id": 198511,
+          "name": "Kargucak",
+          "slug": "kargucak",
+          "population": 534
+        },
+        {
+          "id": 198515,
+          "name": "Karşıyaka",
+          "slug": "karsiyaka",
+          "population": 822
+        },
+        {
+          "id": 198487,
+          "name": "Kavraz",
+          "slug": "kavraz",
+          "population": 787
+        },
+        {
+          "id": 151175,
+          "name": "Kayaca",
+          "slug": "kayaca",
+          "population": 365
+        },
+        {
+          "id": 198537,
+          "name": "Kayaköy Akçakese",
+          "slug": "kayakoy-akcakese",
+          "population": 642
+        },
+        {
+          "id": 151177,
+          "name": "Kılavuzömer",
+          "slug": "kilavuzomer",
+          "population": 187
+        },
+        {
+          "id": 151179,
+          "name": "Kılıçlı",
+          "slug": "kilicli",
+          "population": 752
+        },
+        {
+          "id": 60959,
+          "name": "Konakbaşı",
+          "slug": "konakbasi",
+          "population": 350
+        },
+        {
+          "id": 151069,
+          "name": "Kösebucağı",
+          "slug": "kosebucagi",
+          "population": 1116
+        },
+        {
+          "id": 151121,
+          "name": "Kulak",
+          "slug": "kulak",
+          "population": 1247
+        },
+        {
+          "id": 60954,
+          "name": "Kurtuluş",
+          "slug": "kurtulus",
+          "population": 14435
+        },
+        {
+          "id": 151123,
+          "name": "Küçükkoç",
+          "slug": "kucukkoc",
+          "population": 351
+        },
+        {
+          "id": 198499,
+          "name": "Küpdüşen",
+          "slug": "kupdusen",
+          "population": 380
+        },
+        {
+          "id": 151125,
+          "name": "Mehmetakif",
+          "slug": "mehmetakif",
+          "population": 486
+        },
+        {
+          "id": 60958,
+          "name": "Meşebükü",
+          "slug": "mesebuku",
+          "population": 1234
+        },
+        {
+          "id": 60955,
+          "name": "Mustafakemalpaşa",
+          "slug": "mustafakemalpasa",
+          "population": 7460
+        },
+        {
+          "id": 151127,
+          "name": "Oluklu",
+          "slug": "oluklu",
+          "population": 645
+        },
+        {
+          "id": 151129,
+          "name": "Örencik",
+          "slug": "orencik",
+          "population": 732
+        },
+        {
+          "id": 198495,
+          "name": "Palazlı Kömürlük",
+          "slug": "palazli-komurluk",
+          "population": 584
+        },
+        {
+          "id": 60956,
+          "name": "Sakarya",
+          "slug": "sakarya",
+          "population": 6831
+        },
+        {
+          "id": 151131,
+          "name": "Salihli",
+          "slug": "salihli",
+          "population": 615
+        },
+        {
+          "id": 151133,
+          "name": "Saraytepe",
+          "slug": "saraytepe",
+          "population": 212
+        },
+        {
+          "id": 151135,
+          "name": "Sazcılar",
+          "slug": "sazcilar",
+          "population": 244
+        },
+        {
+          "id": 151137,
+          "name": "Sefaköy",
+          "slug": "sefakoy",
+          "population": 457
+        },
+        {
+          "id": 151139,
+          "name": "Sudere",
+          "slug": "sudere",
+          "population": 164
+        },
+        {
+          "id": 60957,
+          "name": "Şerefiye",
+          "slug": "serefiye",
+          "population": 6494
+        },
+        {
+          "id": 151141,
+          "name": "Tahtabaş",
+          "slug": "tahtabas",
+          "population": 151
+        },
+        {
+          "id": 60960,
+          "name": "Taşlıca",
+          "slug": "taslica",
+          "population": 553
+        },
+        {
+          "id": 151181,
+          "name": "Tayalı",
+          "slug": "tayali",
+          "population": 431
+        },
+        {
+          "id": 151183,
+          "name": "Tepecik",
+          "slug": "tepecik",
+          "population": 584
+        },
+        {
+          "id": 198527,
+          "name": "Uzundere",
+          "slug": "uzundere",
+          "population": 782
+        },
+        {
+          "id": 151077,
+          "name": "Yalıköy",
+          "slug": "yalikoy",
+          "population": 1708
+        },
+        {
+          "id": 151143,
+          "name": "Yapraklı",
+          "slug": "yaprakli",
+          "population": 460
+        },
+        {
+          "id": 151185,
+          "name": "Yassıbahçe",
+          "slug": "yassibahce",
+          "population": 560
+        },
+        {
+          "id": 151145,
+          "name": "Yassıtaş",
+          "slug": "yassitas",
+          "population": 920
+        },
+        {
+          "id": 151187,
+          "name": "Yavaş",
+          "slug": "yavas",
+          "population": 616
+        },
+        {
+          "id": 151147,
+          "name": "Yenidoğan",
+          "slug": "yenidogan",
+          "population": 222
+        },
+        {
+          "id": 151149,
+          "name": "Yenikent",
+          "slug": "yenikent",
+          "population": 405
+        },
+        {
+          "id": 198507,
+          "name": "Yenipazar",
+          "slug": "yenipazar",
+          "population": 1294
+        },
+        {
+          "id": 151189,
+          "name": "Yeniyurt",
+          "slug": "yeniyurt",
+          "population": 114
+        },
+        {
+          "id": 151191,
+          "name": "Yeşilköy",
+          "slug": "yesilkoy",
+          "population": 273
+        },
+        {
+          "id": 151151,
+          "name": "Yeşiltepe",
+          "slug": "yesiltepe",
+          "population": 269
+        },
+        {
+          "id": 151153,
+          "name": "Yukarıardıç",
+          "slug": "yukariardic",
+          "population": 1055
+        },
+        {
+          "id": 151155,
+          "name": "Yukarıbahçeler",
+          "slug": "yukaribahceler",
+          "population": 391
+        },
+        {
+          "id": 151157,
+          "name": "Yukarıtepe",
+          "slug": "yukaritepe",
+          "population": 719
+        },
+        {
+          "id": 151159,
+          "name": "Yusuflu",
+          "slug": "yusuflu",
+          "population": 283
+        }
+      ]
+    },
+    {
+      "id": 1358,
+      "name": "Gölköy",
+      "slug": "golkoy",
+      "population": 26970,
+      "area": 421,
+      "neighborhoods": [
+        {
+          "id": 197867,
+          "name": "Ahmetli",
+          "slug": "ahmetli",
+          "population": 791
+        },
+        {
+          "id": 151233,
+          "name": "Akçalı",
+          "slug": "akcali",
+          "population": 602
+        },
+        {
+          "id": 151195,
+          "name": "Alanyurt",
+          "slug": "alanyurt",
+          "population": 1066
+        },
+        {
+          "id": 151197,
+          "name": "Aydoğan",
+          "slug": "aydogan",
+          "population": 1291
+        },
+        {
+          "id": 151239,
+          "name": "Bayıralan",
+          "slug": "bayiralan",
+          "population": 799
+        },
+        {
+          "id": 151243,
+          "name": "Bulut",
+          "slug": "bulut",
+          "population": 287
+        },
+        {
+          "id": 151247,
+          "name": "Cihadiye",
+          "slug": "cihadiye",
+          "population": 251
+        },
+        {
+          "id": 151251,
+          "name": "Çatak",
+          "slug": "catak",
+          "population": 937
+        },
+        {
+          "id": 151255,
+          "name": "Çetilli",
+          "slug": "cetilli",
+          "population": 723
+        },
+        {
+          "id": 151199,
+          "name": "Damarlı",
+          "slug": "damarli",
+          "population": 697
+        },
+        {
+          "id": 151227,
+          "name": "Direkli",
+          "slug": "direkli",
+          "population": 646
+        },
+        {
+          "id": 151203,
+          "name": "Düzyayla",
+          "slug": "duzyayla",
+          "population": 1078
+        },
+        {
+          "id": 151259,
+          "name": "Emirler",
+          "slug": "emirler",
+          "population": 485
+        },
+        {
+          "id": 61010,
+          "name": "Gölköy",
+          "slug": "golkoy",
+          "population": 4835
+        },
+        {
+          "id": 151263,
+          "name": "Güzelyayla",
+          "slug": "guzelyayla",
+          "population": 132
+        },
+        {
+          "id": 151211,
+          "name": "Güzelyurt",
+          "slug": "guzelyurt",
+          "population": 1719
+        },
+        {
+          "id": 151265,
+          "name": "Haruniye",
+          "slug": "haruniye",
+          "population": 505
+        },
+        {
+          "id": 151267,
+          "name": "Hürriyet",
+          "slug": "hurriyet",
+          "population": 656
+        },
+        {
+          "id": 151269,
+          "name": "İçyaka",
+          "slug": "icyaka",
+          "population": 863
+        },
+        {
+          "id": 151271,
+          "name": "Kale",
+          "slug": "kale",
+          "population": 773
+        },
+        {
+          "id": 61011,
+          "name": "Karagöz",
+          "slug": "karagoz",
+          "population": 525
+        },
+        {
+          "id": 151219,
+          "name": "Karahasan",
+          "slug": "karahasan",
+          "population": 898
+        },
+        {
+          "id": 151273,
+          "name": "Konak",
+          "slug": "konak",
+          "population": 420
+        },
+        {
+          "id": 151275,
+          "name": "Kozören",
+          "slug": "kozoren",
+          "population": 454
+        },
+        {
+          "id": 61012,
+          "name": "Kuşluvan",
+          "slug": "kusluvan",
+          "population": 2714
+        },
+        {
+          "id": 151277,
+          "name": "Özlü",
+          "slug": "ozlu",
+          "population": 469
+        },
+        {
+          "id": 61013,
+          "name": "Paşapınar",
+          "slug": "pasapinar",
+          "population": 458
+        },
+        {
+          "id": 61014,
+          "name": "Sarıca",
+          "slug": "sarica",
+          "population": 826
+        },
+        {
+          "id": 151279,
+          "name": "Süleymaniye",
+          "slug": "suleymaniye",
+          "population": 909
+        },
+        {
+          "id": 151283,
+          "name": "Yuvapınar",
+          "slug": "yuvapinar",
+          "population": 161
+        }
+      ]
+    },
+    {
+      "id": 1795,
+      "name": "Gülyalı",
+      "slug": "gulyali",
+      "population": 9243,
+      "area": 62,
+      "neighborhoods": [
+        {
+          "id": 61030,
+          "name": "Alibey",
+          "slug": "alibey",
+          "population": 453
+        },
+        {
+          "id": 151289,
+          "name": "Ambarcılı",
+          "slug": "ambarcili",
+          "population": 431
+        },
+        {
+          "id": 151293,
+          "name": "Ayrılık",
+          "slug": "ayrilik",
+          "population": 740
+        },
+        {
+          "id": 61031,
+          "name": "Gülistan",
+          "slug": "gulistan",
+          "population": 720
+        },
+        {
+          "id": 61032,
+          "name": "Hoşköy",
+          "slug": "hoskoy",
+          "population": 484
+        },
+        {
+          "id": 151299,
+          "name": "Kestane",
+          "slug": "kestane",
+          "population": 685
+        },
+        {
+          "id": 151301,
+          "name": "Mustafalı",
+          "slug": "mustafali",
+          "population": 586
+        },
+        {
+          "id": 61033,
+          "name": "Sayaca",
+          "slug": "sayaca",
+          "population": 341
+        },
+        {
+          "id": 151303,
+          "name": "Taşlıçay",
+          "slug": "taslicay",
+          "population": 660
+        },
+        {
+          "id": 61035,
+          "name": "Tepealtı",
+          "slug": "tepealti",
+          "population": 198
+        },
+        {
+          "id": 151307,
+          "name": "Turnasuyu",
+          "slug": "turnasuyu",
+          "population": 2539
+        },
+        {
+          "id": 98864,
+          "name": "Ürümbey",
+          "slug": "urumbey",
+          "population": 659
+        },
+        {
+          "id": 61034,
+          "name": "Yeniköy",
+          "slug": "yenikoy",
+          "population": 747
+        }
+      ]
+    },
+    {
+      "id": 1797,
+      "name": "Gürgentepe",
+      "slug": "gurgentepe",
+      "population": 15543,
+      "area": 185,
+      "neighborhoods": [
+        {
+          "id": 61036,
+          "name": "Ağızlar",
+          "slug": "agizlar",
+          "population": 848
+        },
+        {
+          "id": 61037,
+          "name": "Akmescit",
+          "slug": "akmescit",
+          "population": 966
+        },
+        {
+          "id": 61038,
+          "name": "Akören",
+          "slug": "akoren",
+          "population": 566
+        },
+        {
+          "id": 61039,
+          "name": "Akyurt",
+          "slug": "akyurt",
+          "population": 1225
+        },
+        {
+          "id": 151355,
+          "name": "Alaseher",
+          "slug": "alaseher",
+          "population": 446
+        },
+        {
+          "id": 151357,
+          "name": "Bahtiyarlar",
+          "slug": "bahtiyarlar",
+          "population": 1126
+        },
+        {
+          "id": 99336,
+          "name": "Cumhuriyet",
+          "slug": "cumhuriyet",
+          "population": 351
+        },
+        {
+          "id": 198541,
+          "name": "Çatalağaç",
+          "slug": "catalagac",
+          "population": 373
+        },
+        {
+          "id": 61040,
+          "name": "Döşek",
+          "slug": "dosek",
+          "population": 1133
+        },
+        {
+          "id": 151317,
+          "name": "Eskiköy",
+          "slug": "eskikoy",
+          "population": 586
+        },
+        {
+          "id": 61041,
+          "name": "Göller",
+          "slug": "goller",
+          "population": 475
+        },
+        {
+          "id": 151363,
+          "name": "Gülbelen",
+          "slug": "gulbelen",
+          "population": 261
+        },
+        {
+          "id": 151367,
+          "name": "Gültepe",
+          "slug": "gultepe",
+          "population": 296
+        },
+        {
+          "id": 151371,
+          "name": "Hasancık",
+          "slug": "hasancik",
+          "population": 568
+        },
+        {
+          "id": 151341,
+          "name": "Işıktepe",
+          "slug": "isiktepe",
+          "population": 1307
+        },
+        {
+          "id": 61042,
+          "name": "Muratçık",
+          "slug": "muratcik",
+          "population": 611
+        },
+        {
+          "id": 61043,
+          "name": "Okçabel",
+          "slug": "okcabel",
+          "population": 627
+        },
+        {
+          "id": 151373,
+          "name": "Şirinköy",
+          "slug": "sirinkoy",
+          "population": 201
+        },
+        {
+          "id": 151375,
+          "name": "Tepeköy",
+          "slug": "tepekoy",
+          "population": 832
+        },
+        {
+          "id": 151361,
+          "name": "Tikenlice",
+          "slug": "tikenlice",
+          "population": 944
+        },
+        {
+          "id": 151379,
+          "name": "Tuzla",
+          "slug": "tuzla",
+          "population": 225
+        },
+        {
+          "id": 198569,
+          "name": "Yurtseven",
+          "slug": "yurtseven",
+          "population": 1009
+        },
+        {
+          "id": 198577,
+          "name": "Yurtyeri",
+          "slug": "yurtyeri",
+          "population": 567
+        }
+      ]
+    },
+    {
+      "id": 1947,
+      "name": "İkizce",
+      "slug": "ikizce",
+      "population": 14013,
+      "area": 148,
+      "neighborhoods": [
+        {
+          "id": 61056,
+          "name": "Ağcaalan",
+          "slug": "agcaalan",
+          "population": 241
+        },
+        {
+          "id": 61068,
+          "name": "Aşağı Karlıtepe",
+          "slug": "asagi-karlitepe",
+          "population": 348
+        },
+        {
+          "id": 198221,
+          "name": "Aşağı Kaynartaş",
+          "slug": "asagi-kaynartas",
+          "population": 607
+        },
+        {
+          "id": 61064,
+          "name": "Başönü",
+          "slug": "basonu",
+          "population": 204
+        },
+        {
+          "id": 61057,
+          "name": "Beylerce",
+          "slug": "beylerce",
+          "population": 329
+        },
+        {
+          "id": 151397,
+          "name": "Bolluk",
+          "slug": "bolluk",
+          "population": 611
+        },
+        {
+          "id": 151403,
+          "name": "Derebaşı",
+          "slug": "derebasi",
+          "population": 167
+        },
+        {
+          "id": 151383,
+          "name": "Devecik",
+          "slug": "devecik",
+          "population": 959
+        },
+        {
+          "id": 198211,
+          "name": "Diyek",
+          "slug": "diyek",
+          "population": 520
+        },
+        {
+          "id": 151405,
+          "name": "Dumantepe",
+          "slug": "dumantepe",
+          "population": 266
+        },
+        {
+          "id": 151407,
+          "name": "Düzmeşe",
+          "slug": "duzmese",
+          "population": 299
+        },
+        {
+          "id": 61069,
+          "name": "Düzpelit",
+          "slug": "duzpelit",
+          "population": 271
+        },
+        {
+          "id": 198217,
+          "name": "Enağızlı",
+          "slug": "enagizli",
+          "population": 701
+        },
+        {
+          "id": 151415,
+          "name": "Esentepe",
+          "slug": "esentepe",
+          "population": 184
+        },
+        {
+          "id": 61066,
+          "name": "Fatih",
+          "slug": "fatih",
+          "population": 326
+        },
+        {
+          "id": 61058,
+          "name": "Gaziler",
+          "slug": "gaziler",
+          "population": 205
+        },
+        {
+          "id": 61059,
+          "name": "Kale",
+          "slug": "kale",
+          "population": 124
+        },
+        {
+          "id": 151409,
+          "name": "Kervansaray",
+          "slug": "kervansaray",
+          "population": 323
+        },
+        {
+          "id": 151411,
+          "name": "Kiraztepe",
+          "slug": "kiraztepe",
+          "population": 377
+        },
+        {
+          "id": 61060,
+          "name": "Kocaman",
+          "slug": "kocaman",
+          "population": 365
+        },
+        {
+          "id": 61061,
+          "name": "Kurtköy",
+          "slug": "kurtkoy",
+          "population": 129
+        },
+        {
+          "id": 61062,
+          "name": "Kurtluca",
+          "slug": "kurtluca",
+          "population": 282
+        },
+        {
+          "id": 61063,
+          "name": "Merkez",
+          "slug": "merkez",
+          "population": 1249
+        },
+        {
+          "id": 151413,
+          "name": "Özpınar",
+          "slug": "ozpinar",
+          "population": 308
+        },
+        {
+          "id": 198215,
+          "name": "Seymenli",
+          "slug": "seymenli",
+          "population": 851
+        },
+        {
+          "id": 184780,
+          "name": "Şentepe",
+          "slug": "sentepe",
+          "population": 888
+        },
+        {
+          "id": 198219,
+          "name": "Tombaşlı",
+          "slug": "tombasli",
+          "population": 470
+        },
+        {
+          "id": 198213,
+          "name": "Yenice",
+          "slug": "yenice",
+          "population": 472
+        },
+        {
+          "id": 151399,
+          "name": "Yoğunoluk",
+          "slug": "yogunoluk",
+          "population": 1034
+        },
+        {
+          "id": 61067,
+          "name": "Yukarı Karlıtepe",
+          "slug": "yukari-karlitepe",
+          "population": 304
+        },
+        {
+          "id": 151395,
+          "name": "Yukarı Kaynartaş",
+          "slug": "yukari-kaynartas",
+          "population": 418
+        },
+        {
+          "id": 61065,
+          "name": "Yunuskırığı",
+          "slug": "yunuskirigi",
+          "population": 181
+        }
+      ]
+    },
+    {
+      "id": 1950,
+      "name": "Kabadüz",
+      "slug": "kabaduz",
+      "population": 7548,
+      "area": 290,
+      "neighborhoods": [
+        {
+          "id": 151427,
+          "name": "Akgüney",
+          "slug": "akguney",
+          "population": 450
+        },
+        {
+          "id": 61089,
+          "name": "Başköy",
+          "slug": "baskoy",
+          "population": 581
+        },
+        {
+          "id": 151429,
+          "name": "Derinçay",
+          "slug": "derincay",
+          "population": 478
+        },
+        {
+          "id": 151433,
+          "name": "Dişkaya",
+          "slug": "diskaya",
+          "population": 153
+        },
+        {
+          "id": 151435,
+          "name": "Esenyurt",
+          "slug": "esenyurt",
+          "population": 188
+        },
+        {
+          "id": 151437,
+          "name": "Gelinkaya",
+          "slug": "gelinkaya",
+          "population": 244
+        },
+        {
+          "id": 151441,
+          "name": "Gülpınar",
+          "slug": "gulpinar",
+          "population": 258
+        },
+        {
+          "id": 151439,
+          "name": "Gümüşdere",
+          "slug": "gumusdere",
+          "population": 245
+        },
+        {
+          "id": 151443,
+          "name": "Harami",
+          "slug": "harami",
+          "population": 486
+        },
+        {
+          "id": 61090,
+          "name": "Kabadüz",
+          "slug": "kabaduz",
+          "population": 925
+        },
+        {
+          "id": 61091,
+          "name": "Karakiraz",
+          "slug": "karakiraz",
+          "population": 352
+        },
+        {
+          "id": 151445,
+          "name": "Kirazdere",
+          "slug": "kirazdere",
+          "population": 333
+        },
+        {
+          "id": 198731,
+          "name": "Musakırık",
+          "slug": "musakirik",
+          "population": 438
+        },
+        {
+          "id": 151447,
+          "name": "Özlükent",
+          "slug": "ozlukent",
+          "population": 618
+        },
+        {
+          "id": 198733,
+          "name": "Turnalık",
+          "slug": "turnalik",
+          "population": 432
+        },
+        {
+          "id": 151451,
+          "name": "Yeşilada",
+          "slug": "yesilada",
+          "population": 357
+        },
+        {
+          "id": 198729,
+          "name": "Yeşilyurt",
+          "slug": "yesilyurt",
+          "population": 385
+        },
+        {
+          "id": 151417,
+          "name": "Yokuşdibi",
+          "slug": "yokusdibi",
+          "population": 370
+        },
+        {
+          "id": 197955,
+          "name": "Yukarı Kirazdere",
+          "slug": "yukari-kirazdere",
+          "population": 255
+        }
+      ]
+    },
+    {
+      "id": 1951,
+      "name": "Kabataş",
+      "slug": "kabatas",
+      "population": 11011,
+      "area": 74,
+      "neighborhoods": [
+        {
+          "id": 197905,
+          "name": "Alanbaşı",
+          "slug": "alanbasi",
+          "population": 352
+        },
+        {
+          "id": 151453,
+          "name": "Alankent",
+          "slug": "alankent",
+          "population": 444
+        },
+        {
+          "id": 61097,
+          "name": "Ardıç",
+          "slug": "ardic",
+          "population": 688
+        },
+        {
+          "id": 61098,
+          "name": "Belen",
+          "slug": "belen",
+          "population": 531
+        },
+        {
+          "id": 151455,
+          "name": "Beylerli",
+          "slug": "beylerli",
+          "population": 1071
+        },
+        {
+          "id": 197909,
+          "name": "Çukurcak",
+          "slug": "cukurcak",
+          "population": 791
+        },
+        {
+          "id": 197907,
+          "name": "Düz",
+          "slug": "duz",
+          "population": 264
+        },
+        {
+          "id": 61099,
+          "name": "Eceli",
+          "slug": "eceli",
+          "population": 490
+        },
+        {
+          "id": 197911,
+          "name": "Elbeyi",
+          "slug": "elbeyi",
+          "population": 737
+        },
+        {
+          "id": 61100,
+          "name": "Hoşkadem",
+          "slug": "hoskadem",
+          "population": 410
+        },
+        {
+          "id": 197913,
+          "name": "Ilıcak",
+          "slug": "ilicak",
+          "population": 513
+        },
+        {
+          "id": 197915,
+          "name": "Kabataş Yeni",
+          "slug": "kabatas-yeni",
+          "population": 1090
+        },
+        {
+          "id": 197903,
+          "name": "Kayıncık",
+          "slug": "kayincik",
+          "population": 429
+        },
+        {
+          "id": 151457,
+          "name": "Kuzköy",
+          "slug": "kuzkoy",
+          "population": 446
+        },
+        {
+          "id": 61101,
+          "name": "Merkez",
+          "slug": "merkez",
+          "population": 877
+        },
+        {
+          "id": 197917,
+          "name": "Şifa Suyu",
+          "slug": "sifa-suyu",
+          "population": 710
+        },
+        {
+          "id": 197901,
+          "name": "Yakacık",
+          "slug": "yakacik",
+          "population": 721
+        },
+        {
+          "id": 61102,
+          "name": "Yeniceli",
+          "slug": "yeniceli",
+          "population": 447
+        }
+      ]
+    },
+    {
+      "id": 1482,
+      "name": "Korgan",
+      "slug": "korgan",
+      "population": 28144,
+      "area": 254,
+      "neighborhoods": [
+        {
+          "id": 151477,
+          "name": "Aşağıkozpınar",
+          "slug": "asagikozpinar",
+          "population": 357
+        },
+        {
+          "id": 61111,
+          "name": "Aşağıyaylacık",
+          "slug": "asagiyaylacik",
+          "population": 331
+        },
+        {
+          "id": 151481,
+          "name": "Belalan",
+          "slug": "belalan",
+          "population": 848
+        },
+        {
+          "id": 151485,
+          "name": "Beypınarı",
+          "slug": "beypinari",
+          "population": 293
+        },
+        {
+          "id": 151487,
+          "name": "Büyükakçakese",
+          "slug": "buyukakcakese",
+          "population": 236
+        },
+        {
+          "id": 151459,
+          "name": "Çamlı",
+          "slug": "camli",
+          "population": 1435
+        },
+        {
+          "id": 151463,
+          "name": "Çayırkent",
+          "slug": "cayirkent",
+          "population": 3180
+        },
+        {
+          "id": 151467,
+          "name": "Çiftlik",
+          "slug": "ciftlik",
+          "population": 1850
+        },
+        {
+          "id": 151491,
+          "name": "Çitlice",
+          "slug": "citlice",
+          "population": 810
+        },
+        {
+          "id": 61112,
+          "name": "Dip",
+          "slug": "dip",
+          "population": 2972
+        },
+        {
+          "id": 151495,
+          "name": "Durali",
+          "slug": "durali",
+          "population": 323
+        },
+        {
+          "id": 151497,
+          "name": "Karakışla",
+          "slug": "karakisla",
+          "population": 442
+        },
+        {
+          "id": 61113,
+          "name": "Karakoyunlu",
+          "slug": "karakoyunlu",
+          "population": 810
+        },
+        {
+          "id": 151501,
+          "name": "Koçcuğaz",
+          "slug": "koccugaz",
+          "population": 876
+        },
+        {
+          "id": 61114,
+          "name": "Sarıalıç",
+          "slug": "sarialic",
+          "population": 927
+        },
+        {
+          "id": 151505,
+          "name": "Soğukpınar",
+          "slug": "sogukpinar",
+          "population": 412
+        },
+        {
+          "id": 151509,
+          "name": "Tatarcık",
+          "slug": "tatarcik",
+          "population": 362
+        },
+        {
+          "id": 61115,
+          "name": "Tepe",
+          "slug": "tepe",
+          "population": 4290
+        },
+        {
+          "id": 151471,
+          "name": "Tepealan",
+          "slug": "tepealan",
+          "population": 2484
+        },
+        {
+          "id": 151513,
+          "name": "Terzili",
+          "slug": "terzili",
+          "population": 471
+        },
+        {
+          "id": 61116,
+          "name": "Yazıcı",
+          "slug": "yazici",
+          "population": 654
+        },
+        {
+          "id": 61117,
+          "name": "Yazlık",
+          "slug": "yazlik",
+          "population": 150
+        },
+        {
+          "id": 151515,
+          "name": "Yeniköy",
+          "slug": "yenikoy",
+          "population": 482
+        },
+        {
+          "id": 61118,
+          "name": "Yenipınar",
+          "slug": "yenipinar",
+          "population": 994
+        },
+        {
+          "id": 151519,
+          "name": "Yeşilalan",
+          "slug": "yesilalan",
+          "population": 560
+        },
+        {
+          "id": 151523,
+          "name": "Yeşildere",
+          "slug": "yesildere",
+          "population": 194
+        },
+        {
+          "id": 151527,
+          "name": "Yeşilyurt",
+          "slug": "yesilyurt",
+          "population": 360
+        },
+        {
+          "id": 151531,
+          "name": "Yukarıkozpınar",
+          "slug": "yukarikozpinar",
+          "population": 343
+        },
+        {
+          "id": 61119,
+          "name": "Yukarıyaylacık",
+          "slug": "yukariyaylacik",
+          "population": 698
+        }
+      ]
+    },
+    {
+      "id": 1493,
+      "name": "Kumru",
+      "slug": "kumru",
+      "population": 29704,
+      "area": 296,
+      "neighborhoods": [
+        {
+          "id": 151555,
+          "name": "Ağcaalantürk",
+          "slug": "agcaalanturk",
+          "population": 697
+        },
+        {
+          "id": 151559,
+          "name": "Akçadere",
+          "slug": "akcadere",
+          "population": 532
+        },
+        {
+          "id": 151563,
+          "name": "Avdullu",
+          "slug": "avdullu",
+          "population": 300
+        },
+        {
+          "id": 61141,
+          "name": "Ayvalı",
+          "slug": "ayvali",
+          "population": 956
+        },
+        {
+          "id": 151567,
+          "name": "Balı",
+          "slug": "bali",
+          "population": 489
+        },
+        {
+          "id": 151571,
+          "name": "Ballık",
+          "slug": "ballik",
+          "population": 460
+        },
+        {
+          "id": 151575,
+          "name": "Çatılı",
+          "slug": "catili",
+          "population": 348
+        },
+        {
+          "id": 61142,
+          "name": "Demircili",
+          "slug": "demircili",
+          "population": 2304
+        },
+        {
+          "id": 151579,
+          "name": "Derbent",
+          "slug": "derbent",
+          "population": 741
+        },
+        {
+          "id": 198613,
+          "name": "Dereköy",
+          "slug": "derekoy",
+          "population": 462
+        },
+        {
+          "id": 151583,
+          "name": "Divanıtürk",
+          "slug": "divaniturk",
+          "population": 854
+        },
+        {
+          "id": 151589,
+          "name": "Duman",
+          "slug": "duman",
+          "population": 340
+        },
+        {
+          "id": 151593,
+          "name": "Ergentürk",
+          "slug": "ergenturk",
+          "population": 781
+        },
+        {
+          "id": 61143,
+          "name": "Erikçeli",
+          "slug": "erikceli",
+          "population": 884
+        },
+        {
+          "id": 151595,
+          "name": "Esence",
+          "slug": "esence",
+          "population": 605
+        },
+        {
+          "id": 151599,
+          "name": "Eskiçokdeğirmen",
+          "slug": "eskicokdegirmen",
+          "population": 816
+        },
+        {
+          "id": 198627,
+          "name": "Fatih",
+          "slug": "fatih",
+          "population": 572
+        },
+        {
+          "id": 151545,
+          "name": "Fizme",
+          "slug": "fizme",
+          "population": 1001
+        },
+        {
+          "id": 151603,
+          "name": "Gökçeli",
+          "slug": "gokceli",
+          "population": 314
+        },
+        {
+          "id": 151607,
+          "name": "Güneycik",
+          "slug": "guneycik",
+          "population": 1052
+        },
+        {
+          "id": 99828,
+          "name": "Kadıncık",
+          "slug": "kadincik",
+          "population": 940
+        },
+        {
+          "id": 151609,
+          "name": "Karaağaç",
+          "slug": "karaagac",
+          "population": 579
+        },
+        {
+          "id": 151615,
+          "name": "Karacalar",
+          "slug": "karacalar",
+          "population": 577
+        },
+        {
+          "id": 61144,
+          "name": "Karacalı",
+          "slug": "karacali",
+          "population": 2808
+        },
+        {
+          "id": 151657,
+          "name": "Kayabaşı",
+          "slug": "kayabasi",
+          "population": 187
+        },
+        {
+          "id": 151617,
+          "name": "Konaklı",
+          "slug": "konakli",
+          "population": 816
+        },
+        {
+          "id": 151623,
+          "name": "Kovancılı",
+          "slug": "kovancili",
+          "population": 275
+        },
+        {
+          "id": 198631,
+          "name": "Kurtuluş",
+          "slug": "kurtulus",
+          "population": 774
+        },
+        {
+          "id": 151627,
+          "name": "Küçükakçakese",
+          "slug": "kucukakcakese",
+          "population": 455
+        },
+        {
+          "id": 99829,
+          "name": "Ortaca",
+          "slug": "ortaca",
+          "population": 700
+        },
+        {
+          "id": 151631,
+          "name": "Ortaçokdeğirmen",
+          "slug": "ortacokdegirmen",
+          "population": 209
+        },
+        {
+          "id": 61145,
+          "name": "Samur",
+          "slug": "samur",
+          "population": 3281
+        },
+        {
+          "id": 151635,
+          "name": "Şenyurt",
+          "slug": "senyurt",
+          "population": 323
+        },
+        {
+          "id": 151639,
+          "name": "Tekkeköy",
+          "slug": "tekkekoy",
+          "population": 352
+        },
+        {
+          "id": 151641,
+          "name": "Yalnızdam",
+          "slug": "yalnizdam",
+          "population": 902
+        },
+        {
+          "id": 151645,
+          "name": "Yemişken",
+          "slug": "yemisken",
+          "population": 356
+        },
+        {
+          "id": 151649,
+          "name": "Yeniakçaalan",
+          "slug": "yeniakcaalan",
+          "population": 424
+        },
+        {
+          "id": 151651,
+          "name": "Yenidivan",
+          "slug": "yenidivan",
+          "population": 270
+        },
+        {
+          "id": 151655,
+          "name": "Yeniergen",
+          "slug": "yeniergen",
+          "population": 250
+        },
+        {
+          "id": 151537,
+          "name": "Yukarıdamlalı",
+          "slug": "yukaridamlali",
+          "population": 718
+        }
+      ]
+    },
+    {
+      "id": 1525,
+      "name": "Mesudiye",
+      "slug": "mesudiye",
+      "population": 15357,
+      "area": 1046,
+      "neighborhoods": [
+        {
+          "id": 151789,
+          "name": "Abdili",
+          "slug": "abdili",
+          "population": 139
+        },
+        {
+          "id": 199011,
+          "name": "Akkırık",
+          "slug": "akkirik",
+          "population": 245
+        },
+        {
+          "id": 184190,
+          "name": "Akpınar",
+          "slug": "akpinar",
+          "population": 173
+        },
+        {
+          "id": 151687,
+          "name": "Alan",
+          "slug": "alan",
+          "population": 113
+        },
+        {
+          "id": 151791,
+          "name": "Arıcılar",
+          "slug": "aricilar",
+          "population": 97
+        },
+        {
+          "id": 151691,
+          "name": "Arıkmusa",
+          "slug": "arikmusa",
+          "population": 287
+        },
+        {
+          "id": 151817,
+          "name": "Armutkolu",
+          "slug": "armutkolu",
+          "population": 136
+        },
+        {
+          "id": 151693,
+          "name": "Arpaalan",
+          "slug": "arpaalan",
+          "population": 211
+        },
+        {
+          "id": 151697,
+          "name": "Aşağıgökçe",
+          "slug": "asagigokce",
+          "population": 123
+        },
+        {
+          "id": 151795,
+          "name": "Aşıklı",
+          "slug": "asikli",
+          "population": 103
+        },
+        {
+          "id": 61155,
+          "name": "Bahçe",
+          "slug": "bahce",
+          "population": 162
+        },
+        {
+          "id": 151699,
+          "name": "Balıklı",
+          "slug": "balikli",
+          "population": 210
+        },
+        {
+          "id": 151797,
+          "name": "Bayırköy",
+          "slug": "bayirkoy",
+          "population": 326
+        },
+        {
+          "id": 151703,
+          "name": "Bayraklı",
+          "slug": "bayrakli",
+          "population": 164
+        },
+        {
+          "id": 151705,
+          "name": "Beşpınar",
+          "slug": "bespinar",
+          "population": 188
+        },
+        {
+          "id": 151819,
+          "name": "Beyağaç",
+          "slug": "beyagac",
+          "population": 144
+        },
+        {
+          "id": 151711,
+          "name": "Beyseki",
+          "slug": "beyseki",
+          "population": 148
+        },
+        {
+          "id": 151799,
+          "name": "Birebir",
+          "slug": "birebir",
+          "population": 266
+        },
+        {
+          "id": 151821,
+          "name": "Celal",
+          "slug": "celal",
+          "population": 143
+        },
+        {
+          "id": 151715,
+          "name": "Çaltepe",
+          "slug": "caltepe",
+          "population": 236
+        },
+        {
+          "id": 151719,
+          "name": "Çardaklı",
+          "slug": "cardakli",
+          "population": 216
+        },
+        {
+          "id": 151723,
+          "name": "Çavdar",
+          "slug": "cavdar",
+          "population": 257
+        },
+        {
+          "id": 151725,
+          "name": "Çerçi",
+          "slug": "cerci",
+          "population": 19
+        },
+        {
+          "id": 151729,
+          "name": "Çitliksarıca",
+          "slug": "citliksarica",
+          "population": 326
+        },
+        {
+          "id": 151801,
+          "name": "Çukuralan",
+          "slug": "cukuralan",
+          "population": 104
+        },
+        {
+          "id": 151803,
+          "name": "Darıcabaşı",
+          "slug": "daricabasi",
+          "population": 426
+        },
+        {
+          "id": 151731,
+          "name": "Dayılı",
+          "slug": "dayili",
+          "population": 390
+        },
+        {
+          "id": 151805,
+          "name": "Derebaşı",
+          "slug": "derebasi",
+          "population": 257
+        },
+        {
+          "id": 151735,
+          "name": "Doğançam",
+          "slug": "dogancam",
+          "population": 145
+        },
+        {
+          "id": 151807,
+          "name": "Dursunlu",
+          "slug": "dursunlu",
+          "population": 174
+        },
+        {
+          "id": 151737,
+          "name": "Erikköy",
+          "slug": "erikkoy",
+          "population": 119
+        },
+        {
+          "id": 151741,
+          "name": "Esatlı",
+          "slug": "esatli",
+          "population": 331
+        },
+        {
+          "id": 151743,
+          "name": "Göçbeyi",
+          "slug": "gocbeyi",
+          "population": 189
+        },
+        {
+          "id": 61157,
+          "name": "Gölbaşı",
+          "slug": "golbasi",
+          "population": 93
+        },
+        {
+          "id": 151823,
+          "name": "Gülpınar",
+          "slug": "gulpinar",
+          "population": 112
+        },
+        {
+          "id": 151745,
+          "name": "Güneyce",
+          "slug": "guneyce",
+          "population": 579
+        },
+        {
+          "id": 151749,
+          "name": "Güvenli",
+          "slug": "guvenli",
+          "population": 103
+        },
+        {
+          "id": 151809,
+          "name": "Güzelce",
+          "slug": "guzelce",
+          "population": 99
+        },
+        {
+          "id": 151753,
+          "name": "Güzle",
+          "slug": "guzle",
+          "population": 294
+        },
+        {
+          "id": 151811,
+          "name": "Hamzalı",
+          "slug": "hamzali",
+          "population": 79
+        },
+        {
+          "id": 151755,
+          "name": "Herközü",
+          "slug": "herkozu",
+          "population": 314
+        },
+        {
+          "id": 151757,
+          "name": "Ilışar",
+          "slug": "ilisar",
+          "population": 267
+        },
+        {
+          "id": 151759,
+          "name": "Kale",
+          "slug": "kale",
+          "population": 92
+        },
+        {
+          "id": 151761,
+          "name": "Karabayır",
+          "slug": "karabayir",
+          "population": 106
+        },
+        {
+          "id": 151763,
+          "name": "Karacaören",
+          "slug": "karacaoren",
+          "population": 105
+        },
+        {
+          "id": 151765,
+          "name": "Kavaklıdere",
+          "slug": "kavaklidere",
+          "population": 88
+        },
+        {
+          "id": 61158,
+          "name": "Kayadibi",
+          "slug": "kayadibi",
+          "population": 57
+        },
+        {
+          "id": 151767,
+          "name": "Kışlacık",
+          "slug": "kislacik",
+          "population": 121
+        },
+        {
+          "id": 151769,
+          "name": "Konacık",
+          "slug": "konacik",
+          "population": 61
+        },
+        {
+          "id": 197865,
+          "name": "Köşe",
+          "slug": "kose",
+          "population": 193
+        },
+        {
+          "id": 151813,
+          "name": "Mahmudiye",
+          "slug": "mahmudiye",
+          "population": 379
+        },
+        {
+          "id": 61156,
+          "name": "Maksutalan",
+          "slug": "maksutalan",
+          "population": 100
+        },
+        {
+          "id": 61159,
+          "name": "Merkez",
+          "slug": "merkez",
+          "population": 1065
+        },
+        {
+          "id": 151771,
+          "name": "Musalı",
+          "slug": "musali",
+          "population": 164
+        },
+        {
+          "id": 61160,
+          "name": "Müslüm Sarıca",
+          "slug": "muslum-sarica",
+          "population": 454
+        },
+        {
+          "id": 151815,
+          "name": "Pınarlı",
+          "slug": "pinarli",
+          "population": 436
+        },
+        {
+          "id": 151775,
+          "name": "Sarıca",
+          "slug": "sarica",
+          "population": 212
+        },
+        {
+          "id": 151825,
+          "name": "Sarıyayla",
+          "slug": "sariyayla",
+          "population": 66
+        },
+        {
+          "id": 151671,
+          "name": "Topçam",
+          "slug": "topcam",
+          "population": 635
+        },
+        {
+          "id": 151777,
+          "name": "Türkköyü",
+          "slug": "turkkoyu",
+          "population": 80
+        },
+        {
+          "id": 151663,
+          "name": "Üçyol",
+          "slug": "ucyol",
+          "population": 774
+        },
+        {
+          "id": 151827,
+          "name": "Yağmurlar",
+          "slug": "yagmurlar",
+          "population": 111
+        },
+        {
+          "id": 151779,
+          "name": "Yardere",
+          "slug": "yardere",
+          "population": 221
+        },
+        {
+          "id": 151781,
+          "name": "Yavşan",
+          "slug": "yavsan",
+          "population": 197
+        },
+        {
+          "id": 61161,
+          "name": "Yenimahalle",
+          "slug": "yenimahalle",
+          "population": 132
+        },
+        {
+          "id": 151681,
+          "name": "Yeşilce",
+          "slug": "yesilce",
+          "population": 497
+        },
+        {
+          "id": 151783,
+          "name": "Yeşilçit",
+          "slug": "yesilcit",
+          "population": 209
+        },
+        {
+          "id": 151829,
+          "name": "Yeveli",
+          "slug": "yeveli",
+          "population": 136
+        },
+        {
+          "id": 151785,
+          "name": "Yukarıgökçe",
+          "slug": "yukarigokce",
+          "population": 94
+        },
+        {
+          "id": 151787,
+          "name": "Yuvalı",
+          "slug": "yuvali",
+          "population": 65
+        }
+      ]
+    },
+    {
+      "id": 1573,
+      "name": "Perşembe",
+      "slug": "persembe",
+      "population": 31278,
+      "area": 217,
+      "neighborhoods": [
+        {
+          "id": 151835,
+          "name": "Alınca",
+          "slug": "alinca",
+          "population": 528
+        },
+        {
+          "id": 151837,
+          "name": "Anaç",
+          "slug": "anac",
+          "population": 351
+        },
+        {
+          "id": 151839,
+          "name": "Aziziye",
+          "slug": "aziziye",
+          "population": 150
+        },
+        {
+          "id": 61170,
+          "name": "Babalı",
+          "slug": "babali",
+          "population": 322
+        },
+        {
+          "id": 151841,
+          "name": "Bekirli",
+          "slug": "bekirli",
+          "population": 157
+        },
+        {
+          "id": 151843,
+          "name": "Beyli",
+          "slug": "beyli",
+          "population": 741
+        },
+        {
+          "id": 151845,
+          "name": "Boğazcık",
+          "slug": "bogazcik",
+          "population": 481
+        },
+        {
+          "id": 151847,
+          "name": "Bolatlı",
+          "slug": "bolatli",
+          "population": 310
+        },
+        {
+          "id": 151849,
+          "name": "Çamarası",
+          "slug": "camarasi",
+          "population": 368
+        },
+        {
+          "id": 182862,
+          "name": "Çandır",
+          "slug": "candir",
+          "population": 478
+        },
+        {
+          "id": 151853,
+          "name": "Çaytepe",
+          "slug": "caytepe",
+          "population": 721
+        },
+        {
+          "id": 151855,
+          "name": "Çerli",
+          "slug": "cerli",
+          "population": 1127
+        },
+        {
+          "id": 61171,
+          "name": "Çınar",
+          "slug": "cinar",
+          "population": 1131
+        },
+        {
+          "id": 61172,
+          "name": "Dereiçi",
+          "slug": "dereici",
+          "population": 546
+        },
+        {
+          "id": 151857,
+          "name": "Doğan",
+          "slug": "dogan",
+          "population": 545
+        },
+        {
+          "id": 61173,
+          "name": "Düz",
+          "slug": "duz",
+          "population": 1814
+        },
+        {
+          "id": 151859,
+          "name": "Efirli",
+          "slug": "efirli",
+          "population": 3195
+        },
+        {
+          "id": 151861,
+          "name": "Ekinciler",
+          "slug": "ekinciler",
+          "population": 282
+        },
+        {
+          "id": 151863,
+          "name": "Gündoğdu",
+          "slug": "gundogdu",
+          "population": 133
+        },
+        {
+          "id": 151865,
+          "name": "Güzelyurt",
+          "slug": "guzelyurt",
+          "population": 308
+        },
+        {
+          "id": 151867,
+          "name": "Hacılar",
+          "slug": "hacilar",
+          "population": 296
+        },
+        {
+          "id": 61174,
+          "name": "Hamidiye",
+          "slug": "hamidiye",
+          "population": 634
+        },
+        {
+          "id": 151869,
+          "name": "İmeçli",
+          "slug": "imecli",
+          "population": 284
+        },
+        {
+          "id": 151871,
+          "name": "İstanbulboğazı",
+          "slug": "istanbulbogazi",
+          "population": 234
+        },
+        {
+          "id": 61175,
+          "name": "Kacalı",
+          "slug": "kacali",
+          "population": 1520
+        },
+        {
+          "id": 61176,
+          "name": "Kaleyaka",
+          "slug": "kaleyaka",
+          "population": 1082
+        },
+        {
+          "id": 151873,
+          "name": "Kazancılı",
+          "slug": "kazancili",
+          "population": 400
+        },
+        {
+          "id": 151831,
+          "name": "Kırlı",
+          "slug": "kirli",
+          "population": 991
+        },
+        {
+          "id": 151875,
+          "name": "Kovanlı",
+          "slug": "kovanli",
+          "population": 582
+        },
+        {
+          "id": 61177,
+          "name": "Kozağzı",
+          "slug": "kozagzi",
+          "population": 1333
+        },
+        {
+          "id": 151877,
+          "name": "Kurtuluş",
+          "slug": "kurtulus",
+          "population": 264
+        },
+        {
+          "id": 151879,
+          "name": "Kutluca",
+          "slug": "kutluca",
+          "population": 255
+        },
+        {
+          "id": 151881,
+          "name": "Kuyluca",
+          "slug": "kuyluca",
+          "population": 436
+        },
+        {
+          "id": 151833,
+          "name": "Medreseönü",
+          "slug": "medreseonu",
+          "population": 1413
+        },
+        {
+          "id": 151883,
+          "name": "Mersin",
+          "slug": "mersin",
+          "population": 480
+        },
+        {
+          "id": 151885,
+          "name": "Neneli",
+          "slug": "neneli",
+          "population": 502
+        },
+        {
+          "id": 151887,
+          "name": "Okçulu",
+          "slug": "okculu",
+          "population": 520
+        },
+        {
+          "id": 151889,
+          "name": "Ortatepe",
+          "slug": "ortatepe",
+          "population": 439
+        },
+        {
+          "id": 151891,
+          "name": "Ramazan",
+          "slug": "ramazan",
+          "population": 414
+        },
+        {
+          "id": 151893,
+          "name": "Saray",
+          "slug": "saray",
+          "population": 858
+        },
+        {
+          "id": 151895,
+          "name": "Selimiye",
+          "slug": "selimiye",
+          "population": 200
+        },
+        {
+          "id": 151899,
+          "name": "Sırakovancı",
+          "slug": "sirakovanci",
+          "population": 445
+        },
+        {
+          "id": 151901,
+          "name": "Soğukpınar",
+          "slug": "sogukpinar",
+          "population": 807
+        },
+        {
+          "id": 151903,
+          "name": "Şenyurt",
+          "slug": "senyurt",
+          "population": 401
+        },
+        {
+          "id": 151905,
+          "name": "Tarlacık",
+          "slug": "tarlacik",
+          "population": 190
+        },
+        {
+          "id": 151909,
+          "name": "Tepecik",
+          "slug": "tepecik",
+          "population": 368
+        },
+        {
+          "id": 151913,
+          "name": "Tepeköy",
+          "slug": "tepekoy",
+          "population": 134
+        },
+        {
+          "id": 151919,
+          "name": "Töngeldüzü",
+          "slug": "tongelduzu",
+          "population": 70
+        },
+        {
+          "id": 151923,
+          "name": "Yarlı",
+          "slug": "yarli",
+          "population": 560
+        },
+        {
+          "id": 151927,
+          "name": "Yazlık",
+          "slug": "yazlik",
+          "population": 167
+        },
+        {
+          "id": 151931,
+          "name": "Yeniköy",
+          "slug": "yenikoy",
+          "population": 284
+        },
+        {
+          "id": 151937,
+          "name": "Yeniöz",
+          "slug": "yenioz",
+          "population": 44
+        },
+        {
+          "id": 151941,
+          "name": "Yeşilköy",
+          "slug": "yesilkoy",
+          "population": 253
+        },
+        {
+          "id": 151943,
+          "name": "Yumrutaş",
+          "slug": "yumrutas",
+          "population": 730
+        }
+      ]
+    },
+    {
+      "id": 1696,
+      "name": "Ulubey",
+      "slug": "ulubey",
+      "population": 23033,
+      "area": 295,
+      "neighborhoods": [
+        {
+          "id": 151953,
+          "name": "Akoluk",
+          "slug": "akoluk",
+          "population": 486
+        },
+        {
+          "id": 151957,
+          "name": "Akpınar",
+          "slug": "akpinar",
+          "population": 556
+        },
+        {
+          "id": 151969,
+          "name": "Aydınlar",
+          "slug": "aydinlar",
+          "population": 562
+        },
+        {
+          "id": 151975,
+          "name": "Başçardak",
+          "slug": "bascardak",
+          "population": 212
+        },
+        {
+          "id": 151977,
+          "name": "Belenyurt",
+          "slug": "belenyurt",
+          "population": 677
+        },
+        {
+          "id": 151983,
+          "name": "Cevizlik",
+          "slug": "cevizlik",
+          "population": 315
+        },
+        {
+          "id": 151989,
+          "name": "Çağlayan",
+          "slug": "caglayan",
+          "population": 557
+        },
+        {
+          "id": 61192,
+          "name": "Çatallı",
+          "slug": "catalli",
+          "population": 1462
+        },
+        {
+          "id": 151991,
+          "name": "Çubuklu",
+          "slug": "cubuklu",
+          "population": 819
+        },
+        {
+          "id": 61193,
+          "name": "Çukur",
+          "slug": "cukur",
+          "population": 467
+        },
+        {
+          "id": 151997,
+          "name": "Doğlu",
+          "slug": "doglu",
+          "population": 536
+        },
+        {
+          "id": 152005,
+          "name": "Durak",
+          "slug": "durak",
+          "population": 1051
+        },
+        {
+          "id": 152011,
+          "name": "Elmaçukur",
+          "slug": "elmacukur",
+          "population": 236
+        },
+        {
+          "id": 152013,
+          "name": "Eymür",
+          "slug": "eymur",
+          "population": 434
+        },
+        {
+          "id": 152015,
+          "name": "Fındıklı",
+          "slug": "findikli",
+          "population": 505
+        },
+        {
+          "id": 61194,
+          "name": "Gündüzlü",
+          "slug": "gunduzlu",
+          "population": 936
+        },
+        {
+          "id": 152017,
+          "name": "Güvenköy",
+          "slug": "guvenkoy",
+          "population": 260
+        },
+        {
+          "id": 152019,
+          "name": "Güvenyurt",
+          "slug": "guvenyurt",
+          "population": 373
+        },
+        {
+          "id": 152021,
+          "name": "Güzelyurt",
+          "slug": "guzelyurt",
+          "population": 386
+        },
+        {
+          "id": 152025,
+          "name": "Hocaoğlu",
+          "slug": "hocaoglu",
+          "population": 531
+        },
+        {
+          "id": 152027,
+          "name": "Kadıncık",
+          "slug": "kadincik",
+          "population": 624
+        },
+        {
+          "id": 152029,
+          "name": "Kalıcak",
+          "slug": "kalicak",
+          "population": 290
+        },
+        {
+          "id": 61195,
+          "name": "Karakoca",
+          "slug": "karakoca",
+          "population": 730
+        },
+        {
+          "id": 152031,
+          "name": "Kardeşler",
+          "slug": "kardesler",
+          "population": 501
+        },
+        {
+          "id": 152033,
+          "name": "Kıranyağmur",
+          "slug": "kiranyagmur",
+          "population": 290
+        },
+        {
+          "id": 152035,
+          "name": "Kirazlık",
+          "slug": "kirazlik",
+          "population": 452
+        },
+        {
+          "id": 152039,
+          "name": "Koşaca",
+          "slug": "kosaca",
+          "population": 583
+        },
+        {
+          "id": 152041,
+          "name": "Kumanlar",
+          "slug": "kumanlar",
+          "population": 399
+        },
+        {
+          "id": 152043,
+          "name": "Kumrulu",
+          "slug": "kumrulu",
+          "population": 198
+        },
+        {
+          "id": 152045,
+          "name": "Ohtamış",
+          "slug": "ohtamis",
+          "population": 902
+        },
+        {
+          "id": 152047,
+          "name": "Oyumgürgen",
+          "slug": "oyumgurgen",
+          "population": 328
+        },
+        {
+          "id": 152049,
+          "name": "Ören",
+          "slug": "oren",
+          "population": 506
+        },
+        {
+          "id": 152051,
+          "name": "Refahiye",
+          "slug": "refahiye",
+          "population": 333
+        },
+        {
+          "id": 151963,
+          "name": "Şahinkaya",
+          "slug": "sahinkaya",
+          "population": 475
+        },
+        {
+          "id": 152053,
+          "name": "Şekeroluk",
+          "slug": "sekeroluk",
+          "population": 291
+        },
+        {
+          "id": 152055,
+          "name": "Şıhlar",
+          "slug": "sihlar",
+          "population": 585
+        },
+        {
+          "id": 152057,
+          "name": "Uzunmahmut",
+          "slug": "uzunmahmut",
+          "population": 860
+        },
+        {
+          "id": 61196,
+          "name": "Yenimahalle",
+          "slug": "yenimahalle",
+          "population": 398
+        },
+        {
+          "id": 152059,
+          "name": "Yenisayaca",
+          "slug": "yenisayaca",
+          "population": 1179
+        },
+        {
+          "id": 61197,
+          "name": "Yolbaşı",
+          "slug": "yolbasi",
+          "population": 166
+        },
+        {
+          "id": 152061,
+          "name": "Yukarıkızılen",
+          "slug": "yukarikizilen",
+          "population": 1582
+        }
+      ]
+    },
+    {
+      "id": 1706,
+      "name": "Ünye",
+      "slug": "unye",
+      "population": 132915,
+      "area": 569,
+      "neighborhoods": [
+        {
+          "id": 152135,
+          "name": "Ağıdere",
+          "slug": "agidere",
+          "population": 218
+        },
+        {
+          "id": 152141,
+          "name": "Ataköy",
+          "slug": "atakoy",
+          "population": 462
+        },
+        {
+          "id": 61198,
+          "name": "Atatürk",
+          "slug": "ataturk",
+          "population": 15520
+        },
+        {
+          "id": 152145,
+          "name": "Aydıntepe",
+          "slug": "aydintepe",
+          "population": 964
+        },
+        {
+          "id": 152151,
+          "name": "Başköy",
+          "slug": "baskoy",
+          "population": 321
+        },
+        {
+          "id": 61199,
+          "name": "Bayramca",
+          "slug": "bayramca",
+          "population": 6433
+        },
+        {
+          "id": 152307,
+          "name": "Beylerce",
+          "slug": "beylerce",
+          "population": 361
+        },
+        {
+          "id": 61200,
+          "name": "Burunucu",
+          "slug": "burunucu",
+          "population": 3540
+        },
+        {
+          "id": 152155,
+          "name": "Cevizdere",
+          "slug": "cevizdere",
+          "population": 728
+        },
+        {
+          "id": 152161,
+          "name": "Çakmak",
+          "slug": "cakmak",
+          "population": 120
+        },
+        {
+          "id": 61201,
+          "name": "Çamurlu",
+          "slug": "camurlu",
+          "population": 6127
+        },
+        {
+          "id": 152165,
+          "name": "Çatak",
+          "slug": "catak",
+          "population": 689
+        },
+        {
+          "id": 152171,
+          "name": "Çatalpınar",
+          "slug": "catalpinar",
+          "population": 810
+        },
+        {
+          "id": 152177,
+          "name": "Çataltepe",
+          "slug": "cataltepe",
+          "population": 76
+        },
+        {
+          "id": 152309,
+          "name": "Çınarcık",
+          "slug": "cinarcik",
+          "population": 533
+        },
+        {
+          "id": 61202,
+          "name": "Çınarlık",
+          "slug": "cinarlik",
+          "population": 9932
+        },
+        {
+          "id": 152181,
+          "name": "Çiğdem",
+          "slug": "cigdem",
+          "population": 540
+        },
+        {
+          "id": 152187,
+          "name": "Denizbükü",
+          "slug": "denizbuku",
+          "population": 299
+        },
+        {
+          "id": 152313,
+          "name": "Dereköy",
+          "slug": "derekoy",
+          "population": 257
+        },
+        {
+          "id": 152315,
+          "name": "Dizdar",
+          "slug": "dizdar",
+          "population": 179
+        },
+        {
+          "id": 61203,
+          "name": "Döşemedibi",
+          "slug": "dosemedibi",
+          "population": 200
+        },
+        {
+          "id": 152191,
+          "name": "Düzköy",
+          "slug": "duzkoy",
+          "population": 482
+        },
+        {
+          "id": 152195,
+          "name": "Düzsaylan",
+          "slug": "duzsaylan",
+          "population": 207
+        },
+        {
+          "id": 152201,
+          "name": "Elmalık",
+          "slug": "elmalik",
+          "population": 91
+        },
+        {
+          "id": 152065,
+          "name": "Erenyurt",
+          "slug": "erenyurt",
+          "population": 1396
+        },
+        {
+          "id": 152203,
+          "name": "Esenkale",
+          "slug": "esenkale",
+          "population": 277
+        },
+        {
+          "id": 152207,
+          "name": "Eskikızılcakese",
+          "slug": "eskikizilcakese",
+          "population": 556
+        },
+        {
+          "id": 152101,
+          "name": "Fatih",
+          "slug": "fatih",
+          "population": 1984
+        },
+        {
+          "id": 61204,
+          "name": "Fevzi Çakmak",
+          "slug": "fevzi-cakmak",
+          "population": 6816
+        },
+        {
+          "id": 152213,
+          "name": "Göbü",
+          "slug": "gobu",
+          "population": 751
+        },
+        {
+          "id": 152217,
+          "name": "Gölcüğez",
+          "slug": "golcugez",
+          "population": 503
+        },
+        {
+          "id": 61205,
+          "name": "Gölevi",
+          "slug": "golevi",
+          "population": 7893
+        },
+        {
+          "id": 152223,
+          "name": "Günpınarı",
+          "slug": "gunpinari",
+          "population": 405
+        },
+        {
+          "id": 61215,
+          "name": "Gürecülü",
+          "slug": "gureculu",
+          "population": 909
+        },
+        {
+          "id": 152225,
+          "name": "Güzelkale",
+          "slug": "guzelkale",
+          "population": 226
+        },
+        {
+          "id": 152229,
+          "name": "Güzelyalı",
+          "slug": "guzelyali",
+          "population": 538
+        },
+        {
+          "id": 61206,
+          "name": "Hamidiye",
+          "slug": "hamidiye",
+          "population": 4340
+        },
+        {
+          "id": 152075,
+          "name": "Hanyanı",
+          "slug": "hanyani",
+          "population": 792
+        },
+        {
+          "id": 152231,
+          "name": "Hızabaşıgünlük",
+          "slug": "hizabasigunluk",
+          "population": 115
+        },
+        {
+          "id": 152233,
+          "name": "Hızarbaşıkumarlı",
+          "slug": "hizarbasikumarli",
+          "population": 137
+        },
+        {
+          "id": 152069,
+          "name": "İnkur",
+          "slug": "inkur",
+          "population": 2271
+        },
+        {
+          "id": 61207,
+          "name": "İpekyolu",
+          "slug": "ipekyolu",
+          "population": 3342
+        },
+        {
+          "id": 152235,
+          "name": "Kadılar",
+          "slug": "kadilar",
+          "population": 407
+        },
+        {
+          "id": 152239,
+          "name": "Kale",
+          "slug": "kale",
+          "population": 369
+        },
+        {
+          "id": 61208,
+          "name": "Kaledere",
+          "slug": "kaledere",
+          "population": 6827
+        },
+        {
+          "id": 152237,
+          "name": "Kaledibi",
+          "slug": "kaledibi",
+          "population": 224
+        },
+        {
+          "id": 61209,
+          "name": "Karşıyaka",
+          "slug": "karsiyaka",
+          "population": 714
+        },
+        {
+          "id": 152241,
+          "name": "Keş",
+          "slug": "kes",
+          "population": 526
+        },
+        {
+          "id": 152243,
+          "name": "Killik",
+          "slug": "killik",
+          "population": 360
+        },
+        {
+          "id": 152245,
+          "name": "Kocuklu",
+          "slug": "kocuklu",
+          "population": 150
+        },
+        {
+          "id": 152247,
+          "name": "Kuşçulu",
+          "slug": "kusculu",
+          "population": 615
+        },
+        {
+          "id": 152251,
+          "name": "Kuşdoğan",
+          "slug": "kusdogan",
+          "population": 297
+        },
+        {
+          "id": 61210,
+          "name": "Liseler",
+          "slug": "liseler",
+          "population": 6628
+        },
+        {
+          "id": 152253,
+          "name": "Nadırlı",
+          "slug": "nadirli",
+          "population": 205
+        },
+        {
+          "id": 152319,
+          "name": "Nurettin",
+          "slug": "nurettin",
+          "population": 561
+        },
+        {
+          "id": 61211,
+          "name": "Nuriye",
+          "slug": "nuriye",
+          "population": 1354
+        },
+        {
+          "id": 61212,
+          "name": "Orta Yılmazlar",
+          "slug": "orta-yilmazlar",
+          "population": 3651
+        },
+        {
+          "id": 152325,
+          "name": "Ortaköy",
+          "slug": "ortakoy",
+          "population": 652
+        },
+        {
+          "id": 152083,
+          "name": "Pelitliyatak",
+          "slug": "pelitliyatak",
+          "population": 1816
+        },
+        {
+          "id": 152303,
+          "name": "Pınarbaşı",
+          "slug": "pinarbasi",
+          "population": 175
+        },
+        {
+          "id": 152255,
+          "name": "Sahilköy",
+          "slug": "sahilkoy",
+          "population": 956
+        },
+        {
+          "id": 61214,
+          "name": "Saraçlı",
+          "slug": "saracli",
+          "population": 7568
+        },
+        {
+          "id": 152257,
+          "name": "Saraycık",
+          "slug": "saraycik",
+          "population": 745
+        },
+        {
+          "id": 152259,
+          "name": "Sarıhalil",
+          "slug": "sarihalil",
+          "population": 922
+        },
+        {
+          "id": 152263,
+          "name": "Saylan",
+          "slug": "saylan",
+          "population": 516
+        },
+        {
+          "id": 152269,
+          "name": "Sofutepesi",
+          "slug": "sofutepesi",
+          "population": 338
+        },
+        {
+          "id": 152271,
+          "name": "Şenyurt",
+          "slug": "senyurt",
+          "population": 376
+        },
+        {
+          "id": 152275,
+          "name": "Taflancık",
+          "slug": "taflancik",
+          "population": 213
+        },
+        {
+          "id": 152327,
+          "name": "Taşça",
+          "slug": "tasca",
+          "population": 126
+        },
+        {
+          "id": 152079,
+          "name": "Tekkiraz",
+          "slug": "tekkiraz",
+          "population": 2124
+        },
+        {
+          "id": 152277,
+          "name": "Tepeköy",
+          "slug": "tepekoy",
+          "population": 217
+        },
+        {
+          "id": 152329,
+          "name": "Uğurlu",
+          "slug": "ugurlu",
+          "population": 608
+        },
+        {
+          "id": 152281,
+          "name": "Üçpınar",
+          "slug": "ucpinar",
+          "population": 404
+        },
+        {
+          "id": 152283,
+          "name": "Yavı",
+          "slug": "yavi",
+          "population": 1346
+        },
+        {
+          "id": 152333,
+          "name": "Yaycı",
+          "slug": "yayci",
+          "population": 213
+        },
+        {
+          "id": 152285,
+          "name": "Yaylalı",
+          "slug": "yaylali",
+          "population": 119
+        },
+        {
+          "id": 152289,
+          "name": "Yazkonağı",
+          "slug": "yazkonagi",
+          "population": 621
+        },
+        {
+          "id": 152087,
+          "name": "Yenikent",
+          "slug": "yenikent",
+          "population": 1045
+        },
+        {
+          "id": 152337,
+          "name": "Yenikızılcakese",
+          "slug": "yenikizilcakese",
+          "population": 311
+        },
+        {
+          "id": 152339,
+          "name": "Yeniköy",
+          "slug": "yenikoy",
+          "population": 364
+        },
+        {
+          "id": 152343,
+          "name": "Yeşilada",
+          "slug": "yesilada",
+          "population": 95
+        },
+        {
+          "id": 152073,
+          "name": "Yeşilkent",
+          "slug": "yesilkent",
+          "population": 1362
+        },
+        {
+          "id": 152295,
+          "name": "Yiğitler",
+          "slug": "yigitler",
+          "population": 557
+        },
+        {
+          "id": 61213,
+          "name": "Yunus Emre",
+          "slug": "yunus-emre",
+          "population": 2041
+        },
+        {
+          "id": 152299,
+          "name": "Yüceler",
+          "slug": "yuceler",
+          "population": 1857
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "districtCount": 19,
+    "neighborhoodCount": 772
+  }
+}

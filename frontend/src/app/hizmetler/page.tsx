@@ -4,6 +4,7 @@ import { prisma, isMockMode } from "@/lib/db";
 import { mockLocations, mockServices } from "@/lib/mock-data";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 import { slugify } from "@/lib/utils";
+import { getCanonicalNeighborhoodSlug } from "@/lib/locations/ordu-data";
 
 export const dynamic = "force-dynamic";
 
@@ -40,12 +41,6 @@ async function getLocations() {
     console.error("HizmetlerPage: locations query failed, falling back to mock data.", error);
     return mockLocations;
   }
-}
-
-function getNeighborhoodSlug(locationSlug: string, neighborhood: string): string {
-  const parts = locationSlug.split("-");
-  if (parts.length > 1) return parts.slice(1).join("-");
-  return slugify(neighborhood);
 }
 
 export default async function HizmetlerPage() {
@@ -136,12 +131,12 @@ export default async function HizmetlerPage() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {locations.map((location) => {
             const districtSlug = slugify(location.district);
-            const neighborhoodSlug = getNeighborhoodSlug(location.slug, location.neighborhood);
+            const neighborhoodSlug = getCanonicalNeighborhoodSlug(location.slug, location.neighborhood);
 
             return (
               <Link
                 key={location.id}
-                href={`/locations/${districtSlug}/${neighborhoodSlug}`}
+                href={`/ordu/${districtSlug}/${neighborhoodSlug}`}
                 className="group bg-white p-4 rounded-xl border border-outline-variant/20 shadow-sm hover:bg-primary hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
               >
                 <p className="text-xs font-semibold uppercase tracking-wide text-secondary group-hover:text-orange-300">

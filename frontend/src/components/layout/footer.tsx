@@ -14,10 +14,10 @@ export function Footer() {
             Altınordu merkezli mobil ekiplerle hızlı ve güvenilir destek.
           </p>
           <div className="flex gap-4">
-            <span className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:text-orange-500 transition-colors">
+            <span aria-hidden="true" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300">
               <span className="material-symbols-outlined">social_leaderboard</span>
             </span>
-            <span className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:text-orange-500 transition-colors">
+            <span aria-hidden="true" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300">
               <span className="material-symbols-outlined">camera</span>
             </span>
           </div>
@@ -55,7 +55,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/altinordu-cilingir" className="text-slate-400 hover:text-orange-300 font-sans text-sm transition-all duration-300">
-                  Altınordu Merkez
+                  Altınordu Çilingir
                 </Link>
               </li>
               <li>
@@ -87,11 +87,11 @@ export function Footer() {
       </div>
       <div className="max-w-7xl mx-auto px-8 pb-8 border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <span className="text-slate-300 text-xs">
-          <Link href="https://lemoria.com.tr" target="_blank" rel="dofollow" title="Ordu Web Tasarım ve SEO" className="hover:text-white transition-colors">©</Link> {new Date().getFullYear()} Ordu Çilingir - Precision Security Solutions
+          <Link href="https://lemoria.com.tr" target="_blank" rel="noopener noreferrer" title="Ordu Web Tasarım ve SEO" className="hover:text-white transition-colors">©</Link> {new Date().getFullYear()} Ordu Çilingir - Tüm Hakları Saklıdır
         </span>
         <div className="flex gap-8">
-          <Link href="#" className="text-slate-300 text-xs hover:text-white">Gizlilik Politikası</Link>
-          <Link href="#" className="text-slate-300 text-xs hover:text-white">Kullanım Şartları</Link>
+          <Link href="/gizlilik-politikasi" className="text-slate-300 text-xs hover:text-white">Gizlilik Politikası</Link>
+          <Link href="/kullanim-sartlari" className="text-slate-300 text-xs hover:text-white">Kullanım Şartları</Link>
         </div>
       </div>
     </footer>

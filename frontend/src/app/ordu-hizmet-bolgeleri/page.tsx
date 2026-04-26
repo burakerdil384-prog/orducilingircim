@@ -64,9 +64,9 @@ export default function OrduHizmetBolgeleriPage() {
           description: "Araç odaklı acil çilingir çözümleri.",
         },
         {
-          href: "/altinordu-cilingir",
-          label: "Altınordu Çilingir",
-          description: "Merkez ilçe hızlı müdahale ve servis kapsamı.",
+          href: "/ordu",
+          label: "Ordu İlçe Sayfaları",
+          description: "Akkuş'tan Ünye'ye tüm ilçe ve mahalle sayfaları.",
         },
       ]}
     />
