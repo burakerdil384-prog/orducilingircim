@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/seo/schemas";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -61,14 +62,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const post = await getPost(slug);
 
   if (!post) {
-    return (
-      <main className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-headline font-extrabold text-primary mb-4">Yazı Bulunamadı</h1>
-          <Link href="/blog" className="text-secondary font-bold">Blog&apos;a Dön</Link>
-        </div>
-      </main>
-    );
+    notFound();
   }
 
   const relatedPosts = isMockMode
