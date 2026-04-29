@@ -108,7 +108,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     }));
   } catch (e) {
-    console.error("Sitemap: services query failed", e);
+    console.error("Sitemap: services query failed, using mock fallback", e);
+    servicePages = mockServices.map((service) => ({
+      url: `${siteUrl}/services/${service.slug}`,
+      lastModified: service.updatedAt,
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    }));
   }
 
   // Dynamic blog pages
@@ -124,17 +130,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     }));
   } catch (e) {
-    console.error("Sitemap: posts query failed", e);
+    console.error("Sitemap: posts query failed, using mock fallback", e);
+    blogPages = mockPosts
+      .filter((p) => p.published)
+      .map((post) => ({
+        url: `${siteUrl}/blog/${post.slug}`,
+        lastModified: post.updatedAt,
+        changeFrequency: "weekly" as const,
+        priority: 0.7,
+      }));
   }
 
   // Dynamic location pages
   let locationPages: MetadataRoute.Sitemap = [];
   let districtPages: MetadataRoute.Sitemap = [];
-  try {
-    const locations = isMockMode
-      ? mockLocations
-      : await prisma.location.findMany({ select: { district: true, slug: true, updatedAt: true } });
-    locationPages = locations.map((loc) => {
+  const mapLocationPages = (
+    locations: Array<{ district: string; slug: string; updatedAt: Date }>
+  ) => {
+    const mappedLocationPages = locations.map((loc) => {
       const district = slugify(loc.district);
       const neighborhood = neighborhoodSlugFromLocationSlug(loc.slug);
       return {
@@ -165,13 +178,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }
     }
 
-    districtPages = Array.from(districtLastModified.entries()).map(([district, updatedAt]) => ({
+    const mappedDistrictPages = Array.from(districtLastModified.entries()).map(([district, updatedAt]) => ({
       url: `${siteUrl}/locations/${district}`,
       lastModified: updatedAt,
       changeFrequency: "monthly" as const,
       priority: 0.75,
     }));
-    districtPages.push(
+    mappedDistrictPages.push(
       ...Array.from(districtLastModified.entries()).map(([district, updatedAt]) => ({
         url: `${siteUrl}/ordu/${district}`,
         lastModified: updatedAt,
@@ -179,10 +192,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.8,
       }))
     );
-    locationPages.push(...orduLocationPages);
+
+    return {
+      mappedLocationPages: [...mappedLocationPages, ...orduLocationPages],
+      mappedDistrictPages,
+    };
+  };
+
+  try {
+    const locations = isMockMode
+      ? mockLocations
+      : await prisma.location.findMany({ select: { district: true, slug: true, updatedAt: true } });
+    const mapped = mapLocationPages(locations);
+    locationPages = mapped.mappedLocationPages;
+    districtPages = mapped.mappedDistrictPages;
   } catch (e) {
-    console.error("Sitemap: locations query failed", e);
+    console.error("Sitemap: locations query failed, using mock fallback", e);
+    const mapped = mapLocationPages(mockLocations);
+    locationPages = mapped.mappedLocationPages;
+    districtPages = mapped.mappedDistrictPages;
   }
 
-  return [...staticPages, ...servicePages, ...blogPages, ...districtPages, ...locationPages];
+  const allPages = [...staticPages, ...servicePages, ...blogPages, ...districtPages, ...locationPages];
+  if (allPages.length < 20) {
+    console.warn(
+      `SITEMAP_HEALTH_WARNING: generated sitemap has unexpectedly low URL count (${allPages.length})`
+    );
+  }
+  return allPages;
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { generatePageMetadata } from "@/lib/seo/metadata";
 import { generateServiceSchema, generateFAQSchema, generateBreadcrumbSchema } from "@/lib/seo/schemas";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -58,10 +59,22 @@ async function getService(slug: string) {
   }
 }
 
+function parseJsonArray<T>(value: unknown, fallback: T, fieldName: string): T {
+  if (Array.isArray(value)) return value as T;
+  if (typeof value !== "string") return fallback;
+  try {
+    const parsed = JSON.parse(value) as unknown;
+    return Array.isArray(parsed) ? (parsed as T) : fallback;
+  } catch (error) {
+    console.warn(`ServiceDetailPage: failed to parse ${fieldName} JSON, using fallback.`, error);
+    return fallback;
+  }
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const service = await getService(slug);
-  if (!service) return {};
+  if (!service) notFound();
   return generatePageMetadata({
     title: `${service.title} | Ordu Çilingir`,
     description: service.description ?? "",
@@ -74,14 +87,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   const service = await getService(slug);
 
   if (!service) {
-    return (
-      <main className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-headline font-extrabold text-primary mb-4">Hizmet Bulunamadı</h1>
-          <Link href="/" className="text-secondary font-bold">Ana Sayfaya Dön</Link>
-        </div>
-      </main>
-    );
+    notFound();
   }
 
   const locations = isMockMode
@@ -101,22 +107,22 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           console.error("ServiceDetailPage: related services query failed, falling back to mock data.", error);
           return mockServices.filter((s) => s.slug !== slug);
         });
-  const rawPricing = service.pricing;
-  const pricing: { label: string; price: string }[] =
-    Array.isArray(rawPricing) ? rawPricing :
-    typeof rawPricing === "string" ? JSON.parse(rawPricing) :
-    defaultPricingData[slug] || [];
-  const rawFaqs = service.faqs;
-  const faqs: { question: string; answer: string }[] | null =
-    typeof rawFaqs === "string" ? JSON.parse(rawFaqs) :
-    Array.isArray(rawFaqs) ? rawFaqs :
-    null;
+  const pricing = parseJsonArray<{ label: string; price: string }[]>(
+    service.pricing,
+    defaultPricingData[slug] || [],
+    "pricing"
+  );
+  const faqs = parseJsonArray<{ question: string; answer: string }[] | null>(
+    service.faqs,
+    null,
+    "faqs"
+  );
 
   return (
     <main className="min-h-screen">
       <JsonLd data={generateServiceSchema({ name: service.title, description: service.description ?? "", slug: service.slug, price: service.price ?? undefined })} />
       {faqs && <JsonLd data={generateFAQSchema(faqs)} />}
-      <JsonLd data={generateBreadcrumbSchema([{ name: "Ana Sayfa", url: "/" }, { name: "Hizmetler", url: "/services/kapi-acma" }, { name: service.title, url: `/services/${slug}` }])} />
+      <JsonLd data={generateBreadcrumbSchema([{ name: "Ana Sayfa", url: "/" }, { name: "Hizmetler", url: "/hizmetler" }, { name: service.title, url: `/services/${slug}` }])} />
 
       {/* Hero Section */}
       <section className="relative h-[530px] flex items-center overflow-hidden">
