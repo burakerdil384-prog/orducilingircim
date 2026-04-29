@@ -10,6 +10,7 @@ import { getCanonicalNeighborhoodSlug } from "@/lib/locations/ordu-data";
 import { slugify } from "@/lib/locations/slug";
 
 export const dynamic = "force-dynamic";
+const PRIMARY_INDEX_DISTRICT_SLUG = "altinordu";
 
 const mapImage = "/images/location-map.webp";
 
@@ -45,6 +46,7 @@ export async function generateMetadata({ params }: { params: Promise<{ district:
       current.description ||
       `${current.district} ${current.neighborhood} Mahallesi'nde kapı açma, kilit değişimi ve acil çilingir desteği.`,
     path: `/ordu/${district}/${neighborhood}`,
+    noIndex: district !== PRIMARY_INDEX_DISTRICT_SLUG,
   });
 }
 

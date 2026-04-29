@@ -5,6 +5,7 @@ import { slugify } from "@/lib/utils";
 import { neighborhoodSlugFromLocationSlug } from "@/lib/locations/slug";
 
 export const revalidate = 3600;
+const PRIMARY_INDEX_DISTRICT_SLUG = "altinordu";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl =
@@ -147,16 +148,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const mapLocationPages = (
     locations: Array<{ district: string; slug: string; updatedAt: Date }>
   ) => {
-    const orduLocationPages = locations.map((loc) => {
-      const district = slugify(loc.district);
-      const neighborhood = neighborhoodSlugFromLocationSlug(loc.slug);
-      return {
-        url: `${siteUrl}/ordu/${district}/${neighborhood}`,
-        lastModified: loc.updatedAt,
-        changeFrequency: "monthly" as const,
-        priority: 0.82,
-      };
-    });
+    const orduLocationPages = locations
+      .filter((loc) => slugify(loc.district) === PRIMARY_INDEX_DISTRICT_SLUG)
+      .map((loc) => {
+        const district = slugify(loc.district);
+        const neighborhood = neighborhoodSlugFromLocationSlug(loc.slug);
+        return {
+          url: `${siteUrl}/ordu/${district}/${neighborhood}`,
+          lastModified: loc.updatedAt,
+          changeFrequency: "monthly" as const,
+          priority: 0.82,
+        };
+      });
 
     const districtLastModified = new Map<string, Date>();
     for (const loc of locations) {
