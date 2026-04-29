@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ district:
     title: `${location.neighborhood} Çilingir | ${location.district} - Ordu Çilingir`,
     description: location.description ?? "",
     path: `/locations/${district}/${neighborhood}`,
+    noIndex: true,
   });
 }
 

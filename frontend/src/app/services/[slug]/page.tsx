@@ -186,7 +186,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-y-4 gap-x-8 relative z-10">
                   {locations.map((loc) => (
-                    <Link key={loc.id} href={`/locations/${loc.district.toLowerCase().replace(/ı/g, "i").replace(/ş/g, "s").replace(/ğ/g, "g").replace(/ü/g, "u").replace(/ö/g, "o").replace(/ç/g, "c")}/${loc.slug.split("-").slice(1).join("-")}`} className="flex items-center gap-2 text-sm hover:text-secondary transition-colors">
+                    <Link key={loc.id} href={`/ordu/${loc.district.toLowerCase().replace(/ı/g, "i").replace(/ş/g, "s").replace(/ğ/g, "g").replace(/ü/g, "u").replace(/ö/g, "o").replace(/ç/g, "c")}/${loc.slug.split("-").slice(1).join("-")}`} className="flex items-center gap-2 text-sm hover:text-secondary transition-colors">
                       <span className="material-symbols-outlined text-orange-500 text-sm">location_on</span>
                       {loc.neighborhood} Mahallesi
                     </Link>

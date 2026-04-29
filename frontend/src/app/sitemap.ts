@@ -147,17 +147,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const mapLocationPages = (
     locations: Array<{ district: string; slug: string; updatedAt: Date }>
   ) => {
-    const mappedLocationPages = locations.map((loc) => {
-      const district = slugify(loc.district);
-      const neighborhood = neighborhoodSlugFromLocationSlug(loc.slug);
-      return {
-        url: `${siteUrl}/locations/${district}/${neighborhood}`,
-        lastModified: loc.updatedAt,
-        changeFrequency: "monthly" as const,
-        priority: 0.8,
-      };
-    });
-
     const orduLocationPages = locations.map((loc) => {
       const district = slugify(loc.district);
       const neighborhood = neighborhoodSlugFromLocationSlug(loc.slug);
@@ -179,22 +168,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
 
     const mappedDistrictPages = Array.from(districtLastModified.entries()).map(([district, updatedAt]) => ({
-      url: `${siteUrl}/locations/${district}`,
+      url: `${siteUrl}/ordu/${district}`,
       lastModified: updatedAt,
       changeFrequency: "monthly" as const,
-      priority: 0.75,
+      priority: 0.8,
     }));
-    mappedDistrictPages.push(
-      ...Array.from(districtLastModified.entries()).map(([district, updatedAt]) => ({
-        url: `${siteUrl}/ordu/${district}`,
-        lastModified: updatedAt,
-        changeFrequency: "monthly" as const,
-        priority: 0.8,
-      }))
-    );
 
     return {
-      mappedLocationPages: [...mappedLocationPages, ...orduLocationPages],
+      mappedLocationPages: orduLocationPages,
       mappedDistrictPages,
     };
   };

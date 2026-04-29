@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ district:
         ? `${districtName} ilçesindeki hizmet verdiğimiz mahalleleri görüntüleyin ve ilgili mahalle sayfasından hızlıca iletişime geçin.`
         : `${districtName} ilçesi için hizmet bölgeleri ve iletişim bilgileri.`,
     path: `/locations/${district}`,
+    noIndex: true,
   });
 }
 
